@@ -1,0 +1,52 @@
+.masthead {
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: 150px;
+
+    .title {
+      font-size: 26px;
+      font-weight: 600;
+      padding: 5px;
+      color: #2f98d9;
+      letter-spacing: 1px;
+
+      &:before {
+        position: relative;
+        top: 2px;
+        padding: 0 15px 0 0;
+        content: "∆";
+        font-size: 30px;
+      }
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    margin-right: 150px;
+
+    a {
+      position: relative;
+      padding: 10px;
+      margin: 5px;
+      top: 2px;
+      text-transform: uppercase;
+      font-family: sans-serif;
+      font-size: 12px;
+      color: #9297a3;
+      font-weight: lighter;
+    }
+
+   a:last-child {
+     background: #97bf11;
+     color: #fff;
+     border-radius: 5px;
+   }
+  }
+}

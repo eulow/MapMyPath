@@ -1,8 +1,9 @@
 import React from 'react';
+import MastheadContainer from './masthead/masthead_container';
 
 const App = ({ children }) => (
   <div>
-    <h1>mapmypath</h1>
+    <MastheadContainer />
     { children }
   </div>
 );

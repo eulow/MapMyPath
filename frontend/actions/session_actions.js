@@ -41,5 +41,4 @@ export const signUp = (user) => dispatch => (
       // dispatches error action to error reducer
     }
   )
-
 );
