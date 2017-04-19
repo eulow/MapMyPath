@@ -38,8 +38,8 @@
 # Routes
 |Path                   |	Component |
 | --------------------- | ------------- |
-| /auth/signup          | AuthFormContainer |
-| /auth/login           | AuthFormContainer |
+| /signup               | AuthFormContainer |
+| /login                | AuthFormContainer |
 | /homepage/routes/     | RoutesIndexContainer |
 | /homepage/routes/new  | NewRoutesForm |
 | /homepage/routes/:id  | RouteShowContainer |

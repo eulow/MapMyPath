@@ -7,7 +7,7 @@ class Api::SessionsController < ApplicationController
     )
 
     if @user
-      sign_in(@user)
+      log_in(@user)
       render 'api/users/show'
     else
       render(

@@ -3,7 +3,7 @@ import { signOut } from '../../actions/session_actions';
 import Masthead from './masthead';
 
 const mapStateToProps = ({ session }) => ({
-  currentUser: session.currentUser
+  currentUser: session.currentUser,
 });
 
 const mapDispatchToProps = (dispatch) => ({

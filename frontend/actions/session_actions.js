@@ -8,20 +8,22 @@ export const receiveCurrentUser = (currentUser) => ({
   currentUser
 });
 
-export const signIn = (user) => dispatch => (
-  SessionAPIUtil.signIn(user)
-    .then(
-      (currentUser) => {
-        dispatch(receiveCurrentUser(currentUser));
-        dispatch(clearErrors());
-        // dispatches receiveCurrentUser session action and clear error action
-      },
-      (errors) => {
-        dispatch(addErrors(errors));
-       // dispatches error action to error reducer
-      }
-    )
-);
+export const login = (user) => dispatch => {
+  return (
+    SessionAPIUtil.login(user)
+      .then(
+        (currentUser) => {
+          dispatch(receiveCurrentUser(currentUser));
+          dispatch(clearErrors());
+          // dispatches receiveCurrentUser session action and clear error action
+        },
+        (errors) => {
+          dispatch(addErrors(errors));
+         // dispatches error action to error reducer
+        }
+      )
+  );
+};
 
 export const signOut = () => dispatch => (
   SessionAPIUtil.signOut()

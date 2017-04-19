@@ -3,18 +3,18 @@ import { Link } from 'react-router';
 
 const sessionLinks = () => (
   <nav className="login-signup">
-    <Link to="/login" activeClassName="current">Log in</Link>
-    <Link to="/signup" activeClassName="current">Sign up</Link>
+    <Link to="/login" className="login-button">Log in</Link>
+    <Link to="/signup" className="signup-button">Sign up</Link>
   </nav>
 );
 
 const userInfo = (currentUser, signOut) => (
   <nav className="user-info">
-    <img src={window.images.sampleAvatar} />
+    <img className="avatar" src={window.images.sampleAvatar} />
   </nav>
 );
 
-const Masthead = ({ currentUser, signOut }) => {
+const Masthead = ({ currentUser, signOut, path }) => {
   const render = currentUser ? userInfo(currentUser, signOut) : sessionLinks();
 
   return (

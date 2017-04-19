@@ -1,0 +1,31 @@
+.auth-form-container {
+  display: flex;
+  justify-content: center;
+  background: #f0f0f0;
+  height: 700px;
+  
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  a.toggle-button, input[type="submit"] {
+    position: relative;
+    padding: 10px;
+    margin: 5px;
+    top: 2px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #9297a3;
+    font-weight: lighter;
+    letter-spacing: .8px;
+  }
+
+  input[type="submit"] {
+    background: #97bf11;
+    color: #fff;
+    border-radius: 5px;
+  }
+}
