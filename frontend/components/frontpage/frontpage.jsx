@@ -30,11 +30,10 @@ class Frontpage extends React.Component {
             </div>
           </section>
         </div>
+        <div className="footer">
+        </div>
       </div>
     );
-    // <div>
-    //   footer need to complete
-    // </div>
   }
 }
 

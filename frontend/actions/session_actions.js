@@ -16,6 +16,7 @@ export const login = (user) => dispatch => {
         (currentUser) => {
           dispatch(receiveCurrentUser(currentUser));
           dispatch(clearErrors());
+          hashHistory.push('/profile_tabs');
           // dispatches receiveCurrentUser session action and clear error action
         },
         (errors) => {
@@ -31,7 +32,7 @@ export const signOut = () => dispatch => {
     SessionAPIUtil.signOut()
     .then((currentUser) => {
       dispatch(receiveCurrentUser(null));
-      hashHistory.push('/login');
+      hashHistory.push('/');
     })
   );
 };
@@ -43,6 +44,7 @@ export const signUp = (user) => dispatch => (
     (currentUser) => {
       dispatch(receiveCurrentUser(currentUser));
       dispatch(clearErrors());
+      hashHistory.push('/profile_tabs');
       // dispatches receiveCurrentUser session action and clear error action
     },
     (errors) => {
