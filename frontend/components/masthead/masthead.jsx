@@ -8,11 +8,23 @@ const sessionLinks = () => (
   </nav>
 );
 
-const userInfo = (currentUser, signOut) => (
-  <nav className="user-info">
-    <img className="avatar" src={window.images.sampleAvatar} />
-  </nav>
-);
+const userInfo = (currentUser, signOut) => {
+  function signOutMethod(e) {
+    e.preventDefault();
+    signOut();
+  }
+
+  return (
+    <nav className="user-info">
+      <img className="avatar" src={window.images.sampleAvatar} />
+      <button
+        className="signout-button"
+        onClick={signOutMethod}>
+        log out
+      </button>
+    </nav>
+  );
+};
 
 const Masthead = ({ currentUser, signOut, path }) => {
   const render = currentUser ? userInfo(currentUser, signOut) : sessionLinks();
