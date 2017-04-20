@@ -38,9 +38,49 @@ class SessionForm extends React.Component {
     this.props.processForm(user).then(() => this.redirectIfSignedIn());
   }
 
-  renderErrors() {
-
+  renderLoginErrors({ login }) {
+    if(login) {
+      this.setState(
+        {
+          email: "",
+          first_name: ""
+        }
+      );
+      return (
+        <div className="errors">{login}.</div>
+      );
+    }
   }
+  //sign up errors
+  renderFirstNameError({ first_name }) {
+    if(first_name) {
+      return (
+        <div className="errors">First name {first_name}.</div>
+      );
+    }
+  }
+  renderLastNameError({ last_name }) {
+    if(last_name) {
+      return (
+        <div className="errors">Last name {last_name}.</div>
+      );
+    }
+  }
+  renderEmailError({ email }) {
+    if(email) {
+      return (
+        <div className="errors">Email {email}.</div>
+      );
+    }
+  }
+  renderPasswordError({ password }) {
+    if(password) {
+      return (
+        <div className="errors">Password {password}.</div>
+      );
+    }
+  }
+
 
   renderToggle (formType) {
     if(formType === 'signup') {
@@ -81,6 +121,7 @@ class SessionForm extends React.Component {
               placeholder="First name"
               />
           </div>
+          {this.renderFirstNameError(this.props.errors)}
           <div className="input-container">
             <input
               className="input-box"
@@ -90,6 +131,7 @@ class SessionForm extends React.Component {
               placeholder="Last name"
               />
           </div>
+          {this.renderLastNameError(this.props.errors)}
           <div className="input-container">
             <input
               className="input-box"
@@ -99,6 +141,7 @@ class SessionForm extends React.Component {
               placeholder="Email"
               />
           </div>
+          {this.renderEmailError(this.props.errors)}
           <div className="input-container">
             <input
               className="input-box"
@@ -108,6 +151,7 @@ class SessionForm extends React.Component {
               placeholder="Password"
               />
           </div>
+          {this.renderPasswordError(this.props.errors)}
           <input type="submit" value="sign up" />
         </form>
       );
@@ -141,6 +185,7 @@ class SessionForm extends React.Component {
               placeholder="Password"
               />
           </div>
+          {this.renderLoginErrors(this.props.errors)}
           <input type="submit" value="log in" />
         </form>
       );

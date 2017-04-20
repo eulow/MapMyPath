@@ -16,3 +16,5 @@ User.create!(email: 'test1@gmail.com', password: 'test123', first_name: 'test1',
 User.create!(email: 'test2@gmail.com', password: 'test234', first_name: 'test2', last_name: 'test2')
 
 User.create!(email: 'test3@gmail.com', password: 'test345', first_name: 'test3', last_name: 'test3')
+
+User.create!(email: 'Guest', password: 'Password', first_name: 'Best', last_name: 'Guest')

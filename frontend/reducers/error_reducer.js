@@ -6,7 +6,7 @@ const errorReducer = (state = defaultErrors, action) => {
   Object.freeze(state);
   switch(action.type) {
     case ADD_ERRORS:
-      return Object.assign({}, action.errors);
+      return Object.assign({}, action.errors.responseJSON);
     case CLEAR_ERRORS:
       return {};
     default:
