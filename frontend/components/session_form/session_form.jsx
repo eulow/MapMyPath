@@ -40,12 +40,6 @@ class SessionForm extends React.Component {
 
   renderLoginErrors({ login }) {
     if(login) {
-      this.setState(
-        {
-          email: "",
-          first_name: ""
-        }
-      );
       return (
         <div className="errors">{login}.</div>
       );
