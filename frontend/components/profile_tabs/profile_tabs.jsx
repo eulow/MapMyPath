@@ -4,13 +4,20 @@ import { Link } from 'react-router';
 class ProfileTabs extends React.Component {
   constructor(props) {
     super(props);
+
+    // this.selected = this.selected.bind(this);
   }
 
+  // selected() => {
+  //
+  // }
 
   render () {
     return (
       <div className="profile-tabs">
-        <Link to={'/home/activity_feed'}>
+        <Link
+          to={'/home/activity_feed'}
+          >
           Activity Feed
         </Link>
         <Link to={'home/user_dashboard'}>

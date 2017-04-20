@@ -22,7 +22,7 @@ const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
-      replace('/profile_tabs');
+      replace('/my_home');
     }
   };
 
@@ -42,7 +42,7 @@ const Root = ({ store }) => {
             component={ SessionFormContainer }
             onEnter={ _redirectIfLoggedIn} />
           <Route
-            path='/profile_tabs'
+            path='/my_home'
             component={ ProfileTabs }
             onEnter={ _ensureLoggedIn}>
           </Route>
