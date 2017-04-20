@@ -1,0 +1,28 @@
+.frontpage {
+  * {
+    border: 1px solid black;
+  }
+  display: flex;
+  justify-content: flex-end;
+  height: 450px;
+  width: 100%;
+  background: image-url("frontpage.jpg") top center;
+  background-size: cover;
+  padding: 50px;
+  background-position-y: -100px;
+  background-repeat: no-repeat;
+  margin: 0 50px 0 0;
+
+  section {
+    width: 450px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 200px;
+
+    h1 {
+      text-transform: uppercase;
+    }
+  }
+}

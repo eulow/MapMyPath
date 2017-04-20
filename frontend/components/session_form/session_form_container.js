@@ -3,7 +3,7 @@ import { login, signOut, signUp } from '../../actions/session_actions';
 import { clearErrors } from '../../actions/error_actions';
 import SessionForm from './session_form';
 
-const mapStateToProps = ({ session, errors }, { location }) => ({
+const mapStateToProps = ({ session, errors }) => ({
   signedIn: Boolean(session.currentUser),
   errors
 });
@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch, { location }) => {
   }
   return {
     processForm: user => dispatch(processForm(user)),
-    loginGuest: (guest) => dispatch(login(guest)),
+    loginGuest: guest => dispatch(login(guest)),
     clearErrors: () => dispatch(clearErrors()),
     formType
   };
