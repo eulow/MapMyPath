@@ -49,10 +49,11 @@ class SessionForm extends React.Component {
     }
   }
 
-  renderSignUp (formType) {
-    if(formType === 'signup') {
+  renderForm () {
+    if(this.props.formType === 'signup') {
       return (
-        <div>
+        <form className="auth-form" onSubmit={this.handleSubmit}>
+          {this.renderToggle('signup')}
           <input
             className="input-box"
             type="text"
@@ -69,40 +70,6 @@ class SessionForm extends React.Component {
             className="login-input"
             placeholder="Last name"
           />
-        </div>
-      )
-    }
-  }
-
-  render () {
-    let text = 'sign up';
-    if (this.props.formType === 'login') {
-      text = 'log in';
-    }
-
-  //   const signUpPortion = (this.formType === 'login') ? (
-      // <input
-      //   className="input-box"
-      //   type="text"
-      //   value={this.state.first_name}
-      //   onChange={this.update("first_name")}
-      //   className="login-input"
-      //   placeholder="First name"
-      // />
-      // <input
-      //   className="input-box"
-      //   type="text"
-      //   value={this.state.last_name}
-      //   onChange={this.update("last_name")}
-      //   className="login-input"
-      //   placeholder="Last name"
-      // />
-  // ) : <p></p>
-    return (
-      <div className="auth-form-container">
-        <form className="auth-form" onSubmit={this.handleSubmit}>
-          {this.renderToggle(this.props.formType)}
-          {this.renderSignUp(this.props.formType)}
           <input
             className="input-box"
             type="text"
@@ -119,8 +86,39 @@ class SessionForm extends React.Component {
             className="login-input"
             placeholder="Password"
           />
-        <input type="submit" value={text} />
+          <input type="submit" value="sign up" />
         </form>
+      );
+    } else {
+      return (
+        <form className="auth-form" onSubmit={this.handleSubmit}>
+          {this.renderToggle('login')}
+          <input
+            className="input-box"
+            type="text"
+            value={this.state.email}
+            onChange={this.update("email")}
+            className="login-input"
+            placeholder="Email"
+          />
+          <input
+            className="input-box"
+            type="password"
+            value={this.state.password}
+            onChange={this.update("password")}
+            className="login-input"
+            placeholder="Password"
+          />
+          <input type="submit" value="login" />
+        </form>
+      );
+    }
+  }
+
+  render () {
+    return (
+      <div className="auth-form-container">
+        {this.renderForm()}
       </div>
     );
   }
