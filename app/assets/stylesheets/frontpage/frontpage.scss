@@ -6,12 +6,13 @@
   justify-content: flex-end;
   height: 450px;
   width: 100%;
-  background: image-url("frontpage.jpg") top center;
+  background: image-url("frontpage-min.jpg");
   background-size: cover;
   padding: 50px;
   background-position-y: -100px;
   background-repeat: no-repeat;
   margin: 0 50px 0 0;
+  border-bottom: 1px solid #d6d6d6;
 
   section {
     width: 450px;

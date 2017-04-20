@@ -1,5 +1,6 @@
 import * as SessionAPIUtil from '../util/session_api_util';
 import { clearErrors, addErrors } from './error_actions';
+import { hashHistory } from 'react-router';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 
@@ -25,10 +26,16 @@ export const login = (user) => dispatch => {
   );
 };
 
-export const signOut = () => dispatch => (
-  SessionAPIUtil.signOut()
-  .then(currentUser => dispatch(receiveCurrentUser(null)))
-);
+export const signOut = () => dispatch => {
+  return (
+    SessionAPIUtil.signOut()
+    .then((currentUser) => {
+      dispatch(receiveCurrentUser(null));
+      hashHistory.push('/login');
+    })
+  );
+};
+
 
 export const signUp = (user) => dispatch => (
   SessionAPIUtil.signUp(user)
