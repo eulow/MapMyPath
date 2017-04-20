@@ -13,6 +13,7 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.loginGuest = this.loginGuest.bind(this);
   }
 
   componentDidUpdate() {
@@ -34,7 +35,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.processForm({ user }).then(() => this.redirectIfSignedIn());
+    this.props.processForm(user).then(() => this.redirectIfSignedIn());
   }
 
   renderErrors() {
@@ -49,43 +50,64 @@ class SessionForm extends React.Component {
     }
   }
 
+  loginGuest(e) {
+    e.preventDefault();
+    const guest = {
+      email: "Guest",
+      password: "Password"
+    };
+    this.props.loginGuest(guest);
+  }
+
   renderForm () {
     if(this.props.formType === 'signup') {
       return (
         <form className="auth-form" onSubmit={this.handleSubmit}>
           {this.renderToggle('signup')}
-          <input
-            className="input-box"
-            type="text"
-            value={this.state.first_name}
-            onChange={this.update("first_name")}
-            className="login-input"
-            placeholder="First name"
-          />
-          <input
-            className="input-box"
-            type="text"
-            value={this.state.last_name}
-            onChange={this.update("last_name")}
-            className="login-input"
-            placeholder="Last name"
-          />
-          <input
-            className="input-box"
-            type="text"
-            value={this.state.email}
-            onChange={this.update("email")}
-            className="login-input"
-            placeholder="Email"
-          />
-          <input
-            className="input-box"
-            type="password"
-            value={this.state.password}
-            onChange={this.update("password")}
-            className="login-input"
-            placeholder="Password"
-          />
+          <button className="guest-login" onClick={this.loginGuest}>
+            Log in as guest
+          </button>
+          <div className="or-bar">
+            <span className="bar" />
+              <span className="or">OR</span>
+            <span className="bar" />
+          </div>
+          <div className="input-container">
+            <input
+              className="input-box"
+              type="text"
+              value={this.state.first_name}
+              onChange={this.update("first_name")}
+              placeholder="First name"
+              />
+          </div>
+          <div className="input-container">
+            <input
+              className="input-box"
+              type="text"
+              value={this.state.last_name}
+              onChange={this.update("last_name")}
+              placeholder="Last name"
+              />
+          </div>
+          <div className="input-container">
+            <input
+              className="input-box"
+              type="text"
+              value={this.state.email}
+              onChange={this.update("email")}
+              placeholder="Email"
+              />
+          </div>
+          <div className="input-container">
+            <input
+              className="input-box"
+              type="password"
+              value={this.state.password}
+              onChange={this.update("password")}
+              placeholder="Password"
+              />
+          </div>
           <input type="submit" value="sign up" />
         </form>
       );
@@ -93,23 +115,33 @@ class SessionForm extends React.Component {
       return (
         <form className="auth-form" onSubmit={this.handleSubmit}>
           {this.renderToggle('login')}
-          <input
-            className="input-box"
-            type="text"
-            value={this.state.email}
-            onChange={this.update("email")}
-            className="login-input"
-            placeholder="Email"
-          />
-          <input
-            className="input-box"
-            type="password"
-            value={this.state.password}
-            onChange={this.update("password")}
-            className="login-input"
-            placeholder="Password"
-          />
-          <input type="submit" value="login" />
+          <button className="guest-login" onClick={this.loginGuest}>
+            Log in as guest
+          </button>
+          <div className="or-bar">
+            <span className="bar" />
+              <span className="or">OR</span>
+            <span className="bar" />
+          </div>
+          <div className="input-container">
+            <input
+              className="input-box"
+              type="text"
+              value={this.state.email}
+              onChange={this.update("email")}
+              placeholder="Email"
+              />
+          </div>
+          <div className="input-container">
+            <input
+              className="input-box"
+              type="password"
+              value={this.state.password}
+              onChange={this.update("password")}
+              placeholder="Password"
+              />
+          </div>
+          <input type="submit" value="log in" />
         </form>
       );
     }

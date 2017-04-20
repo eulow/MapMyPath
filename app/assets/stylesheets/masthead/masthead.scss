@@ -2,6 +2,7 @@
   display: flex;
   height: 60px;
   justify-content: space-between;
+  border-bottom: 1px solid #d6d6d6;
 
   .logo {
     display: flex;
@@ -51,6 +52,7 @@
       color: #9297a3;
       font-weight: lighter;
       letter-spacing: .8px;
+      transition-duration: .2s;
     }
 
    a.signup-button {

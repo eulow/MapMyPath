@@ -3,29 +3,105 @@
   justify-content: center;
   background: #f0f0f0;
   height: 700px;
-  
+
+  // * {
+  //   border: 1px solid black;
+  // }
 
   form {
     display: flex;
     flex-direction: column;
+    position: relative;
+    top: 5%;
+    height: 70%;
+    width: 320px;
+
   }
 
-  a.toggle-button, input[type="submit"] {
+  a.toggle-button {
     position: relative;
-    padding: 10px;
-    margin: 5px;
+    padding: 10px 0;
+    margin: 10px 0 0 0;
     top: 2px;
     text-transform: uppercase;
     font-family: sans-serif;
     font-size: 12px;
     color: #9297a3;
     font-weight: lighter;
-    letter-spacing: .8px;
+    text-align: right;
   }
 
-  input[type="submit"] {
+  .or-bar {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+
+    .bar {
+      display: block;
+      height: 1px;
+      flex: 1;
+      border-bottom: 1px solid #c8c7cc
+    }
+
+    .or {
+      text-transform: uppercase;
+      font-size: 12px;
+      padding: 0 15px;
+      color: #c8c7cc;
+    }
+  }
+
+  input[type="submit"], .guest-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #97bf11;
     color: #fff;
-    border-radius: 5px;
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+    transition-duration: .2s;
+    text-transform: uppercase;
+    margin: 10px 0;
+    padding: 10px 0;
+    font-size: 12px;
+    letter-spacing: .8px;
+    border-radius: 2px;
+    &:hover {
+      background-color: #91b710
+    }
+  }
+
+  .guest-login {
+    background-color: #3b5998;
+    &:hover {
+      background-color: #274178;
+    }
+  }
+
+  a.toggle-button:hover {
+    color: #6d717a;
+    font-weight: 500
+  }
+
+  .input-container {
+    display: block;
+    margin-bottom: 4px;
+    border: 1px solid #c8c7cc;
+    height: 40px;
+    margin: 5px 0;
+  }
+
+  .input-box {
+    display: block;
+    width: 100%;
+    padding: 20px 16px;
+    height: 44px;
+    box-sizing: border-box;
+    font-size: 12px;
+    font-weight: 100;
+    &::-webkit-input-placeholder {
+      color: #c8c7cc;
+}
   }
 }
