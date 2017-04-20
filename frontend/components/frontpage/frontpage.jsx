@@ -10,23 +10,29 @@ class Frontpage extends React.Component {
 
   render () {
     return(
-      <div className="frontpage">
-        <section>
-          <h1>Make every mile count, join free today</h1>
-          <h3>You pound the pavement, we provide the motivation.
-            Plan each stride and learn from every route with MapMyPath.
-          </h3>
-          <nav className="login-signup">
-            <button className="guest-login" onClick={this.props.loginGuest}>
-              Log in as guest
-            </button>
-            <div>or</div>
-            <Link to="/signup" className="signup-button">Sign up with email</Link>
-          </nav>
-          <nav className="login">
-            <Link to="/login" className="toggle-button">Log in</Link>
-          </nav>
-        </section>
+      <div className="front-page">
+        <div className="frontpage-content">
+          <section>
+            <h1>Make every mile count, join free today</h1>
+            <h3>You pound the pavement, we provide the motivation.
+              Plan each stride and learn from every route with MapMyPath.
+            </h3>
+            <nav className="login-signup">
+              <button className="guest-login" onClick={this.props.loginGuest}>
+                Log in as guest
+              </button>
+              <div className="or">or</div>
+              <Link to="/signup" className="signup-button">Sign up with email</Link>
+            </nav>
+            <div className="login">
+              <p>Already a member?</p>
+              <Link to="/login" className="login-button">Log in</Link>
+            </div>
+          </section>
+        </div>
+        <div>
+          footer
+        </div>
       </div>
     );
   }
