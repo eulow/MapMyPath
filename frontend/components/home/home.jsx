@@ -9,6 +9,7 @@ class Home extends React.Component {
   }
 
   selectedTab(tab) {
+    // debugger
     if (tab === this.props.location.pathname) {
       return "selected";
     }
@@ -27,14 +28,15 @@ class Home extends React.Component {
                 Activity Feed
               </Link>
               <Link
-                to={'home/user_dashboard'}
+                to={'/home/user_dashboard'}
                 className={this.selectedTab('/home/user_dashboard')} >
                 My Dashboard
               </Link>
-              <Link to={'home/paths'}
+              <Link to={'/home/paths'}
                 className={this.selectedTab('/home/paths')}>
-                Create Paths
+                My Paths
               </Link>
+              <div className="end-border"></div>
             </div>
           </section>
         </div>

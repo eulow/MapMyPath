@@ -50,6 +50,12 @@ const Root = ({ store }) => {
             <Route
               path='activity_feed'
               component={ Home } />
+            <Route
+              path='user_dashboard'
+              component={ Home } />
+            <Route
+              path='paths'
+              component={ Home } />
           </Route>
 
         </Route>

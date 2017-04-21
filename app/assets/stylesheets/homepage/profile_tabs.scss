@@ -1,0 +1,43 @@
+.profile-tabs-container {
+
+  .profile-tabs {
+    display: flex;
+    width: 950px;
+    padding: 35px 0;
+    color: #046AB2;
+
+    a {
+      font-size: 15.5px;
+      text-transform: uppercase;
+      padding: 14px 23px;
+      width: 200px;
+      text-align: center;
+      background: #f6f6f6;
+      border-top: 1px solid #d1d0cf;
+      border-bottom: 1px solid #d1d0cf;
+      border-right: 1px solid #d1d0cf;
+
+      &:hover {
+        color: #92BFDD;
+        background: #fff;
+      }
+
+      &:first-child {
+        border-left: 1px solid #dddddd;
+      }
+    }
+
+    .selected {
+      border-top: 3.5px solid #2BA5EF;
+      color: #444444;
+      background: #fff;
+      border-bottom: 0;
+    }
+
+    .end-border {
+      border-bottom: 1px solid #d1d0cf;
+      width: 200px;
+    }
+
+  }
+}
