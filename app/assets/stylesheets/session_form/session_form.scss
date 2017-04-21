@@ -67,7 +67,6 @@
 
   input[type="submit"], .guest-login {
     display: flex;
-    // align-items: center;
     justify-content: center;
     background: #97bf11;
     color: #fff;
@@ -81,6 +80,7 @@
     font-size: 12px;
     letter-spacing: .8px;
     border-radius: 6px;
+    font-weight: 600;
     &:hover {
       background-color: #94bb0f
     }
@@ -114,7 +114,8 @@
       color: #c8c7cc;
     }
     &:focus {
-      box-shadow: 0px 0px 4px 1px rgba(64,128,255,1)
+      box-shadow: 0px 0px 4px 1px rgba(64,128,255,1);
+      background: #fff;
     }
   }
 }

@@ -113,11 +113,13 @@ class SessionForm extends React.Component {
           <button className="guest-login" onClick={this.loginGuest}>
             Log in as guest
           </button>
+
           <div className="or-bar">
             <span className="bar" />
               <span className="or">OR</span>
             <span className="bar" />
           </div>
+
           <div className="input-container">
             <input
               className="input-box"
@@ -127,6 +129,7 @@ class SessionForm extends React.Component {
               placeholder="First name"
               />
           </div>
+
           {this.renderFirstNameError(this.props.errors)}
           <div className="input-container">
             <input
@@ -137,6 +140,7 @@ class SessionForm extends React.Component {
               placeholder="Last name"
               />
           </div>
+          
           {this.renderLastNameError(this.props.errors)}
           <div className="input-container">
             <input

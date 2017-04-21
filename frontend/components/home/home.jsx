@@ -40,6 +40,8 @@ class Home extends React.Component {
             </div>
           </section>
         </div>
+        
+        {this.props.children}
       </div>
     );
   }

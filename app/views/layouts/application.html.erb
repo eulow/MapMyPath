@@ -1,13 +1,17 @@
 <!DOCTYPE html>
+
 <html>
   <head>
-    <title> MapMyPath</title>
+    <title>MapMyPath</title>
     <%= csrf_meta_tags %>
 
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBygQhRnDSS9s1hu7jxsQMu3mwIU7Hd2N4">
+    </script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-
     <%= favicon_link_tag image_path("favicon.ico") %>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
 
   <body>

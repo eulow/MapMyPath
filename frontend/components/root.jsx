@@ -10,6 +10,8 @@ import SessionFormContainer from './session_form/session_form_container';
 import Frontpage from './frontpage/frontpage';
 import Home from './home/home';
 
+import PathsMain from './home/paths/paths_main';
+
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
@@ -48,17 +50,19 @@ const Root = ({ store }) => {
             component={ Home }
             onEnter={ _ensureLoggedIn} >
             <IndexRedirect to='activity_feed' />
+
             <Route
               path='activity_feed'
               component={ Home } />
+
             <Route
               path='user_dashboard'
               component={ Home } />
+
             <Route
               path='paths'
-              component={ Home } />
+              component={ PathsMain } />
           </Route>
-
         </Route>
       </Router>
     </Provider>
