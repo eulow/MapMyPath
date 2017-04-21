@@ -8,7 +8,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
 import Frontpage from './frontpage/frontpage';
-import ProfileTabs from './profile_tabs/profile_tabs';
+import Home from './home/home';
 
 
 const Root = ({ store }) => {
@@ -22,7 +22,7 @@ const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
-      replace('/my_home');
+      replace('/home');
     }
   };
 
@@ -33,6 +33,7 @@ const Root = ({ store }) => {
           <IndexRoute
             component={ Frontpage }
             onEnter={ _redirectIfLoggedIn} />
+
           <Route
             path='/login'
             component={ SessionFormContainer }
@@ -41,11 +42,16 @@ const Root = ({ store }) => {
             path='/signup'
             component={ SessionFormContainer }
             onEnter={ _redirectIfLoggedIn} />
+
           <Route
-            path='/my_home'
-            component={ ProfileTabs }
-            onEnter={ _ensureLoggedIn}>
+            path='/home'
+            component={ Home }
+            onEnter={ _ensureLoggedIn} >
+            <Route
+              path='activity_feed'
+              component={ Home } />
           </Route>
+
         </Route>
       </Router>
     </Provider>

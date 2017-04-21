@@ -9,10 +9,11 @@
     justify-content: flex-end;
     // height: 100%;
     // width: 100%;
+    min-width: 930px;
     background: image-url("frontpage-min.jpg");
     background-size: cover;
-    padding: 65px;
-    background-position-y: -150px;
+    padding: 55px;
+    background-position-y: -164px;
     // background-position-x: -75px;
     background-repeat: no-repeat;
 
@@ -47,12 +48,13 @@
         margin: 20px 0 0 0;
 
         .or {
-          font-size: 13px;
+          font-size: 15px;
           padding: 0 15px;
           color: white;
           text-shadow: 2px 1px 9px rgba(150, 150, 150, 0.94);
           display: flex;
           align-items: center;
+          font-weight: lighter;
         }
 
         .guest-login, .signup-button {
@@ -66,8 +68,8 @@
           padding: 10px 20px;
           font-size: 14px;
           font-weight: 700;
-          letter-spacing: .4px;
-          border-radius: 7px;
+          letter-spacing: 1.5px;
+          border-radius: 10px;
           box-shadow: -4px 6px 31px -8px rgba(0,0,0,0.75)
         }
 
@@ -101,9 +103,9 @@
       .login {
         display: flex;
         position: relative;
-        top: 200px;
-        right: 85px;
-        justify-content: flex-end;
+        top: 180px;
+        // right: 85px;
+        // justify-content: flex-end;
         align-items: center;
 
 

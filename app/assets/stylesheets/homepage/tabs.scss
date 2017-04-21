@@ -1,0 +1,29 @@
+.main-content {
+  display: flex;
+  justify-content: center;
+  margin: 28px 0 0 0;
+  box-sizing: border-box;
+
+  // * {
+  //   border: 1px solid black;
+  // }
+
+  .profile-tabs-container {
+    width: 64%;
+
+    .profile-tabs {
+      display: flex;
+      height: 45px;
+      border-bottom: 1px solid #d1d0cf;
+
+      a {
+        font-size: 15px;
+        text-transform: uppercase;
+        padding: 12px 23px;
+        width: 200px;
+        text-align: center;
+      }
+      // move link down 1px pixel on select to remove bottom border
+    }
+  }
+}

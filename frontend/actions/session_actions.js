@@ -16,7 +16,7 @@ export const login = (user) => dispatch => {
         (currentUser) => {
           dispatch(receiveCurrentUser(currentUser));
           dispatch(clearErrors());
-          hashHistory.push('/my_home');
+          hashHistory.push('/home');
           // dispatches receiveCurrentUser session action and clear error action
         },
         (errors) => {
@@ -44,7 +44,7 @@ export const signUp = (user) => dispatch => (
     (currentUser) => {
       dispatch(receiveCurrentUser(currentUser));
       dispatch(clearErrors());
-      hashHistory.push('/my_home');
+      hashHistory.push('/home');
       // dispatches receiveCurrentUser session action and clear error action
     },
     (errors) => {

@@ -3,10 +3,13 @@ import { login, signOut, signUp } from '../../actions/session_actions';
 import { clearErrors } from '../../actions/error_actions';
 import SessionForm from './session_form';
 
-const mapStateToProps = ({ session, errors }) => ({
-  signedIn: Boolean(session.currentUser),
-  errors
-});
+const mapStateToProps = ({ session, errors }, ownProps) => {
+  // debugger
+  return ({
+    signedIn: Boolean(session.currentUser),
+    errors
+  });
+};
 
 const mapDispatchToProps = (dispatch, { location }) => {
   const formType = location.pathname.slice(1);
