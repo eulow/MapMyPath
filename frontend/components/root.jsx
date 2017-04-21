@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 
 // react router
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, IndexRoute, hashHistory, IndexRedirect } from 'react-router';
 
 // react components
 import App from './app';
@@ -47,6 +47,7 @@ const Root = ({ store }) => {
             path='/home'
             component={ Home }
             onEnter={ _ensureLoggedIn} >
+            <IndexRedirect to='activity_feed' />
             <Route
               path='activity_feed'
               component={ Home } />

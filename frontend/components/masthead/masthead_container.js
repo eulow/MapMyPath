@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import { signOut } from '../../actions/session_actions';
 import Masthead from './masthead';
 
-const mapStateToProps = ({ session }) => {
+const mapStateToProps = ({ session }, { location }) => {
   return ({
     currentUser: session.currentUser,
+    path: location.pathname
   });
 };
 
