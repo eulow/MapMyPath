@@ -17,25 +17,27 @@ class Home extends React.Component {
 
   render () {
     return (
-      <div className='main-content'>
-        <section className="profile-tabs-container">
-          <div className="profile-tabs">
-            <Link
-              to={'/home/activity_feed'}
-              className={this.selectedTab('/home/activity_feed')} >
-              Activity Feed
-            </Link>
-            <Link
-              to={'home/user_dashboard'}
-              className={this.selectedTab('/home/user_dashboard')} >
-              My Dashboard
-            </Link>
-            <Link to={'home/routes'}
-              className={this.selectedTab('/home/routes')}>
-              Create Routes
-            </Link>
-          </div>
-        </section>
+      <div className='main-content-container'>
+        <div className='header-container'>
+          <section className="profile-tabs-container">
+            <div className="profile-tabs">
+              <Link
+                to={'/home/activity_feed'}
+                className={this.selectedTab('/home/activity_feed')} >
+                Activity Feed
+              </Link>
+              <Link
+                to={'home/user_dashboard'}
+                className={this.selectedTab('/home/user_dashboard')} >
+                My Dashboard
+              </Link>
+              <Link to={'home/paths'}
+                className={this.selectedTab('/home/paths')}>
+                Create Paths
+              </Link>
+            </div>
+          </section>
+        </div>
       </div>
     );
   }

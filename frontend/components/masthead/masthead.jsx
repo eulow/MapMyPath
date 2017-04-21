@@ -83,13 +83,15 @@ const Masthead = ({ currentUser, signOut }) => {
   // debugger
 
   return (
-    <div className="masthead">
-      <Link to='/' className="logo">
-        <h1 className="title">mapmypath</h1>
-      </Link>
+    <div className='masthead-container'>
 
-      {render}
+      <div className="masthead">
+        <Link to='/' className="logo">
+          <h1 className="title">mapmypath</h1>
+        </Link>
 
+        {render}
+      </div>
     </div>
   );
 };
