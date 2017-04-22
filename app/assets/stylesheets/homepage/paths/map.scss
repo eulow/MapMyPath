@@ -1,0 +1,11 @@
+#map {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    display: block;
+    padding: 20px;
+  }
+}
