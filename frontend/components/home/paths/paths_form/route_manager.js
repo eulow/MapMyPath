@@ -17,7 +17,6 @@ export default class RouteManager {
   }
 
   addMarker(position) {
-    // debugger
     const marker = new google.maps.Marker({
       position,
       map: this.map,
@@ -33,29 +32,6 @@ export default class RouteManager {
       marker.setMap(null);
       this.getDirections(markers);
     }
-  }
-
-  removeLastPoint () {
-    // this.directionsService = new google.maps.DirectionsService;
-    this.directionsRenderer.setMap(null);
-    // debugger
-
-    if (this.pathMarkers.length === 1) {
-      this.pathMarkers[0].setMap(null);
-      this.pathMarkers = [];
-    } else if (this.pathMarkers.length === 2) {
-      const remainingMarker = this.pathMarkers[0];
-      this.pathMarkers = [];
-      this.addMarker(remainingMarker.position);
-    } else {
-      this.directionsRenderer.setMap(null);
-      this.pathMarkers.pop();
-      this.getDirections(this.pathMarkers);
-    }
-  }
-
-  removeAllPoints () {
-
   }
 
   getDirections(markers) {

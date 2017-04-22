@@ -6,7 +6,8 @@ class Map extends React.Component {
     super(props);
 
     this.createMap = this.createMap.bind(this);
-    this.resetMap = this.resetMap.bind(this);
+    this.clearMap = this.clearMap.bind(this);
+    this.undo = this.undo.bind(this);
   }
 
   componentDidMount () {
@@ -27,7 +28,7 @@ class Map extends React.Component {
 
   createMap (initialPosition, zoom) {
     zoom = zoom || 15;
-    
+
     this.map = new google.maps.Map(this.refs.map, {
       center: initialPosition,
       zoom,
@@ -122,15 +123,30 @@ class Map extends React.Component {
     });
   }
 
-  resetMap (e) {
+  clearMap (e) {
     this.createMap(this.map.getCenter(), this.map.getZoom());
+  }
+
+  undo (e) {
+    let markers = this.routeManager.pathMarkers;
+    if (markers.length > 2) {
+      this.routeManager.pathMarkers.pop();
+      this.routeManager.getDirections(this.routeManager.pathMarkers);
+    } else if (markers.length === 2) {
+      let marker = markers[0];
+      this.createMap(this.map.getCenter(), this.map.getZoom());
+      this.routeManager.addMarker(marker.position);
+    } else {
+      this.createMap(this.map.getCenter(), this.map.getZoom());
+    }
   }
 
   render () {
     return (
       <div id="map-container">
         <div className="map-buttons">
-          <button onClick={this.resetMap}>Clear map</button>
+          <button onClick={this.undo}>Undo</button>
+          <button onClick={this.clearMap}>Clear</button>
         </div>
         <div id="map" ref="map">
           <p>Loading mapping tools</p>
