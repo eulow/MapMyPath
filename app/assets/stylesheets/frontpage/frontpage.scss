@@ -1,5 +1,5 @@
 .front-page {
-  border-bottom: 1px solid #d6d6d6;
+  // border-bottom: 1px solid #d6d6d6;
 
   .frontpage-content {
     // * {
@@ -102,11 +102,11 @@
 
       .login {
         display: flex;
+        justify-content: flex-end;
         position: relative;
         top: 180px;
-        // right: 85px;
-        // justify-content: flex-end;
         align-items: center;
+        margin-right: 25px;
 
 
         p {
@@ -149,10 +149,44 @@
   }
 
   .footer {
-    // border-top: 3px solid white;
     display: flex;
-    background: rgba(233, 230, 229, 0.45);
+    justify-content: center;
+    background: #f9f7f6;
     width: 100%;
-    height: 100px;
+    // height: 100px;
+
+    // * {
+    //   border: 1px solid black;
+    // }
+    .features {
+      display: flex;
+      width: 800px;
+      margin: 30px 0 40px 0;
+      color: #999;
+
+      &>div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 250px;
+        margin: 0 20px;
+
+        .fa {
+          color: #67b1ea;
+          margin-bottom: 25px;
+        }
+
+        h3 {
+          text-transform: uppercase;
+          letter-spacing: .5px;
+          font-weight: 800;
+        }
+
+        p {
+          text-align: center;
+          font-size: 13px;
+        }
+      }
+    }
   }
 }

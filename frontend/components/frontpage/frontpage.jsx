@@ -31,6 +31,24 @@ class Frontpage extends React.Component {
           </section>
         </div>
         <div className="footer">
+          <div className="features">
+            <div>
+              <div><i className="fa fa-map-marker fa-5x" aria-hidden="true"></i></div>
+              <h3>Map your route</h3>
+              <p>Know where you're going, see where you've been. Be bold and create your own runs.</p>
+            </div>
+            <div>
+              <div><i className="fa fa-pencil fa-5x" aria-hidden="true"></i></div>
+              <h3>Track your activity</h3>
+              <p>Record your activity, track your speed, track your runs.</p>
+            </div>
+            <div>
+              <div><i className="fa fa-users fa-5x" aria-hidden="true"></i></div>
+              <h3>Share with friends</h3>
+              <p>Add a social twist to your exercise routine. Get extra encourgement, cheer on your buddies.</p>
+            </div>
+
+          </div>
         </div>
       </div>
     );
