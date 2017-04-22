@@ -1,13 +1,12 @@
 import React from 'react';
 import RouteManager from './route_manager';
 
-// const initialPosition={ lat: 40.745209, lng: -73.993957 };
-
 class Map extends React.Component {
   constructor(props) {
     super(props);
 
     this.createMap = this.createMap.bind(this);
+    this.resetMap = this.resetMap.bind(this);
   }
 
   componentDidMount () {
@@ -26,10 +25,12 @@ class Map extends React.Component {
     }
   }
 
-  createMap (initialPosition) {
+  createMap (initialPosition, zoom) {
+    zoom = zoom || 15;
+    
     this.map = new google.maps.Map(this.refs.map, {
       center: initialPosition,
-      zoom: 15,
+      zoom,
       mapTypeControl: false,
       streetViewControl: false,
       draggableCursor: 'crosshair',
@@ -114,19 +115,28 @@ class Map extends React.Component {
         }
       ]
     });
-    const routeManager = new RouteManager(this.map);
+    this.routeManager = new RouteManager(this.map);
 
     this.map.addListener('click', (e) => {
-      routeManager.addMarker(e.latLng);
+      this.routeManager.addMarker(e.latLng);
     });
+  }
+
+  resetMap (e) {
+    this.createMap(this.map.getCenter(), this.map.getZoom());
   }
 
   render () {
     return (
-      <div id="map" ref="map">
-        <p>Loading mapping tools</p>
-        <div id="loading"></div>
-        <p>Please wait</p>
+      <div id="map-container">
+        <div className="map-buttons">
+          <button onClick={this.resetMap}>Clear map</button>
+        </div>
+        <div id="map" ref="map">
+          <p>Loading mapping tools</p>
+          <div id="loading"></div>
+          <p>Please wait</p>
+        </div>
       </div>
     );
   }

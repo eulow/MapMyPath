@@ -13,6 +13,7 @@ export default class RouteManager {
 
     this.getDirections = this.getDirections.bind(this);
     this.renderDirections = this.renderDirections.bind(this);
+    this.addMarker = this.addMarker.bind(this);
   }
 
   addMarker(position) {
@@ -28,13 +29,33 @@ export default class RouteManager {
     const markers = this.pathMarkers;
 
     if (markers.length > 1) {
-      marker.setMap(null);
-    }
-
-    if (markers.length > 1) {
       markers[0].setMap(null);
+      marker.setMap(null);
       this.getDirections(markers);
     }
+  }
+
+  removeLastPoint () {
+    // this.directionsService = new google.maps.DirectionsService;
+    this.directionsRenderer.setMap(null);
+    // debugger
+
+    if (this.pathMarkers.length === 1) {
+      this.pathMarkers[0].setMap(null);
+      this.pathMarkers = [];
+    } else if (this.pathMarkers.length === 2) {
+      const remainingMarker = this.pathMarkers[0];
+      this.pathMarkers = [];
+      this.addMarker(remainingMarker.position);
+    } else {
+      this.directionsRenderer.setMap(null);
+      this.pathMarkers.pop();
+      this.getDirections(this.pathMarkers);
+    }
+  }
+
+  removeAllPoints () {
+
   }
 
   getDirections(markers) {
@@ -65,7 +86,5 @@ export default class RouteManager {
     this.polyline = route.overview_polyline;
     this.distance = route.legs[0].distance.text;
     this.directionsRenderer.setDirections(response);
-    // debugger
   }
-
 }

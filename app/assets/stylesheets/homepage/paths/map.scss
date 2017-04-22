@@ -1,11 +1,53 @@
-#map {
+#map-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  border: 1px solid black;
 
-  p {
-    display: block;
-    padding: 20px;
+  .map-buttons {
+    display: flex;
+    position: absolute;
+    z-index: 100;
+    margin: 12px 0 0 610px;
+    background: white;
+    border: .5px solid #696262;
+    border-radius: 3px;
+    box-shadow: -4px 6px 12px -8px rgba(0,0,0,0.75);
+
+    button {
+      margin: 5px 5px 5px 0;
+      padding: 5px;
+      background: -webkit-gradient(
+      linear, left top, left bottom,
+      from(#f5f5f5),
+      to(#f0f0f0));
+      border: 1px solid #dddddd;
+      cursor: pointer;
+      border-radius: 5px;
+
+      &:first-child {
+        margin-left: 5px;
+      }
+
+      &:hover {
+        background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#ededed),
+        to(#e0e0e0));
+      }
+    }
   }
+
+  #map {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 450px;
+
+    p {
+      display: block;
+      padding: 20px;
+    }
+  }
+
 }
