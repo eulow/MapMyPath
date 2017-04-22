@@ -23,8 +23,8 @@ const userInfo = (currentUser, signOut) => {
     <nav className="user-info">
       <ul id="drop-down-menu">
         <Link to="/friends" className="drop-down-button">Friends</Link>
-        <Link to="/home" className="drop-down-button">Home Page</Link>
         <Link to="/home/paths" className="drop-down-button">Paths</Link>
+        <Link to="/home" className="drop-down-button">Home Page</Link>
         <button className="drop-down-button" onClick={signOutMethod}>
           Logout
         </button>
