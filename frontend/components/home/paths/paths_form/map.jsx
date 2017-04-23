@@ -30,8 +30,12 @@ class Map extends React.Component {
     this.map = new google.maps.Map(this.refs.map, {
       center: initialPosition,
       zoom,
-      mapTypeControl: false,
-      streetViewControl: false,
+      rotateControl: true,
+      mapTypeControlOptions: {
+      style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+      },
+      // mapTypeControl: false,
+      // streetViewControl: false,
       draggableCursor: 'crosshair',
       styles: [
         {
@@ -114,7 +118,7 @@ class Map extends React.Component {
         }
       ]
     });
-    
+
     this.routeManager = new RouteManager(this.map);
 
     this.map.addListener('click', (e) => {
@@ -123,10 +127,16 @@ class Map extends React.Component {
   }
 
   clearMap (e) {
-    this.createMap(this.map.getCenter(), this.map.getZoom());
+    e.preventDefault();
+
+    if (this.routeManager.pathMarkers.length > 0) {
+      this.createMap(this.map.getCenter(), this.map.getZoom());
+    }
   }
 
   undoMap (e) {
+    e.preventDefault();
+
     let markers = this.routeManager.pathMarkers;
     if (markers.length > 2) {
       this.routeManager.pathMarkers.pop();
@@ -135,7 +145,7 @@ class Map extends React.Component {
       let marker = markers[0];
       this.createMap(this.map.getCenter(), this.map.getZoom());
       this.routeManager.addMarker(marker.position);
-    } else {
+    } else if (markers.length === 1) {
       this.createMap(this.map.getCenter(), this.map.getZoom());
     }
   }

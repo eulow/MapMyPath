@@ -14,11 +14,6 @@ const userInfo = (currentUser, signOut) => {
     signOut();
   }
 
-  // <button
-  //   className="signout-button"
-  //   onClick={signOutMethod}>
-  //   log out
-  // </button>
   return (
     <nav className="user-info">
       <ul id="drop-down-menu">

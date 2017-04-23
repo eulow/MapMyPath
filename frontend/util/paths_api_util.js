@@ -3,14 +3,14 @@ export const getAllPaths = () => (
     method: 'GET',
     url: 'api/paths'
   })
-)
+);
 
 export const getSinglePath = (id) => (
   $.ajax({
     method: 'GET',
     url: `api/paths/${id}`
   })
-)
+);
 
 export const createPath = (path) => (
   $.ajax({
@@ -26,19 +26,11 @@ export const updatePath = (path) => (
     url: `api/paths/${path.id}`,
     data: { path }
   })
-)
+);
 
 export const deletePath = (id) => (
   $.ajax({
     method: 'DELETE',
     url: `api/paths/${id}`
   })
-)
-
-{
-  name: 'super cool',
-  polyline: 'random',
-  distance: 5,
-  start_address: 'start',
-  end_address: 'end',
-}
+);

@@ -39,12 +39,12 @@
       }
     }
     .user-info {
+      position: relative;
       .avatar {
         position: relative;
         height: 42px;
         width: 45px;
         border: .5px solid #d1d0cf;
-        // border-radius: 10px;
         margin: 0 8px 0 0;
       }
 
@@ -55,22 +55,24 @@
       #drop-down-menu {
         display: none;
         flex-direction: column;
-        position: relative;
+        position: absolute;
         border: 1px solid #d3d6dc;
         border-top: 0;
-        top: 111px;
-        left: 48px;
         color: #9297a3;
         box-shadow: 0 2px 4px 0 rgba(34, 38, 40, 0.2);
         background-color: #fff;
+        top: 70px;
+        right: 8px;
 
         .drop-down-button {
           text-align: center;
-          padding: 10px 20px;
+          padding: 16px 20px;
           font-size: 12px;
           border-top: 1px solid #d3d6dc;
           cursor: pointer;
           font-weight: 500;
+          white-space: nowrap;
+
           &:hover {
             color: black;
           }
@@ -82,14 +84,12 @@
     nav {
       display: flex;
       align-items: center;
-      padding: 5px;
 
       .login-button, .signup-button, .signout-button {
         position: relative;
         padding: 10px;
         margin: 5px;
         text-transform: uppercase;
-        font-family: sans-serif;
         font-size: 13px;
         color: #9297a3;
         transition-duration: .4s;
