@@ -7,23 +7,21 @@ class Map extends React.Component {
 
     this.createMap = this.createMap.bind(this);
     this.clearMap = this.clearMap.bind(this);
-    this.undo = this.undo.bind(this);
+    this.undoMap = this.undoMap.bind(this);
   }
 
   componentDidMount () {
-    let initialPosition = { lat: 40.745209, lng: -73.993957 };
+    const initialPosition = { lat: 40.745209, lng: -73.993957 };
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          this.createMap(
-            { lat: position.coords.latitude, lng: position.coords.longitude }
-          );
-        }
-      );
-    } else {
-      this.createMap(initialPosition);
-    }
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        this.createMap(
+          { lat: position.coords.latitude, lng: position.coords.longitude }
+        );
+      }, (error) => {
+        this.createMap(initialPosition);
+      }
+    );
   }
 
   createMap (initialPosition, zoom) {
@@ -116,6 +114,7 @@ class Map extends React.Component {
         }
       ]
     });
+    
     this.routeManager = new RouteManager(this.map);
 
     this.map.addListener('click', (e) => {
@@ -127,7 +126,7 @@ class Map extends React.Component {
     this.createMap(this.map.getCenter(), this.map.getZoom());
   }
 
-  undo (e) {
+  undoMap (e) {
     let markers = this.routeManager.pathMarkers;
     if (markers.length > 2) {
       this.routeManager.pathMarkers.pop();
@@ -145,7 +144,7 @@ class Map extends React.Component {
     return (
       <div id="map-container">
         <div className="map-buttons">
-          <button onClick={this.undo}>Undo</button>
+          <button onClick={this.undoMap}>Undo</button>
           <button onClick={this.clearMap}>Clear</button>
         </div>
         <div id="map" ref="map">

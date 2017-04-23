@@ -11,6 +11,7 @@ import Frontpage from './frontpage/frontpage';
 import Home from './home/home';
 
 import PathsMain from './home/paths/paths_main';
+import PathForm from './home/paths/paths_form/path_form';
 
 
 const Root = ({ store }) => {
@@ -61,7 +62,10 @@ const Root = ({ store }) => {
 
             <Route
               path='paths'
-              component={ PathsMain } />
+              component={ PathsMain }>
+              <Route
+                component={ PathForm } />
+            </Route>
           </Route>
         </Route>
       </Router>

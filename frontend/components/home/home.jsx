@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 class Home extends React.Component {
   constructor(props) {
     super(props);
-
     this.selectedTab = this.selectedTab.bind(this);
   }
 
@@ -40,7 +39,7 @@ class Home extends React.Component {
             </div>
           </section>
         </div>
-        
+
         {this.props.children}
       </div>
     );

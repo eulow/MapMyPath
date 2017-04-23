@@ -21,8 +21,9 @@
 | id            | integer      | not null, primary key |
 | user_id       | integer      | not null, foreign key |
 | name          | string       | not null |
-| routing_data  | line_string  | not null |
-| map_url       | string       | not null |
+| polyline      | string       | not null |
+| start_address | string       | not null |
+| end_address   | string       | not null |
 | distance      | float        | not null |
 | done          | boolean      | not null, default: false |
 | created_at    | timestamp    | not null |

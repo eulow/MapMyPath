@@ -4,7 +4,6 @@ import { clearErrors } from '../../actions/error_actions';
 import SessionForm from './session_form';
 
 const mapStateToProps = ({ session, errors }, ownProps) => {
-  // debugger
   return ({
     signedIn: Boolean(session.currentUser),
     errors

@@ -4,7 +4,7 @@ class Api::UsersController < ApplicationController
 
     if @user.save
       log_in(@user)
-      render 'api/users/show'
+      render :show
     else
       render(
         json: @user.errors.messages,
@@ -18,7 +18,7 @@ class Api::UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
 
     if @user.update(user_params)
-      render 'api/users/show'
+      render :show
     else
       render(
         json: @user.errors.messages,
@@ -29,7 +29,7 @@ class Api::UsersController < ApplicationController
   end
 
   private
-  
+
   def user_params
     params.require(:user).permit(
       :first_name,

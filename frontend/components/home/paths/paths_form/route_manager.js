@@ -59,8 +59,11 @@ export default class RouteManager {
 
   renderDirections(response) {
     const route = response.routes[0];
+
     this.polyline = route.overview_polyline;
     this.distance = route.legs[0].distance.text;
+    this.start_address = route.legs[0].start_address;
+    this.end_address = route.legs[0].end_address;
     this.directionsRenderer.setDirections(response);
   }
 }
