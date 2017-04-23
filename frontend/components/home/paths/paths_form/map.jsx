@@ -1,5 +1,5 @@
 import React from 'react';
-import RouteManager from './route_manager';
+import MapManager from './map_manager';
 
 class Map extends React.Component {
   constructor(props) {
@@ -119,35 +119,45 @@ class Map extends React.Component {
       ]
     });
 
-    this.routeManager = new RouteManager(this.map);
+    this.MapManager = new MapManager(this.map);
 
     this.map.addListener('click', (e) => {
-      this.routeManager.addMarker(e.latLng);
+      this.MapManager.addMarker(e.latLng);
     });
   }
 
   clearMap (e) {
     e.preventDefault();
 
-    if (this.routeManager.pathMarkers.length > 0) {
-      this.createMap(this.map.getCenter(), this.map.getZoom());
+    if (this.MapManager.pathMarkers.length > 0) {
+      this.MapManager.clearDirections();
+      this.MapManager.pathMarkers[0].setMap(null);
+      this.MapManager.pathMarkers = [];
+      // this.createMap(this.map.getCenter(), this.map.getZoom());
     }
   }
 
   undoMap (e) {
     e.preventDefault();
 
-    let markers = this.routeManager.pathMarkers;
-    if (markers.length > 2) {
-      this.routeManager.pathMarkers.pop();
-      this.routeManager.getDirections(this.routeManager.pathMarkers);
-    } else if (markers.length === 2) {
-      let marker = markers[0];
-      this.createMap(this.map.getCenter(), this.map.getZoom());
-      this.routeManager.addMarker(marker.position);
-    } else if (markers.length === 1) {
-      this.createMap(this.map.getCenter(), this.map.getZoom());
-    }
+    this.MapManager.undo();
+
+    //** MOVED CODE TO ROUTE MANAGER **//
+
+    // let markers = this.MapManager.pathMarkers;
+    // if (markers.length > 2) {
+    //   this.MapManager.pathMarkers.pop();
+    //   this.MapManager.getDirections(this.MapManager.pathMarkers);
+    // } else if (markers.length === 2) {
+    //   let marker = markers[0];
+    //   // this.createMap(this.map.getCenter(), this.map.getZoom());
+    //   this.MapManager.clearDirections();
+    //   this.MapManager.pathMarkers = [];
+    //   this.MapManager.addMarker(marker.position);
+    // } else if (markers.length === 1) {
+    //   // this.createMap(this.map.getCenter(), this.map.getZoom());
+    //   this.clearMap();
+    // }
   }
 
   render () {

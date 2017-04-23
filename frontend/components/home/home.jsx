@@ -12,7 +12,7 @@ class Home extends React.Component {
     if (tab === this.props.location.pathname) {
       return "selected";
     }
-    return "";
+    return "unselected";
   }
 
   render () {

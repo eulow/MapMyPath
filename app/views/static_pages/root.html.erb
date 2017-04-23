@@ -2,7 +2,7 @@
 
   // only for static images. Not things that your users upload
   window.images = {
-    sampleAvatar: "<%= image_path("sample_avatar.jpg") %>"
+    sampleAvatar: "<%= image_path("default_avatar.png") %>"
   }
   <% if logged_in? %>
     window.currentUser = <%= render(

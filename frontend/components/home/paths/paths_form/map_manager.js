@@ -1,4 +1,4 @@
-export default class RouteManager {
+export default class MapManager {
   constructor(map) {
     this.map = map;
     this.pathMarkers = [];
@@ -7,13 +7,14 @@ export default class RouteManager {
     this.directionsRenderer = new google.maps.DirectionsRenderer(
       {
         map: this.map,
-        preserveViewport: true
+        preserveViewport: true,
       }
     );
 
     this.getDirections = this.getDirections.bind(this);
     this.renderDirections = this.renderDirections.bind(this);
     this.addMarker = this.addMarker.bind(this);
+    this.clearDirections = this.clearDirections.bind(this);
   }
 
   addMarker(position) {
@@ -31,6 +32,35 @@ export default class RouteManager {
       markers[0].setMap(null);
       marker.setMap(null);
       this.getDirections(markers);
+    }
+  }
+
+  clearDirections() {
+    this.directionsRenderer.setMap(null);
+    this.directionsRenderer = new google.maps.DirectionsRenderer(
+      {
+        map: this.map,
+        preserveViewport: true,
+      }
+    );
+  }
+
+  undo() {
+    let markers = this.pathMarkers;
+
+    if (markers.length > 2) {
+      this.pathMarkers.pop();
+      this.getDirections(this.pathMarkers);
+    } else if (markers.length === 2) {
+      let marker = markers[0];
+      // this.createMap(this.map.getCenter(), this.map.getZoom());
+      this.clearDirections();
+      this.pathMarkers = [];
+      this.addMarker(marker.position);
+    } else if (markers.length === 1) {
+      this.clearDirections();
+      this.pathMarkers[0].setMap(null);
+      this.pathMarkers = [];
     }
   }
 
@@ -59,7 +89,6 @@ export default class RouteManager {
 
   renderDirections(response) {
     const route = response.routes[0];
-
     this.polyline = route.overview_polyline;
     this.distance = route.legs[0].distance.text;
     this.start_address = route.legs[0].start_address;
