@@ -2,7 +2,7 @@ class Api::PathsController < ApplicationController
   # before_action :require_logged_in!
 
   def index
-    @paths = current_user.paths
+    @paths = current_user.paths.order(created_at: :desc)
     render :index
   end
 
