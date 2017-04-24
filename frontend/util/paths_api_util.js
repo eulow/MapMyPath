@@ -34,3 +34,11 @@ export const deletePath = (id) => (
     url: `api/paths/${id}`
   })
 );
+
+// path = {
+//   name: 'Sample',
+//   polyline: 'Test',
+//   distance: '5',
+//   start_address: 'here',
+//   end_address: 'there'
+// }

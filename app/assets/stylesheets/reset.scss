@@ -1,4 +1,4 @@
-html, body, header, nav, h1, a, h2, h3,
+html, body, header, nav, h1, a, h2, h3, h4,
 ul, li, strong, main, button,
 section, img, div, h2, p, form,
 fieldset, label, input, textarea,
@@ -15,5 +15,12 @@ span, article, footer, time, small {
   box-sizing: inherit;
   background: transparent;
   -webkit-font-smoothing: antialiased;
+  list-style: none;
+}
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
 }

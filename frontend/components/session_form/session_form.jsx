@@ -4,7 +4,6 @@ import { Link, withRouter } from 'react-router';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       email: "",
       first_name: "",
@@ -140,7 +139,7 @@ class SessionForm extends React.Component {
               placeholder="Last name"
               />
           </div>
-          
+
           {this.renderLastNameError(this.props.errors)}
           <div className="input-container">
             <input
@@ -180,7 +179,7 @@ class SessionForm extends React.Component {
           <div className="input-container">
             <input
               className="input-box"
-              type="text"
+              type="email"
               value={this.state.email}
               onChange={this.update("email")}
               placeholder="Email"

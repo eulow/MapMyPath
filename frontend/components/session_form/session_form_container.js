@@ -3,7 +3,7 @@ import { login, signOut, signUp } from '../../actions/session_actions';
 import { clearErrors } from '../../actions/error_actions';
 import SessionForm from './session_form';
 
-const mapStateToProps = ({ session, errors }, ownProps) => {
+const mapStateToProps = ({ session, errors }) => {
   return ({
     signedIn: Boolean(session.currentUser),
     errors

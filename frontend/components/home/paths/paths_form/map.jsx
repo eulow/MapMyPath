@@ -4,7 +4,6 @@ import MapManager from './map_manager';
 class Map extends React.Component {
   constructor(props) {
     super(props);
-
     this.createMap = this.createMap.bind(this);
     this.clearMap = this.clearMap.bind(this);
     this.undoMap = this.undoMap.bind(this);
@@ -34,8 +33,6 @@ class Map extends React.Component {
       mapTypeControlOptions: {
       style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
       },
-      // mapTypeControl: false,
-      // streetViewControl: false,
       draggableCursor: 'crosshair',
       styles: [
         {
@@ -119,7 +116,7 @@ class Map extends React.Component {
       ]
     });
 
-    this.MapManager = new MapManager(this.map);
+    this.MapManager = new MapManager(this.map, this.props.setState);
 
     this.map.addListener('click', (e) => {
       this.MapManager.addMarker(e.latLng);
@@ -133,7 +130,6 @@ class Map extends React.Component {
       this.MapManager.clearDirections();
       this.MapManager.pathMarkers[0].setMap(null);
       this.MapManager.pathMarkers = [];
-      // this.createMap(this.map.getCenter(), this.map.getZoom());
     }
   }
 
@@ -141,23 +137,6 @@ class Map extends React.Component {
     e.preventDefault();
 
     this.MapManager.undo();
-
-    //** MOVED CODE TO ROUTE MANAGER **//
-
-    // let markers = this.MapManager.pathMarkers;
-    // if (markers.length > 2) {
-    //   this.MapManager.pathMarkers.pop();
-    //   this.MapManager.getDirections(this.MapManager.pathMarkers);
-    // } else if (markers.length === 2) {
-    //   let marker = markers[0];
-    //   // this.createMap(this.map.getCenter(), this.map.getZoom());
-    //   this.MapManager.clearDirections();
-    //   this.MapManager.pathMarkers = [];
-    //   this.MapManager.addMarker(marker.position);
-    // } else if (markers.length === 1) {
-    //   // this.createMap(this.map.getCenter(), this.map.getZoom());
-    //   this.clearMap();
-    // }
   }
 
   render () {

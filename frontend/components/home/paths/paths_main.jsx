@@ -1,5 +1,5 @@
 import React from 'react';
-import PathForm from './paths_form/path_form';
+import PathFormContainer from './paths_form/path_form_container';
 
 class PathsMain extends React.Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class PathsMain extends React.Component {
   render () {
     return (
       <section className='paths-main'>
-        <PathForm />
+        <PathFormContainer />
       </section>
     );
   }

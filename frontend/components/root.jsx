@@ -11,7 +11,7 @@ import Frontpage from './frontpage/frontpage';
 import Home from './home/home';
 
 import PathsMain from './home/paths/paths_main';
-import PathForm from './home/paths/paths_form/path_form';
+import PathFormContainer from './home/paths/paths_form/path_form_container';
 
 
 const Root = ({ store }) => {
@@ -64,7 +64,7 @@ const Root = ({ store }) => {
               path='paths'
               component={ PathsMain }>
               <Route
-                component={ PathForm } />
+                component={ PathFormContainer } />
             </Route>
           </Route>
         </Route>

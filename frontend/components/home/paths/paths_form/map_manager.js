@@ -1,6 +1,7 @@
 export default class MapManager {
-  constructor(map) {
+  constructor(map, updateState) {
     this.map = map;
+    this.updateState = updateState;
     this.pathMarkers = [];
 
     this.directionsService = new google.maps.DirectionsService;
@@ -43,6 +44,12 @@ export default class MapManager {
         preserveViewport: true,
       }
     );
+    this.updateState({
+      distance: 0,
+      polyline: '',
+      start_address: 'N/A',
+      end_address: 'N/A'
+    });
   }
 
   undo() {
@@ -89,10 +96,14 @@ export default class MapManager {
 
   renderDirections(response) {
     const route = response.routes[0];
-    this.polyline = route.overview_polyline;
-    this.distance = route.legs[0].distance.text;
-    this.start_address = route.legs[0].start_address;
-    this.end_address = route.legs[0].end_address;
+    const distanceInMiles = (route.legs[0].distance.value * .000622).toFixed(2);
+    this.updateState({
+      distance: distanceInMiles,
+      polyline: route.overview_polyline,
+      start_address: route.legs[0].start_address,
+      end_address: route.legs[0].end_address
+    });
+
     this.directionsRenderer.setDirections(response);
   }
 }

@@ -1,0 +1,206 @@
+
+.path-main {
+  // * {
+  //   border: 1px solid red;
+  // }
+  color: #444444;
+  display: flex;
+  // width: 1000px;
+  // box-sizing:
+
+  .errors {
+    font-size: 11px;
+    color: rgba(255, 0, 0, 0.69);
+    width: 180px;
+  }
+
+  .path-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    // border: 1px solid #7b7878;
+
+    .path-details {
+      padding: 10px 0px 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      // border-bottom: 1px solid #7b7878;
+      border-right: 0;
+
+      h3 {
+        text-transform: uppercase;
+        margin: 8px 0;
+        padding-bottom: 4px;
+        border-bottom: grey 1px solid;
+        font-size: 18px;
+      }
+
+      ul {
+        height: 200px;
+      }
+
+      li {
+        margin: 5px;
+        align-content: center;
+
+        &:last-child {
+          padding-bottom: 5px;
+          border-bottom: 1px solid gray
+        }
+      }
+
+      p {
+        width: 240px;
+        vertical-align: middle;
+      }
+
+      .address {
+        height: 38px;
+      }
+
+      h4 {
+        margin: 8px 0;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+
+    .path-form-input {
+      padding: 10px 0px 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      // border-left: 1px solid #7b7878;
+      // border-bottom: 1px solid #7b7878;
+      height: 300px;
+
+
+      h3 {
+        text-transform: uppercase;
+        margin: 8px 0;
+        padding-bottom: 4px;
+        border-bottom: grey 1px solid;
+        font-size: 18px;
+      }
+
+      .name-input {
+        margin: 5px 0;
+        border: 1px solid #c8c7cc;
+        padding: 10px;
+        font-size: 12px;
+        width: 180px;
+        border-radius: 3px;
+        transition: .2s;
+        &:focus {
+          box-shadow: 0px 0px 4px 1px rgba(64,128,255,1);
+          background: #fff;
+        }
+      }
+
+      .select-container {
+        border: 1px solid #c8c7cc;
+        border-radius: 2px;
+        width: 200px;
+        margin: 5px 0;
+
+        select {
+          background: transparent;
+          border: none;
+          font-size: 12px;
+          height: 35px;
+          padding: 5px;
+          width: 200px;
+          // transition: .2s;
+          &:focus {
+            box-shadow: 0px 0px 4px 1px rgba(64,128,255,1);
+            background: #fff;
+          }
+        }
+      }
+
+      input[type='date'] {
+          width: 100%;
+          padding: 8px 15px;
+          font-size: 12px;
+          text-transform: uppercase;
+          transition: .2s;
+          &:focus {
+            box-shadow: 0px 0px 4px 1px rgba(64,128,255,1);
+            background: #fff;
+          }
+      }
+
+      #date-container {
+        border: 1px solid #c8c7cc;
+        border-radius: 3px;
+        width: 200px;
+        margin: 5px 0;
+      }
+
+      #duration-container {
+        // display: flex;
+        width: 200px;
+        justify-content: space-between;
+        align-items: center;
+
+        input[type='tel'] {
+          margin: 5px 0;
+          border: 1px solid #c8c7cc;
+          padding: 10px;
+          font-size: 12px;
+          width: 38px;
+          border-radius: 3px;
+          transition: .2s;
+          &:focus {
+            box-shadow: 0px 0px 4px 1px rgba(64,128,255,1);
+            background: #fff;
+          }
+        }
+      }
+
+      input[type='submit'] {
+        background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#ff9628),
+        to(#ff8714));
+        width: 160px;
+        text-align: center;
+        color: #fff;
+        height: 20px;
+        cursor: pointer;
+        transition-duration: .4s;
+        text-transform: uppercase;
+        padding: 5px 20px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        border-radius: 5px;
+        margin-top: 10px;
+        // box-shadow: -4px 6px 31px -8px rgba(0,0,0,0.75)
+
+        &:hover {
+          background: -webkit-gradient(
+          linear, left top, left bottom,
+          from(#f08a15),
+          to(#e56e06))
+        }
+      }
+
+      .false {
+        display: none;
+      }
+
+      .true {
+        display: flex;
+      }
+    }
+
+  }
+}

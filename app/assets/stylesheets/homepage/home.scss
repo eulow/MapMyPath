@@ -1,7 +1,8 @@
 .main-content-container {
   display: flex;
   flex-direction: column;
-  // justify-content: center;
+  justify-content: center;
   align-items: center;
   background: image-url("global_bg.png");
+  padding-bottom: 100px;
 }
