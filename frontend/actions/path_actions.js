@@ -68,7 +68,7 @@ export const createPath = (path) => (dispatch) => {
       (newPath) => {
        dispatch(receiveNewPath(newPath));
        dispatch(clearErrors());
-      //  hashHistory.push(`./home/paths/${newPath.id}`);
+       hashHistory.push(`/home/paths/all`);
       },
       (errors) => {
         dispatch(addErrors(errors));
