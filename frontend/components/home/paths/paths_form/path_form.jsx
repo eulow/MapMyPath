@@ -1,6 +1,6 @@
 import React from 'react';
 import Map from './map';
-import Modal from 'react-modal';
+// import Modal from 'react-modal';
 
 class PathForm extends React.Component {
   constructor(props) {
@@ -36,8 +36,7 @@ class PathForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const path = this.state;
-    this.convertDuration();
+    const path = Object.assign({}, this.state, { duration: this.convertDuration() });
     this.props.createPath(path);
   }
 
@@ -45,10 +44,7 @@ class PathForm extends React.Component {
     const hoursSeconds = this.hours * 3600;
     const minutesSeconds = this.minutes * 60;
     const seconds = this.seconds;
-
-    this.setState({
-      duration: hoursSeconds + minutesSeconds + seconds
-    });
+    return (hoursSeconds + minutesSeconds + seconds);
   }
 
   setDuration(e) {

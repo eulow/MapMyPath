@@ -8,8 +8,7 @@ class Home extends React.Component {
   }
 
   selectedTab(tab) {
-    // debugger
-    if (tab === this.props.location.pathname) {
+    if (this.props.location.pathname.includes(tab)) {
       return "selected";
     }
     return "unselected";

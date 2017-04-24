@@ -1,10 +1,8 @@
 #map-container {
-  display: flex;
   border: 1px solid black;
   position: relative;
 
   .map-buttons {
-    display: flex;
     position: absolute;
     z-index: 1;
     top: 10px;
@@ -34,7 +32,6 @@
 
   #map {
     display: flex;
-    position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -42,8 +39,7 @@
     height: 620px;
 
     p {
-      display: block;
-      padding: 20px;
+      padding: 40px;
     }
   }
 

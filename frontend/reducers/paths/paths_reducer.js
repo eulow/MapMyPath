@@ -1,12 +1,11 @@
 import {
   RECEIVE_ALL_PATHS,
   RECEIVE_NEW_PATH,
-  REMOVE_PATH 
+  REMOVE_PATH
 } from '../../actions/path_actions';
 
 const PathsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
-  // debugger
   switch(action.type) {
     case RECEIVE_ALL_PATHS:
      return Object.assign({}, action.paths);

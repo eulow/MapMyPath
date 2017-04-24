@@ -62,11 +62,10 @@ const Root = ({ store }) => {
               path='user_dashboard'
               component={ Home } />
 
-            <Route
-              path='paths'
-              component={ PathsMain }>
-              <Route component ={ PathIndexContainer } />
-              <Route component={ PathFormContainer } />
+            <Route path='paths' component={ PathsMain }>
+              <IndexRedirect to='all' />
+              <Route path='all' component ={ PathIndexContainer } />
+              <Route path='new' component={ PathFormContainer } />
             </Route>
           </Route>
         </Route>

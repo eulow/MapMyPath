@@ -1,0 +1,51 @@
+import React from 'react';
+import { hashHistory } from 'react-router';
+import { Link } from 'react-router';
+import PathIndexItem from './path_index_item';
+
+class PathIndex extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount () {
+    this.props.requestAllPaths();
+  }
+
+  render () {
+    return (
+      <div>
+        <header>
+          <h2>My Paths</h2>
+          <Link to={'/home/paths/new'}>Make a path</Link>
+        </header>
+        <table>
+          <thead>
+            <tr>
+              <th>Path</th>
+              <th>Created</th>
+              <th>Distance</th>
+              <th>Name</th>
+              <th>Start Location</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              this.props.paths.map(path => {
+                return (
+                  <PathIndexItem
+                    key={ path.id }
+                    deletePath={ this.props.deletePath }
+                    path={ path } />
+                );
+              })
+            }
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+}
+
+export default PathIndex;

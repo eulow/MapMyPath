@@ -2,7 +2,7 @@ class Api::PathsController < ApplicationController
   # before_action :require_logged_in!
 
   def index
-    @paths = current_user.paths.order(created_at: :desc)
+    @paths = current_user.paths
     render :index
   end
 
@@ -26,9 +26,10 @@ class Api::PathsController < ApplicationController
   end
 
   def destroy
+    # debugger
     @path = Path.find(params[:id])
     @path.destroy
-    render json: @path.id
+    render json: @path
   end
 
   def update
