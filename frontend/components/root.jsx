@@ -10,8 +10,10 @@ import SessionFormContainer from './session_form/session_form_container';
 import Frontpage from './frontpage/frontpage';
 import Home from './home/home';
 
+// paths
 import PathsMain from './home/paths/paths_main';
 import PathFormContainer from './home/paths/paths_form/path_form_container';
+import PathIndexContainer from './home/paths/paths_index/path_index_container';
 
 
 const Root = ({ store }) => {
@@ -63,8 +65,8 @@ const Root = ({ store }) => {
             <Route
               path='paths'
               component={ PathsMain }>
-              <Route
-                component={ PathFormContainer } />
+              <Route component ={ PathIndexContainer } />
+              <Route component={ PathFormContainer } />
             </Route>
           </Route>
         </Route>

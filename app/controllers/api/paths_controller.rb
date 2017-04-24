@@ -55,7 +55,8 @@ class Api::PathsController < ApplicationController
       :end_address,
       :duration,
       :done,
-      :done_date
+      :done_date,
+      :description
     )
   end
 end

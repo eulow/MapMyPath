@@ -15,6 +15,7 @@ class PathForm extends React.Component {
       duration: 0,
       done: false,
       done_date: "",
+      description: ""
     };
     this.hours = 0;
     this.minutes = 0;
@@ -126,6 +127,15 @@ class PathForm extends React.Component {
                   I have done this run
                 </option>
               </select>
+            </div>
+            <div className={this.state.done}>
+              <input
+                className='description-input'
+                type='text'
+                value={this.state.description}
+                onChange={this.update('description')}
+                placeholder='Describe your run'
+                />
             </div>
             <div id='date-container' className={this.state.done}>
               <input type='date'
