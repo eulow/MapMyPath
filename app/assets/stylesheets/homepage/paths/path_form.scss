@@ -1,6 +1,46 @@
+.create-path {
+  color: #444444;
+
+  header {
+    display: flex;
+    text-transform: uppercase;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d1d0cf;
+    letter-spacing: 1px;
+    width: 935px;
+    margin: 0 auto;
+
+    .back-button {
+      font-size: 12px;
+      color: white;
+      padding: 15px 18px;
+      transition: .6s;
+      border-radius: 2px;
+      font-weight: bold;
+      background: -webkit-gradient(
+      linear, left top, left bottom,
+      from(#4499db),
+      to(#177ed7));
+      &:hover {
+        background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#3f92c6),
+        to(#0074bc))
+      }
+    }
+    h2 {
+      margin-left: 5px;
+      font-weight: lighter;
+    }
+  }
+}
+
 .path-main {
   color: #444444;
   display: flex;
+  margin-top: 20px;
 
   .errors {
     font-size: 11px;
@@ -125,7 +165,6 @@
       }
 
       #duration-container {
-        // display: flex;
         width: 200px;
         justify-content: space-between;
         align-items: center;

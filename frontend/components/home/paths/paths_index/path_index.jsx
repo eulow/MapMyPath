@@ -14,10 +14,10 @@ class PathIndex extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className='paths-index'>
         <header>
           <h2>My Paths</h2>
-          <Link to={'/home/paths/new'}>Make a path</Link>
+          <Link to={'/home/paths/new'} className='create-button'>Create a path</Link>
         </header>
         <table>
           <thead>
@@ -27,6 +27,7 @@ class PathIndex extends React.Component {
               <th>Distance</th>
               <th>Name</th>
               <th>Start Location</th>
+              <th>Complete</th>
               <th>Options</th>
             </tr>
           </thead>
