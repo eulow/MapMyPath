@@ -24,7 +24,7 @@ const userInfo = (currentUser, signOut) => {
           Logout
         </button>
       </ul>
-      <img className="avatar" src={window.images.sampleAvatar} />
+      <img className="avatar" src={currentUser.img_url} />
     </nav>
   );
 };
