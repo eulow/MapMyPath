@@ -40,27 +40,33 @@
   }
 }
 
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+
 .map-modal-overlay {
   position: fixed;
-  top: 70px;
+  top: 0px;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #000000;
+  background-color: #dddddd;
   z-index: 3;
-  opacity: .5;
+  opacity: .9;
+
 }
 .map-modal-content {
   border: 1px solid black;
   position: absolute;
   width: 300px;
   height: 300px;
-  top: 28%;
+  top: 26%;
   left: 40%;
   right: 50%;
   bottom: 50%;
   background: #fff;
   border-radius: 4px;
+  overflow: hidden;
 
   div {
     margin: auto;
