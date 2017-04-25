@@ -49,24 +49,13 @@
 | created_at   | timestamp | not null |
 | updated_at   | timestamp | not null |
 
-## statuses
-
-| column name   | data type | details |
-| ------------- | --------- | ------------- |
-| id            | integer   | not null, primary key |
-| user_id       | integer   | not null, foreign key |
-| body          | text      | not null |
-| created_at    | timestamp | not null |
-| updated_at    | timestamp | not null |
-
 ## comments
 
 | column name       | data type   | details |
 | -------------     | ----------- | ------------- |
 | id                | integer     | not null, primary key |
 | author_id         | integer     | not null, foreign key |
-| commentable_id    | integer     | not null, foreign key |
-| commentable_type  | string      | not null |
+| path_id           | integer     | not null, foreign key |
 | body              | text        | not null |
 | created_at        | timestamp   | not null |
 | updated_at        | timestamp   | not null |

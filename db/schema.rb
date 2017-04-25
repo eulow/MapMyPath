@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170424015713) do
+ActiveRecord::Schema.define(version: 20170425033644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "author_id",  null: false
+    t.integer  "path_id",    null: false
+    t.text     "body",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "paths", force: :cascade do |t|
     t.string   "name",                          null: false
@@ -32,14 +40,14 @@ ActiveRecord::Schema.define(version: 20170424015713) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",           null: false
-    t.string   "first_name",      null: false
-    t.string   "last_name",       null: false
-    t.string   "password_digest", null: false
-    t.string   "session_token",   null: false
-    t.string   "img_url"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "email",                                                                                          null: false
+    t.string   "first_name",                                                                                     null: false
+    t.string   "last_name",                                                                                      null: false
+    t.string   "password_digest",                                                                                null: false
+    t.string   "session_token",                                                                                  null: false
+    t.string   "img_url",         default: "https://s3.us-east-2.amazonaws.com/mapmyrun-dev/default_avatar.png"
+    t.datetime "created_at",                                                                                     null: false
+    t.datetime "updated_at",                                                                                     null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["first_name"], name: "index_users_on_first_name", using: :btree
     t.index ["last_name"], name: "index_users_on_last_name", using: :btree

@@ -8,7 +8,7 @@
 #  last_name       :string           not null
 #  password_digest :string           not null
 #  session_token   :string           not null
-#  img_url         :string
+#  img_url         :string           default("https://s3.us-east-2.amazonaws.com/mapmyrun-dev/default_avatar.png")
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
@@ -22,7 +22,12 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  has_many :paths
+  has_many :paths, dependent: :destroy
+  has_many :comments,
+    class_name: 'Comment',
+    primary_key: :id,
+    foreign_key: :author_id,
+    dependent: :destroy
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

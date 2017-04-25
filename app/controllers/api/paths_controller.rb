@@ -1,5 +1,5 @@
 class Api::PathsController < ApplicationController
-  # before_action :require_logged_in!
+  before_action :require_logged_in!
 
   def index
     @paths = current_user.paths

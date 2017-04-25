@@ -15,103 +15,90 @@ u1 = User.create!(
 email: 'Guest',
 password: 'Password',
 first_name: 'Best',
-last_name: 'Guest',
-img_url: 'https://s3.us-east-2.amazonaws.com/mapmyrun-dev/default_avatar.png'
+last_name: 'Guest'
 )
 
 u2 = User.create!(
   email: 'low.eugene1@gmail.com',
   password: 'password',
   first_name: 'Eugene',
-  last_name: 'Low',
-  img_url: 'https://s3.us-east-2.amazonaws.com/mapmyrun-dev/default_avatar.png'
+  last_name: 'Low'
 )
 
 u3 = User.create!(
   email: 'pg@gmail.com',
   password: 'password',
   first_name: 'Paul',
-  last_name: 'George',
-  img_url: 'https://s3.us-east-2.amazonaws.com/mapmyrun-dev/default_avatar.png'
+  last_name: 'George'
 )
 
 u4 = User.create!(
   email: 'lb@gmail.com',
   password: 'password',
   first_name: 'LeBron',
-  last_name: 'James',
-  img_url: 'https://s3.us-east-2.amazonaws.com/mapmyrun-dev/default_avatar.png')
+  last_name: 'James')
 
 u5 = User.create!(
   email: 'cm@gmail.com',
   password: 'password',
   first_name: 'Carmelo',
-  last_name: 'Anthony',
-  img_url: 'https://s3.us-east-2.amazonaws.com/mapmyrun-dev/default_avatar.png'
+  last_name: 'Anthony'
 )
 
 u6 = User.create!(
   email: 'jl@gmail.com',
   password: 'password',
   first_name: 'Jeremy',
-  last_name: 'Lin',
-  img_url: 'https://s3.us-east-2.amazonaws.com/mapmyrun-dev/default_avatar.png'
+  last_name: 'Lin'
 )
 
 u7 = User.create!(
   email: 'dr@gmail.com',
   password: 'password',
   first_name: 'Derrick',
-  last_name: 'Rose',
-  img_url: 'https://s3.us-east-2.amazonaws.com/mapmyrun-dev/default_avatar.png'
+  last_name: 'Rose'
 )
 
 u8 = User.create!(
   email: 'jh@gmail.com',
   password: 'password',
   first_name: 'Jeff',
-  last_name: 'Hornacek',
-  img_url: 'https://s3.us-east-2.amazonaws.com/mapmyrun-dev/default_avatar.png'
+  last_name: 'Hornacek'
 )
 
 u9 = User.create!(
   email: 'sm@gmail.com',
   password: 'password',
   first_name: 'Steve',
-  last_name: 'Mills',
-  img_url: 'https://s3.us-east-2.amazonaws.com/mapmyrun-dev/default_avatar.png'
+  last_name: 'Mills'
 )
 
 u11 = User.create!(
   email: 'pe@gmail.com',
   password: 'password',
   first_name: 'Patrick',
-  last_name: 'Ewing',
-  img_url: 'https://s3.us-east-2.amazonaws.com/mapmyrun-dev/default_avatar.png'
+  last_name: 'Ewing'
 )
 
 u12 = User.create!(
   email: 'pj@gmail.com',
   password: 'password',
   first_name: 'Phil',
-  last_name: 'Jackson',
-  img_url: 'https://s3.us-east-2.amazonaws.com/mapmyrun-dev/default_avatar.png'
+  last_name: 'Jackson'
 )
 
 u13 = User.create!(
   email: 'bk@gmail.com',
   password: 'password',
   first_name: 'Bernard',
-  last_name: 'King',
-  img_url: 'https://s3.us-east-2.amazonaws.com/mapmyrun-dev/default_avatar.png'
+  last_name: 'King'
 )
 
 u14 = User.create!(
   email: 'tc@gmail.com',
   password: 'password',
   first_name: 'Tyson',
-  last_name: 'Chandler',
-  img_url: 'https://s3.us-east-2.amazonaws.com/mapmyrun-dev/default_avatar.png'
+  last_name: 'Chandler'
 )
 
 # Paths
