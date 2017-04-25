@@ -1,9 +1,15 @@
 import React from 'react';
 import MapManager from './map_manager';
+import Modal from 'react-modal';
 
 class Map extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      modalIsOpen: true
+    };
+
     this.createMap = this.createMap.bind(this);
     this.clearMap = this.clearMap.bind(this);
     this.undoMap = this.undoMap.bind(this);
@@ -30,9 +36,10 @@ class Map extends React.Component {
       center: initialPosition,
       zoom,
       rotateControl: true,
-      mapTypeControlOptions: {
-      style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
-      },
+      mapTypeControlOptions:
+        {
+          style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+        },
       draggableCursor: 'crosshair',
       styles: [
         {
@@ -121,6 +128,10 @@ class Map extends React.Component {
     this.map.addListener('click', (e) => {
       this.MapManager.addMarker(e.latLng);
     });
+
+    this.map.addListener('idle', (e) => {
+      this.setState({ modalIsOpen: false });
+    });
   }
 
   clearMap (e) {
@@ -142,14 +153,24 @@ class Map extends React.Component {
   render () {
     return (
       <div id="map-container">
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          overlayClassName="map-modal-overlay"
+          className="map-modal-content"
+          contentLabel="Example Modal"
+        >
+          <div className="map-loading">
+            <p>Loading mapping tools</p>
+            <div id="loading"></div>
+            <p>Please wait</p>
+          </div>
+
+        </Modal>
         <div className="map-buttons">
           <button onClick={this.undoMap}>Undo</button>
           <button onClick={this.clearMap}>Clear</button>
         </div>
         <div id="map" ref="map">
-          <p>Loading mapping tools</p>
-          <div id="loading"></div>
-          <p>Please wait</p>
         </div>
       </div>
     );

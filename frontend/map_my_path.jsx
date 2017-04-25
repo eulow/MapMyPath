@@ -18,6 +18,7 @@ import Modal from 'react-modal';
 // window.getAllPaths = PathsAPIUtil.getAllPaths;
 // window.requestAllPaths = requestAllPaths;
 // window.requestSinglePath = requestSinglePath;
+// window.store = store;
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -27,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
-  window.store = store;
+  Modal.setAppElement(document.body);
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });

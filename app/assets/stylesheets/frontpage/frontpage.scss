@@ -1,20 +1,13 @@
 .front-page {
-  // border-bottom: 1px solid #d6d6d6;
 
   .frontpage-content {
-    // * {
-    //   border: 1px solid black;
-    // }
     display: flex;
     justify-content: flex-end;
-    // height: 100%;
-    // width: 100%;
     min-width: 930px;
     background: image-url("frontpage-min.jpg");
     background-size: cover;
     padding: 55px;
     background-position-y: -164px;
-    // background-position-x: -75px;
     background-repeat: no-repeat;
 
     section {
