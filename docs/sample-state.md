@@ -14,11 +14,11 @@
     password: "is too short (minimum is 6 characters)"
   },
 
-  routes: {
+  paths: {
     1: {
       user_id: 1,
-      name: "Sample route",
-      routing_data: "",
+      name: "Sample path",
+      polyline: "",
       distance: "5 miles",
       done: false,
       map_url: "",
@@ -26,8 +26,8 @@
     },
     2: {
       user_id: 2,
-      name: "Sample route 2",
-      routing_data: "",
+      name: "Sample path 2",
+      polyline: "",
       distance: "5 miles",
       done: true,
       map_url: "",
@@ -56,8 +56,8 @@
   comments: {
     1: {
       id: 1,
-      routeId: 1,
-      byUserId: 2,
+      pathId: 1,
+      authorId: 2,
       body: "good job!"
     }
   }

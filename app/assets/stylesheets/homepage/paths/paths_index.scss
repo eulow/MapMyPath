@@ -40,7 +40,7 @@
     // border: 0;
     margin-top: 20px;
     width: 100%;
-    font-size: 13px;
+    font-size: 12px;
     border-collapse: collapse;
 
     th {
@@ -53,6 +53,10 @@
       padding: 10px 15px;
       border: 1px solid #d1d0cf;
     }
+
+    // .no-wrap {
+    //   white-space: nowrap;
+    // }
 
 
     td:first-child {
@@ -72,10 +76,13 @@
       background-color: #f6f6f6;
     }
 
-     button {
-      color: #0076c0;
-      font-size: 13px;
-      cursor: pointer;
+      button {
+        margin: auto;
+        display: block;
+        color: #0076c0;
+        font-size: 12px;
+        cursor: pointer;
+        padding: 2px 0;
     }
   }
 }

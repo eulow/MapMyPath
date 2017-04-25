@@ -1,6 +1,11 @@
 class Api::CommentsController < ApplicationController
   before_action :require_logged_in!
 
+  def index
+    # double check
+    @comments = Comment.where('path_id = ?', params[:path_id])
+  end
+
   def create
     @comment = Comment.new(comment_params)
     @comment.author_id = current_user.id

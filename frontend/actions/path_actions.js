@@ -6,8 +6,6 @@ export const RECEIVE_ALL_PATHS = 'RECEIVE_ALL_PATHS';
 export const RECEIVE_SINGLE_PATH = 'RECEIVE_SINGLE_PATH';
 export const RECEIVE_NEW_PATH = 'RECEIVE_NEW_PATH';
 export const REMOVE_PATH = 'REMOVE_PATH';
-export const LOADING_ALL_PATHS = 'LOADING_ALL_PATHS';
-export const LOADING_SINGLE_PATH = 'LOADING_SINGLE_PATH';
 
 export const receiveAllPaths = (paths) => ({
   type: RECEIVE_ALL_PATHS,
@@ -29,46 +27,40 @@ export const removePath = (id) => ({
   id
 });
 
-export const loadingAllPaths = () => ({
-  type: LOADING_ALL_PATHS
-});
-
-export const loadingSinglePath = () => ({
-  type: LOADING_SINGLE_PATH
-});
-
 export const requestAllPaths = () => (dispatch) => {
-  dispatch(loadingAllPaths);
   return (
     PathsAPIUtil.getAllPaths()
     .then(
       (paths) => {
-      dispatch(receiveAllPaths(paths));
+        dispatch(receiveAllPaths(paths));
       }
     )
   );
 };
 
 export const requestSinglePath = (id) => (dispatch) => {
-  dispatch(loadingSinglePath);
   return (
-    PathsAPIUtil.getSinglePath()
+    PathsAPIUtil.getSinglePath(id)
     .then(
       (path) => {
-        dispatch(receiveSinglePath());
+        dispatch(receiveSinglePath(path));
       }
     )
   );
 };
 
+
 export const createPath = (path) => (dispatch) => {
+  //  dispatch(receiveNewPath(newPath));
+  //  not necessary since it will redirect to new page,
+  // thus loading new component
+
   return (
     PathsAPIUtil.createPath(path)
     .then(
       (newPath) => {
-       dispatch(receiveNewPath(newPath));
        dispatch(clearErrors());
-       hashHistory.push(`/home/paths/all`);
+       hashHistory.push(`/home/paths/${newPath.id}`);
       },
       (errors) => {
         dispatch(addErrors(errors));

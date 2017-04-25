@@ -14,6 +14,7 @@ import Home from './home/home';
 import PathsMain from './home/paths/paths_main';
 import PathFormContainer from './home/paths/paths_form/path_form_container';
 import PathIndexContainer from './home/paths/paths_index/path_index_container';
+import PathShowContainer from './home/paths/path_show/path_show_container';
 
 
 const Root = ({ store }) => {
@@ -66,6 +67,7 @@ const Root = ({ store }) => {
               <IndexRedirect to='all' />
               <Route path='all' component ={ PathIndexContainer } />
               <Route path='new' component={ PathFormContainer } />
+              <Route path=':id' component={ PathShowContainer } />
             </Route>
           </Route>
         </Route>

@@ -6,7 +6,7 @@ import { requestAllPaths, deletePath } from '../../../../actions/path_actions';
 const mapStateToProps = ({ paths }) => {
   return {
     paths: Object.keys(paths).map(id => paths[id])
-      .sort(function(a, b) {return b.id - a.id;})
+      .sort(function(a, b) { return b.id - a.id; })
   };
 };
 

@@ -17,7 +17,11 @@ class PathIndex extends React.Component {
       <div className='paths-index'>
         <header>
           <h2>My Paths</h2>
-          <Link to={'/home/paths/new'} className='create-button'>Create a path</Link>
+          <Link
+            to={'/home/paths/new'}
+            className='create-button'
+            >Create a path
+          </Link>
         </header>
         <table>
           <thead>

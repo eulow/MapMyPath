@@ -1,1 +1,1 @@
-json.extract! @comment, :id, :author_id, :path_id, :body
+json.partial! 'api/comments/comment', comment: @comment

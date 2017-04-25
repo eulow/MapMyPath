@@ -2,7 +2,7 @@ import { CLEAR_ERRORS, ADD_ERRORS } from '../actions/error_actions';
 
 const defaultErrors = {};
 
-const errorReducer = (state = defaultErrors, action) => {
+const ErrorReducer = (state = defaultErrors, action) => {
   Object.freeze(state);
   switch(action.type) {
     case ADD_ERRORS:
@@ -14,4 +14,4 @@ const errorReducer = (state = defaultErrors, action) => {
   }
 };
 
-export default errorReducer;
+export default ErrorReducer;

@@ -26,7 +26,6 @@ class Api::PathsController < ApplicationController
   end
 
   def destroy
-    # debugger
     @path = Path.find(params[:id])
     @path.destroy
     render json: @path
