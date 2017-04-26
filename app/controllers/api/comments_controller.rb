@@ -13,14 +13,14 @@ class Api::CommentsController < ApplicationController
     if @comment.save
       render :show
     else
-      render @comment.errors.messages, status: 422
+      render json: @comment.errors.messages, status: 422
     end
   end
 
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    render json: @path
+    render json: @comment
   end
 
   private

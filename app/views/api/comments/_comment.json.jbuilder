@@ -1,4 +1,4 @@
-json.extract! comment, :id, :author_id, :path_id, :body
+json.extract! comment, :id, :author_id, :path_id, :body, :created_at
 
 json.set! :author do
   json.id comment.author.id

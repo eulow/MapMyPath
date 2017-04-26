@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { hashHistory } from 'react-router';
 import Comments from './comments';
 import { convertSecondsToTime } from '../../../../util/math_calculations';
 
@@ -116,6 +116,7 @@ class PathShow extends React.Component {
                 <span className='duration'>
                   <h3>Time</h3>
                   {duration()}
+                  <h5>hh : mm : ss</h5>
                 </span>
               </div>
               <dl className='body-content'>
@@ -132,6 +133,10 @@ class PathShow extends React.Component {
                   <dd>{ path.user.name }</dd>
                 </span>
                 <span>
+                  <dt>Description:</dt>
+                  <dd>{ path.description }</dd>
+                </span>
+                <span>
                   <dt>Completed on:</dt>
                   {complete()}
                 </span>
@@ -141,11 +146,17 @@ class PathShow extends React.Component {
           </div>
           <section className='side-bar'>
             <nav>
-              <Link to='/home/paths'>My Paths</Link>
-              <Link to='/home/paths/new'>New Path</Link>
+              <button onClick={
+                  () => hashHistory.push('/home/paths')
+                }>all paths
+              </button>
+              <button onClick={
+                  () => hashHistory.push('/home/paths/new')
+                }>create a path
+              </button>
               <button onClick={
                   () => this.props.deletePath(path.id)
-                }>Delete
+                }>Delete this path
               </button>
             </nav>
             <Comments

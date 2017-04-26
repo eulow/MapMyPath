@@ -19,7 +19,7 @@ const mapStateToProps = ({ session, paths, comments, errors }) => {
     path,
     errors,
     comments: Object.keys(comments).map(id => comments[id])
-      .sort(function(a, b) { return b.id - a.id; }),
+    .sort(function(a, b) { return b.id - a.id; }),
     currentUser: session.currentUser
   };
 };

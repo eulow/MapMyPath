@@ -83,5 +83,9 @@
         cursor: pointer;
         padding: 2px 0;
     }
+
+    tbody tr:hover {
+      background: #ececec;
+    }
   }
 }
