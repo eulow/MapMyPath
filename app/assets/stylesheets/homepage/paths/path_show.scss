@@ -1,4 +1,61 @@
 #path-show-map {
-  width: 500px;
+  width: 650px;
   height: 300px;
+}
+
+.path-show-body {
+  // margin: 0 auto;
+  display: flex;
+  // width: 935px;
+  color: #444444;
+  // box-sizing:border-box;
+
+  header {
+    text-transform: uppercase;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d1d0cf;
+    letter-spacing: 1px;
+
+    h2 {
+      margin-left: 5px;
+      font-weight: lighter;
+    }
+  }
+
+  .path-info {
+    display: flex;
+
+    .distance-duration {
+      border: 1px solid #d1d0cf;
+    }
+
+    .body-content {
+      span {
+        display: flex;
+
+        dt {
+          width: 100px;
+        }
+      }
+      // dl {
+      //   width: 300px;
+      //   overflow: hidden;
+      //   background: #ff0;
+      //   padding: 10px 0;
+      //   margin: 0
+      // }
+      // dt {
+      //   float: left;
+      //   width: 30%;
+      //   padding: 0;
+      //   margin: 0;
+      // }
+      // dd {
+      //   float: left;
+      //   width: 70%;
+      //   padding: 0;
+      //   margin: 0;
+      // }
+    }
+  }
 }

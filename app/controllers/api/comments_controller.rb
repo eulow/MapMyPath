@@ -3,7 +3,7 @@ class Api::CommentsController < ApplicationController
 
   def index
     # double check
-    @comments = Comment.where('path_id = ?', params[:path_id])
+    @comments = Comment.where('path_id = ?', params[:path_id]).includes(:author)
   end
 
   def create

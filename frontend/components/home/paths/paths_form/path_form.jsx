@@ -1,7 +1,7 @@
 import React from 'react';
 import Map from './map';
 import { Link } from 'react-router';
-// import Modal from 'react-modal';
+import { convertTimeToSeconds } from '../../../../util/math_calculations';
 
 class PathForm extends React.Component {
   constructor(props) {
@@ -23,7 +23,6 @@ class PathForm extends React.Component {
     this.seconds = 0;
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.convertDuration = this.convertDuration.bind(this);
     this.setDuration = this.setDuration.bind(this);
   }
 
@@ -37,15 +36,9 @@ class PathForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const path = Object.assign({}, this.state, { duration: this.convertDuration() });
+    const duration = convertTimeToSeconds(this.hours, this.minutes, this.seconds);
+    const path = Object.assign({}, this.state, { duration });
     this.props.createPath(path);
-  }
-
-  convertDuration () {
-    const hoursSeconds = this.hours * 3600;
-    const minutesSeconds = this.minutes * 60;
-    const seconds = this.seconds;
-    return (hoursSeconds + minutesSeconds + seconds);
   }
 
   setDuration(e) {
@@ -151,27 +144,26 @@ class PathForm extends React.Component {
                   placeholder='HH'
                   max='24'
                   maxLength='2'/>:
-                  <input
-                    name='minutes'
-                    type='tel'
-                    onChange={this.setDuration}
-                    placeholder='MM'
-                    max='59'
-                    maxLength='2'/>:
-                    <input
-                      name='seconds'
-                      type='tel'
-                      onChange={this.setDuration}
-                      placeholder='SS'
-                      max='59'
-                      maxLength='2'/>
-                  </div>
-                  <input type='submit' value='save path' />
-                </form>
-              </div>
-              <Map setState={this.setState.bind(this)}/>
-            </div>
-
+                <input
+                  name='minutes'
+                  type='tel'
+                  onChange={this.setDuration}
+                  placeholder='MM'
+                  max='59'
+                  maxLength='2'/>:
+                <input
+                  name='seconds'
+                  type='tel'
+                  onChange={this.setDuration}
+                  placeholder='SS'
+                  max='59'
+                  maxLength='2'/>
+                </div>
+              <input type='submit' value='save path' />
+            </form>
+          </div>
+          <Map setState={this.setState.bind(this)}/>
+        </div>
       </div>
     );
   }

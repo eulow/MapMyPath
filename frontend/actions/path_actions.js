@@ -91,6 +91,7 @@ export const deletePath = (id) => (dispatch) => {
     .then(
       (deletedPath) => {
         dispatch(removePath(deletedPath.id));
+        hashHistory.push(`/home/paths/`);
       },
       (errors) => {
         dispatch(addErrors(errors));

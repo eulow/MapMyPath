@@ -2,7 +2,6 @@
 
   .profile-tabs {
     display: flex;
-    width: 950px;
     padding: 35px 0 20px 0;
     color: #046AB2;
 
@@ -10,13 +9,14 @@
       font-size: 14px;
       text-transform: uppercase;
       padding: 12px 23px;
-      width: 200px;
+      width: 700px;
       text-align: center;
       background: #f6f6f6;
       border-top: 1px solid #d1d0cf;
       border-bottom: 1px solid #d1d0cf;
       border-right: 1px solid #d1d0cf;
       font-weight: 700;
+
 
       &:hover {
         color: #92BFDD;
@@ -43,7 +43,7 @@
 
     .end-border {
       border-bottom: 1px solid #d1d0cf;
-      width: 200px;
+      width: 100%;
     }
   }
 }

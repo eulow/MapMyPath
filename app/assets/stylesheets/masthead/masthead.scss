@@ -1,24 +1,22 @@
 .masthead-container {
-  // border: 1px solid black;
+  margin: 0 auto;
   border-bottom: 1px solid #d6d6d6;
-  display: flex;
   justify-content: center;
+  background: #fff;
 
   .masthead {
-    // border: 1px solid black;
+    margin: auto;
     display: flex;
     height: 70px;
     justify-content: space-between;
-    width: 950px;
-
-    // * {
-    //   border: 1px solid black;
-    // }
+    max-width: 950px;
+    // padding: 0 50px;
+    // padding-right: 100px;
+    // left: 50%;
 
     .logo {
       display: flex;
       align-items: center;
-      text-align: center;
       margin-bottom: 4px;
 
       .title {
@@ -38,6 +36,7 @@
         }
       }
     }
+
     .user-info {
       position: relative;
       .avatar {
@@ -124,5 +123,4 @@
       }
     }
   }
-
 }

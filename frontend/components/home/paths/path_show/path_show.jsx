@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Comments from './comments';
+import { convertSecondsToTime } from '../../../../util/math_calculations';
 
 class PathShow extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class PathShow extends React.Component {
         this.createMap();
       }
     );
-    // this.props.requestAllComments(this.props.params.id);
+    this.props.requestAllComments(this.props.params.id);
   }
 
   createMap () {
@@ -61,20 +62,16 @@ class PathShow extends React.Component {
     polyPath.setMap(this.map);
   }
 
-  convertSecondsToTime (sec_num) {
-    let hours   = Math.floor(sec_num / 3600);
-    let minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-    let seconds = sec_num - (hours * 3600) - (minutes * 60);
-
-    if (hours   < 10) {hours   = "0"+hours;}
-    if (minutes < 10) {minutes = "0"+minutes;}
-    if (seconds < 10) {seconds = "0"+seconds;}
-    return (hours+':'+minutes+':'+seconds);
-  }
-
   render () {
     if(this.props.path) {
-      const { path } = this.props;
+      const {
+        path,
+        currentUser,
+        comments,
+        deleteComment,
+        createComment,
+        errors
+      } = this.props;
 
       const duration = () => {
         if (path.duration === 0) {
@@ -83,9 +80,22 @@ class PathShow extends React.Component {
           );
         } else {
           return (
-            <p>{this.convertSecondsToTime(path.duration)}</p>
+            <p>{convertSecondsToTime(path.duration)}</p>
           );
         }
+      };
+
+      const complete = () => {
+        if (path.done_date) {
+          return (
+            <dd>{path.done_date}</dd>
+          );
+        } else {
+          return (
+            <dd>--</dd>
+          );
+        }
+
       };
 
       return (
@@ -103,12 +113,29 @@ class PathShow extends React.Component {
                   <p>{ path.distance }</p>
                   <h5>miles</h5>
                 </span>
-
                 <span className='duration'>
-                  <h3>Completion time</h3>
+                  <h3>Time</h3>
                   {duration()}
                 </span>
               </div>
+              <dl className='body-content'>
+                <span>
+                  <dt>Begins in:</dt>
+                  <dd>{ path.start_address }</dd>
+                </span>
+                <span>
+                  <dt>Ends in:</dt>
+                  <dd>{ path.end_address }</dd>
+                </span>
+                <span>
+                  <dt>Created by:</dt>
+                  <dd>{ path.user.name }</dd>
+                </span>
+                <span>
+                  <dt>Completed on:</dt>
+                  {complete()}
+                </span>
+              </dl>
             </section>
             <div id='path-show-map' ref='map'></div>
           </div>
@@ -122,9 +149,12 @@ class PathShow extends React.Component {
               </button>
             </nav>
             <Comments
-              comments={this.props.comments}
-              createComment={this.props.createComment}
-              deleteComment={this.props.deleteComment}
+              currentUser={currentUser}
+              comments={comments}
+              createComment={createComment}
+              deleteComment={deleteComment}
+              errors={errors}
+              pathId={path.id}
             />
           </section>
         </div>
