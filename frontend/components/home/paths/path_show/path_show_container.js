@@ -13,6 +13,8 @@ import {
   updatePath
 } from '../../../../actions/path_actions';
 
+import { clearErrors } from '../../../../actions/error_actions';
+
 const mapStateToProps = ({ session, paths, comments, errors }) => {
   const path = paths[Object.keys(paths)];
   return {
@@ -33,7 +35,8 @@ const mapDispatchToProps = (dispatch) => {
     createComment: (commentId, pathId) =>
       dispatch(createComment(commentId, pathId)),
     deleteComment: (commentId, pathId) =>
-      dispatch(deleteComment(commentId, pathId))
+      dispatch(deleteComment(commentId, pathId)),
+    clearErrors: () => dispatch(clearErrors())
   };
 };
 

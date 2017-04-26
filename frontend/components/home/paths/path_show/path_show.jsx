@@ -3,6 +3,7 @@ import { hashHistory } from 'react-router';
 import Comments from './comments';
 import { convertSecondsToTime } from '../../../../util/math_calculations';
 
+
 class PathShow extends React.Component {
   constructor(props) {
     super(props);
@@ -18,6 +19,11 @@ class PathShow extends React.Component {
       }
     );
     this.props.requestAllComments(this.props.params.id);
+
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   createMap () {

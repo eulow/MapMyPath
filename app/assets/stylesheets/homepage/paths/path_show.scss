@@ -173,12 +173,13 @@
         text-transform: uppercase;
         font-size: 12px;
         font-weight: 400;
-        margin: 10px 0 15px 0;
+        margin-top: 8px;
       }
 
 
       ul {
         display: block;
+        // margin-top: 10px;
 
         .comment-container {
           display: flex;
@@ -227,7 +228,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 10px 0;
+        margin: 10px 0 20px 0;
         width: 100%;
         letter-spacing: 1px;
 
