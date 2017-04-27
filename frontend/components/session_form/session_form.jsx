@@ -44,7 +44,6 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-    // debugger
     e.preventDefault();
     const user = this.state;
     this.props.processForm(user).then(() => this.redirectIfSignedIn());

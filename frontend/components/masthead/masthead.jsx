@@ -30,7 +30,6 @@ const userInfo = (currentUser, signOut) => {
 };
 
 const Masthead = ({ currentUser, signOut, path }) => {
-  // debugger
   let render = currentUser ? userInfo(currentUser, signOut) : sessionLinks();
   if (path === '/login' || path ==='/signup') {
     render = <div></div>;

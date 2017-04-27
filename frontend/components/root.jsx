@@ -17,6 +17,9 @@ import PathFormContainer from './home/paths/paths_form/path_form_container';
 import PathIndexContainer from './home/paths/paths_index/path_index_container';
 import PathShowContainer from './home/paths/path_show/path_show_container';
 
+// dashboard
+import DashboardContainer from './home/dashboard/dashboard_container';
+
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
@@ -62,7 +65,7 @@ const Root = ({ store }) => {
 
             <Route
               path='user_dashboard'
-              component={ Home } />
+              component={ DashboardContainer } />
 
             <Route path='paths' component={ PathsMain }>
               <IndexRedirect to='all' />

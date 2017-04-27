@@ -2,7 +2,6 @@ class Api::FriendshipsController < ApplicationController
 
   def create
     @friendship = current_user.friendships.new(friendship_params)
-    @friendship.status = 'pending'
 
     if @friendship.save
       render :show
@@ -13,7 +12,7 @@ class Api::FriendshipsController < ApplicationController
 
   def update
     @friendship = Friendship.find(params[:id])
-    @friendship.status = 'confirmed'
+    @friendship.status = 1
 
     if @friendship.save
       render :show
