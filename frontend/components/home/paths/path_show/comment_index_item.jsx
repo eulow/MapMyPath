@@ -1,8 +1,7 @@
 import React from 'react';
 import { FormattedRelative } from 'react-intl';
 
-const CommentIndexItem= ({ comment, deleteComment }) => {
-
+const CommentIndexItem = ({ comment, deleteComment }) => {
   return (
     <li className='comment-container'>
       <img className='avatar' src={ comment.author.img_url } />

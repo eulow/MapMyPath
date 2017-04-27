@@ -1,14 +1,29 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
-import Comments from './comments';
 import { convertSecondsToTime } from '../../../../util/math_calculations';
+import Comments from './comments';
+import PathUpdateForm from './path_update_form';
 
+import Modal from 'react-modal';
 
 class PathShow extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      modalIsOpen: true
+    };
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+
     this.createMap = this.createMap.bind(this);
+  }
+
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+  closeModal() {
+    this.setState({modalIsOpen: false});
   }
 
   componentDidMount () {
@@ -76,7 +91,8 @@ class PathShow extends React.Component {
         comments,
         deleteComment,
         createComment,
-        errors
+        errors,
+        updatePath
       } = this.props;
 
       const duration = () => {
@@ -107,8 +123,8 @@ class PathShow extends React.Component {
       return (
         <div className='path-show-body'>
           <div className='path-content'>
-            <header>
-              <h2>
+            <header >
+              <h2 className='path-show-header'>
                 { path.name }
               </h2>
             </header>
@@ -160,6 +176,11 @@ class PathShow extends React.Component {
                   () => hashHistory.push('/home/paths/new')
                 }>create a path
               </button>
+              <button
+                className='blue-button'
+                onClick={() => this.openModal()
+                }>did this path
+              </button>
               <button onClick={
                   () => this.props.deletePath(path.id)
                 }>Delete this path
@@ -174,6 +195,19 @@ class PathShow extends React.Component {
               pathId={path.id}
             />
           </section>
+          <Modal
+            isOpen={this.state.modalIsOpen}
+            overlayClassName='path-update-overlay'
+            className='path-update-content'
+            contentLabel="Update Modal"
+            >
+            <PathUpdateForm
+              path={path}
+              updatePath={updatePath}
+              closeModal={this.closeModal}
+              />
+          </Modal>
+
         </div>
       );
     } else {
@@ -181,6 +215,5 @@ class PathShow extends React.Component {
     }
   }
 }
-
 
 export default PathShow;

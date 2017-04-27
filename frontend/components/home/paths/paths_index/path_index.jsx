@@ -15,8 +15,8 @@ class PathIndex extends React.Component {
   render () {
     return (
       <div className='paths-index'>
-        <header>
-          <h2>My Paths</h2>
+        <header >
+          <h2 className='path-index-header'>My Paths</h2>
           <Link
             to={'/home/paths/new'}
             className='create-button'

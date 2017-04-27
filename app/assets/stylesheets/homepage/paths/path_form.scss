@@ -1,5 +1,5 @@
 .create-path {
-  color: #444444;
+  // color: #444444;
 
   header {
     display: flex;
@@ -28,7 +28,7 @@
         to(#0074bc))
       }
     }
-    h2 {
+    .path-form-header {
       margin-left: 5px;
       font-weight: lighter;
     }

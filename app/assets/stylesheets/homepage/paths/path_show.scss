@@ -11,11 +11,12 @@
 
   header {
     text-transform: uppercase;
-    padding-bottom: 20px;
+    margin-top: 8px;
+    padding-bottom: 27px;
     border-bottom: 1px solid #d1d0cf;
     letter-spacing: 1px;
 
-    h2 {
+    .path-show-header {
       margin-left: 5px;
       font-weight: lighter;
     }
@@ -41,7 +42,7 @@
       }
 
       p {
-        color: #434343;
+        color: #616060;
         font-size: 16px;
         padding: 3px 0;
       }
@@ -154,6 +155,19 @@
           }
         }
       }
+
+      .blue-button {
+        background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#4499db),
+        to(#177ed7));
+        &:hover {
+          background: -webkit-gradient(
+          linear, left top, left bottom,
+          from(#3f92c6),
+          to(#0074bc))
+        }
+      }
     }
 
     .comments-box {
@@ -179,7 +193,7 @@
 
       ul {
         display: block;
-        // margin-top: 10px;
+        color: #616060;
 
         .comment-container {
           display: flex;
@@ -237,7 +251,6 @@
           border: 1px solid #c8c7cc;
           padding: 8px;
           font-size: 12px;
-          // width: 80%;
 
           border-radius: 3px;
           transition: .2s;

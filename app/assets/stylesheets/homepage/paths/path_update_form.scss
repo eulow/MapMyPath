@@ -1,0 +1,145 @@
+.path-update-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(99, 99, 99, 0.8);
+  z-index: 3;
+
+}
+
+.path-update-content {
+  box-shadow: 0px 0px 8px 1px rgba(0,0,0,1);
+  position: absolute;
+  width: 275px;
+  height: 400px;
+  top: 15%;
+  left: 40%;
+  right: 50%;
+  bottom: 50%;
+  background-color: #fff;
+
+  .path-update-form {
+    width: 240px;
+    height: 400px;
+    margin: auto;
+
+    form {
+      margin-top: 25px;
+
+      div {
+        margin: 10px 0;
+      }
+      .duration-container {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #d1d0cf;
+      }
+    }
+
+    h3 {
+      font-size: 26px;
+      padding: 25px 0;
+      border-bottom: 1px solid #d1d0cf;
+      color: #444444;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      color: #8c8c8c;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    input[type='date'] {
+      color: #108cc9;
+      padding: 3px 0;
+      font-size: 13px;
+      transition: .2s;
+      border: 1px solid #c3c2c2;
+      border-radius: 3px;
+      // width: 60px;
+      &:focus {
+        box-shadow: 0px 0px 4px 1px rgba(64,128,255,1);
+        background: #fff;
+      }
+    }
+
+    input[type='text'] {
+      border: 1px solid #c3c2c2;
+      border-radius: 3px;
+      font-size: 12px;
+      padding: 5px;
+    }
+
+    input[type='tel'] {
+      margin: 2px;
+      border: 1px solid #c3c2c2;
+      padding: 5px;
+      font-size: 12px;
+      width: 25px;
+      border-radius: 3px;
+      transition: .2s;
+      &:focus {
+        box-shadow: 0px 0px 4px 1px rgba(64,128,255,1);
+        background: #fff;
+      }
+    }
+
+
+    input[name='hours'] {
+      margin-left: 0;
+    }
+
+    .path-update-form-buttons {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;;
+      // border: 1px solid black;
+
+      input[type='submit'] {
+        background: -webkit-gradient(
+          linear, left top, left bottom,
+          from(#b6b6b6),
+          to(#a9a6a6));
+        text-align: center;
+        color: #fff;
+        height: 20px;
+        cursor: pointer;
+        text-transform: uppercase;
+        padding: 5px 10px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        border-radius: 5px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+
+        &:hover {
+          background: -webkit-gradient(
+          linear, left top, left bottom,
+          from(#878585),
+          to(#5e5e5e));
+        }
+      }
+
+      p {
+        font-size: 12px;
+        font-weight: lighter;
+        padding: 0 10px;
+      }
+
+
+      .cancel-button {
+        text-align: center;
+        font-size: 12px;
+        color: #0076c0;
+        cursor: pointer;
+      }
+
+    }
+  }
+}

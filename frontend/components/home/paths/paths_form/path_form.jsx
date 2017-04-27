@@ -77,8 +77,8 @@ class PathForm extends React.Component {
   render () {
     return (
       <div className='create-path'>
-        <header>
-          <h2>Create a Path</h2>
+        <header >
+          <h2 className='path-form-header'>Create a Path</h2>
           <Link to={'/home/paths/all'} className='back-button'>Back to all paths</Link>
         </header>
         <div className='path-main'>

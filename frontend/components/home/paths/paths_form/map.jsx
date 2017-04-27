@@ -164,8 +164,8 @@ class Map extends React.Component {
             <div id="loading"></div>
             <p>Please wait</p>
           </div>
-
         </Modal>
+
         <div className="map-buttons">
           <button onClick={this.undoMap}>Undo</button>
           <button onClick={this.clearMap}>Clear</button>

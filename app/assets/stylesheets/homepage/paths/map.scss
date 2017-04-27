@@ -40,21 +40,21 @@
   }
 }
 
-.ReactModal__Body--open {
-  overflow: hidden;
-}
+// .ReactModal__Body--open {
+//   overflow: hidden;
+// }
 
 .map-modal-overlay {
   position: fixed;
-  top: 0px;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   background-color: #dddddd;
   z-index: 3;
   opacity: .9;
-
 }
+
 .map-modal-content {
   border: 1px solid black;
   position: absolute;
