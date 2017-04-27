@@ -204,13 +204,14 @@
             margin-left: 5px;
             display: flex;
             flex-direction: column;
-            font-size: 12px;
+            font-size: 11px;
             width: 100%;
 
             .user-info {
               display: flex;
               justify-content: space-between;
               margin-bottom: 5px;
+              // overflow: hidden;
 
               p {
                 font-weight: 600;
@@ -221,6 +222,7 @@
                 font-size: 10px;
 
                 button {
+                  font-size: 10px;
                   margin: auto;
                   color: #0076c0;
                   cursor: pointer;
