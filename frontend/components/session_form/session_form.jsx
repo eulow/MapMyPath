@@ -44,6 +44,7 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
+    // debugger
     e.preventDefault();
     const user = this.state;
     this.props.processForm(user).then(() => this.redirectIfSignedIn());
@@ -109,9 +110,9 @@ class SessionForm extends React.Component {
       return (
         <form className="auth-form" onSubmit={this.handleSubmit}>
           {this.renderToggle('signup')}
-          <button className="guest-login" onClick={this.loginGuest}>
+          <div className="guest-login" onClick={this.loginGuest}>
             Log in as guest
-          </button>
+          </div>
 
           <div className="or-bar">
             <span className="bar" />
@@ -168,9 +169,9 @@ class SessionForm extends React.Component {
       return (
         <form className="auth-form" onSubmit={this.handleSubmit}>
           {this.renderToggle('login')}
-          <button className="guest-login" onClick={this.loginGuest}>
+          <div className="guest-login" onClick={this.loginGuest}>
             Log in as guest
-          </button>
+          </div>
           <div className="or-bar">
             <span className="bar" />
               <span className="or">OR</span>
