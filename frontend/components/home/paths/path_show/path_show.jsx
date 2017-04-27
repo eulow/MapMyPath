@@ -174,7 +174,7 @@ class PathShow extends React.Component {
               </button>
               <button onClick={
                   () => hashHistory.push('/home/paths/new')
-                }>create a path
+                }>create path
               </button>
               <button
                 className='blue-button'
@@ -207,7 +207,6 @@ class PathShow extends React.Component {
               closeModal={this.closeModal}
               />
           </Modal>
-
         </div>
       );
     } else {

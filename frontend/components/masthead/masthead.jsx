@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
+
 
 const sessionLinks = () => (
   <nav className="login-signup">
@@ -12,6 +13,7 @@ const userInfo = (currentUser, signOut) => {
   function signOutMethod(e) {
     e.preventDefault();
     signOut();
+    hashHistory.push('/');
   }
 
   return (
