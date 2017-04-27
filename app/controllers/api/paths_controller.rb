@@ -7,8 +7,7 @@ class Api::PathsController < ApplicationController
   end
 
   def create
-    @path = Path.new(path_params)
-    @path.user_id = current_user.id
+    @path = current_user.paths.new(path_params)
 
     if @path.save
       render :show

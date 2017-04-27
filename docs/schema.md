@@ -29,25 +29,16 @@
 | created_at    | timestamp    | not null |
 | updated_at    | timestamp    | not null |
 
-## friends
+## friendships
 
 | column name   | data type | details |
 | ------------- | ----------| ------------- |
 | id            | integer   | not null, primary key |
 | user_id       | integer   | not null, foreign key |
 | friend_id     | integer   | not null, foreign key |
+| status        | string    | not null |
 | created_at    | timestamp | not null |
 | updated_at    | timestamp | not null |
-
-## friend_requests
-
-| column name  | data type | details |
-| ------------ | --------- | ------------- |
-| id           | integer   | not null, primary key |
-| user_id      | integer   | not null, foreign key |
-| requester_id | integer   | not null, foreign key |
-| created_at   | timestamp | not null |
-| updated_at   | timestamp | not null |
 
 ## comments
 
