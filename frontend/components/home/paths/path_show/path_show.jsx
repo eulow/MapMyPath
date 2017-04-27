@@ -11,7 +11,7 @@ class PathShow extends React.Component {
     super(props);
 
     this.state = {
-      modalIsOpen: true
+      modalIsOpen: false
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
