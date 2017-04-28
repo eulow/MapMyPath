@@ -203,6 +203,7 @@ p13 = Path.create!(
 p14 = Path.create!(
   user_id: u3.id,
   distance: 89.04,
+  done: true,
   start_address: "Unnamed Road, Bass Lake, CA 93604, USA",
   end_address: "Glass Flow Rd, June Lake, CA 93529, USA",
   name: "Yosemite",
@@ -210,12 +211,53 @@ p14 = Path.create!(
 )
 
 p15 = Path.create!(
+  user_id: u4.id,
+  name: "Prospect Park Hip Trot",
+  distance: 0.23,
+  polyline:
+  "cgdwF|pnbMt@f@d@`@RXd@nAJZBb@OfBy@v@a@n@Yt@Uj@IIAAC?m@d@_@JULMRa@dBg@xBs@K@u@I{@Y_AKg@Eg@EgAE[K[i@sAMi@W_AOa@UYUWOKUGm@?g@CYIIMSKVSLSFe@Vw@Vg@BY?YWm@Q[SSSGe@FaAPWEYKi@WWIGQu@J}@F}@@w@Iq@Qg@SaA}@WOWGeA@w@DPs@JYTa@h@o@GoAMgA?YD]LWTWHGh@MXEn@E`A?JBXWZYT[x@uBBOPN^^TTBA\\QXIb@@n@PdA`@CMSwACU?m@Fe@BM~AUTGPIJG@BPTPLLDAZGdA?`@F^Nn@DJ@AJBJ?ZM^[TSDAD?BXFb@JVNVVVb@VM`@ENA^?^Lp@Jv@Fn@?h@Ep@St@IRALBXV~@FDPLNR`@|@Pb@^f@\\^dBz@FD",
+  start_address: "Center Dr, Brooklyn, NY 11225, USA",
+  end_address: "Bridle Trail, Brooklyn, NY 11215, USA",
+  done: true
+)
+
+p16 = Path.create!(
+  user_id: u5.id,
+  name: "The Beauty of India",
+  distance: 1.23,
+  polyline:
+  "uo{dDard{MREH?NFDDBLADbA|Ah@dAVd@n@t@fAv@dAh@bAb@fA^bG`BvA\\tBXn@RvA`@f@T\\Nd@Xz@j@tAhAdBnB`BbC~AvBlCpDBAD?HH?@|JvA~AT~CTj@@z@FhB@^CnCa@hAGXAzAJ?@A@?@?@?BBDDBJADKAEACDmAn@aO@??C@EAAHaAr@{M@ABC?IAED{@fAwLB?BCBI?KCCAAjAsKLgBt@sJV_CbAiH@?@?@A@C@EAE?Az@wFjC_PHCHIBK?KEKECAAT{A\\aF?aCKsBSuBs@_Gc@uD_@wCYgAYk@uAcB_@_AKe@Ci@Fm@f@aBHs@@]@w@Am@KcB?_@Fu@Jo@Hu@LMbAuAbByClBeEt@}AtAqC`AwBrBaE~AcDx@kBTq@`@qBLsBJcEBoIAuJ?mBIqDe@mIOeCUiCKwB]mGIYQaCMkBSwE?}AF_BP}AZkB\\iAb@oAx@v@y@w@]TKHcAvAcPtRs@`AwBlC_C|CkCzDsCtDoFbHkD`F{CrEsA~Bs@vAu@lAmBzCaC|DyAlCqApD}@|C]xAg@rBGPMz@CdAAbGG?B`IoA??[?ZfEAlEEBB@NFBb@XDPBNJX@NDXPh@BZGdHDHdBh@ZFIR_@dAOl@?LBFBBjA`@r@LFLF~@BNEh@?HBNBPNnAHD\\LU|@AAC?G@EBIJCNBNBDBBUh@m@|@u@bA_BhBwC|Bi@n@g@v@cBrCaE|GcAxB}AfE]x@Qv@OjBGbB@~AAf@G`@_@rAmA~C[t@_@t@c@f@q@f@kAv@o@ZG?OFc@PYFc@EEsASkCGu@E?I?CAoC~AwD|Bk@Z}@VsBj@wBp@eBd@gCn@}Ab@kAV_Fb@sAHqGPQ?Hv@FfBBtC@rADr@T`BX|@fAjBdA|AzC`FdArAlBWpAyAPMPCFABEB}AhBA@c@DWIwI?Qh@A",
+  start_address: "Bijali Ghar Crossing, Agra Fort, Rakabganj, Agra, Uttar Pradesh 282003, India",
+  end_address: "The Mall Rd, Agra Cantt, Rakabganj, Agra, Uttar Pradesh 282001, India",
+)
+
+p17 = Path.create!(
+  user_id: u4.id,
+  name: "PokeHunt",
+  distance: 0.03,
+  polyline: "urp~Cly`iNBKDCH?RFd@Bp@Kr@DfAJNA`@OVAL?JFHJ@HAb@Bb@T`B@\\ORKT?\\Zf@BPAFAJQFQCUYMIO?W?QGEK?MDcAAOKEQ?O@W?S?]_@GCMEg@MMMCOE_@CYMW]a@",
+  start_address: "Deicke Park Trail, Plantation, FL 33322, USA",
+  end_address: "Deicke Park Trail, Plantation, FL 33322, USA",
+)
+
+p18 = Path.create!(
+  user_id: u5.id,
+  name: "Easter Island Trek",
+  distance: 3.56,
+  polyline: "|_kdDhn}ySwGx@gBd@o@jAQjC|@dDjBdFd@jFd@hEDvEmAxJmA|BuB|@mFbBkBpAmBxGaB~BoChFs@fDKxFzDtMvBxELdAYvNCzG`@zDx@nIt@lGWtAiAZgB?{Cz@sJfHkAbBe@xAPzCy@pBeBhByBv@{C\\wCzDcJlNyD|GmCvIuCtGwD~FyDdGe@rBK`DLtA`CBlR}DxIuDvAUlPnGvHrDnElCjXfPlInFrJxB|GlDpEfF|AhDvArMpElWhClHhC|EdE~H`BnBfGrEp[zR`I|FbG|CpI`G|AxAdFxIzGtPbK|W|@pEp@pClEtJf@l@n@DdF_Cf@KnAJfAp@p@vArAnAz@ArCe@lKpA`Cp@xMfJ|FjDfKlDbKtDfIjBvNnDnC`AlBjBdIjNdC|CjAxB|GvUtIb\\xEhNxE~P`CpGjCvC|BdEnB|IlBnKbHvXzJh[zG~SdFvQ`^|pA]dCaCtG}Bg@|Bf@qErMyBhGwDrK}Lp]kE~LTk@kD}A{@]uF{B_KsEoNkNmI}IvA{F`BqGmBcADuAL}FUsDY_DpBmROw@uCyBiLqJ{AkEeAcAuFwAgAm@iCuDcFu@wJuBcCCqAe@kAiCsAyB}AkHy@aGkAiEaCoDmGwDoNsMqK}FqI_CpI~BpK|FpGnGj@l@TU|@kAPy@EwB^cY@{Eg@i@uBcDDeCUQyIyAL{Bx@gJ|H{A`UyD`JuAtEuAhKyDtAAlEf@lGtB`Cd@|FbDhATzBKxBIzEdAnErAjAMpEkAmBoKoB}I}BeEkCwCaCqGyE_QyEiNcBiGqFySvJFhTDjCBtG}AB]_Tsf@u@qBl@[bM}@xa@gDtL_A`A_@tCe@zNeBbHiAiBqDkA{B]iABySw@aCcC}K_BmIa@sC_DoKeEaHkDsHwGcEuAgAsDiFeImNoBuD{C_C}BkAoBc@cC{@iAi@yC_@o@Ik@oBIOYc@gDwKcAiAm@{Ae@qCiBy@cBGyAPcAmOSsCs@sCaF{IaCcFcJuNyHwR}BkIu@wH{AyC{EmGeAaFgBe^j@sEMmDaAyB]uDG_F|JaM`D_Nf@sDa@uDsCoGy@cA{A]gDzAqCfAmBY}BmCWqCxHeO|R_UZeCMaBy@iBsBqDWoBHmGKyBaAwDmCkJkAcByIwDmB_A_B_Cu@kCsAmDmCgCiIuEsEuH_DmEqHsBw@H_AhAsFdLoBxB{DhBw@Ly@Uy@o@WqASgDiBaKa@eGcB}F[[_BX_ExBgHbBqEnAmGrCmLzAqOfD_JG}Ge@}LcBgNmBeNoBmUeDsM_B",
+  start_address: "Unnamed Road, Isla de Pascua, Región de Valparaíso...",
+  end_address: "Camino Vaitea Anakena, Isla de Pascua, Región de Valparaíso, Chile",
+)
+
+p19 = Path.create!(
   user_id: u1.id,
-  distance: 89.04,
-  start_address: "Unnamed Road, Bass Lake, CA 93604, USA",
-  end_address: "Glass Flow Rd, June Lake, CA 93529, USA",
-  name: "Yosemite",
-  polyline: "yeycFb{sxUoUv_@er@r[cZxl@ntLkEt\\xO~ZhMuMbPkD~s@f^rcAxDbiAzr@lk@pTpeAmExw@pMbd@{z@}IkcAuJwb@oDwMlW_SrDwT_Vg]_e@{Teh@iq@po@wLv`Bgb@lgBcd@a_Aoc@u|@u`@e}@sv@gOgRcuArJil@{q@ioA{SilAoo@nMyk@_qBbIkjByZu`@on@sCkM{q@kIk~@a`Dc\\}iBmIe|@wcB_eAxbAU`i@}o@|hBe{@paA{KdF}I_@klBnI_b@cQo[{]wh@cz@eYc[wn@{fAw\\eKgJ{XqBklAin@auAkYgQgMiz@kB{d@sXaaA}~@}r@qi@eVyo@}b@m]{Mop@yKmhAmO_{@cbA{uBua@cy@nPwZ}TmXq^{t@ecBi_@in@`Fo~Am\\ksA_TeaDtN}wFeJyiAihAksAo~Cwf@uz@y@gq@eo@gWvAuIkd@jQum@mOm^i}@yb@{QnDbKcj@VseApNokBvlBk`Cwz@gxGi_@_tAdd@eh@dkAua@zpI}_AjwCs}@hjBk|@tnBouAvz@woA~o@aHjo@ch@~xAua@xJio@uMgh@~Pe[tm@k|@xVcf@flAeeAf{CazBh}Bc~@vb@v[j_AiFrjAaQ|q@a@dc@uXbJpS~m@zr@`Zva@oH|hB|^zv@zq@vc@neA~u@rhB}c@_d@fkBDlXbEn\\cMxeA|Mn~BoJ|\\dDzeAs~AtQaTtVa`@{Kug@}Z_fAsEkl@}FaaAjUax@pb@_PlEyCmCqTju@qqB`yBo]ji@qfBppCsHh`Cd@ni@aP`oCkm@bx@ac@prAahAzlAad@j}AdU`^}Nx_@mOvMlHfd@_k@aIuj@|]geAfF}o@u@ekBnq@yn@z_@kZfRxy@vj@v{@vp@qUpIaS~ZmCrKh]d}@_Blj@xQhaAhuBf{DxnBrvDbz@gB~dBuQjY`t@rKd`AwNzm@|Hh|@og@juAd[r}@fZ`c@gVhg@{`@jVtAtf@wChPvy@jl@h^b}AkNptAxRpsAzNpm@vg@zd@j\\nr@`bA`h@|gBgSpMcE~WkJrg@alAth@}r@_Gif@xZoeApg@y^r\\nKvVhx@d`@bg@tfBFz|Cd^TjfAlZ|p@bm@[fV|z@cMfeB~d@bgBhw@yUx`@pcBha@|`AcIhh@jJbf@pIxb@bp@bShp@j|Ahp@fgAnMfNbRu`A~Uky@l[ytBpZcCbBfV|a@rO|a@t|@la@i\\hsCj^w@ui@xDa|@k[geAoq@uf@XslAi_@whAoFqYhRqOnDwNs\\cQae@qT~nAodA|TsW",
+  polyline: "y||_GuckiAe@k@?sCTO~AoFdCkHHOTFfIlFbBhAFe@\\iDv@eIRiDXuD|@eFdBuGp@sBv@aH~@n@jKlHx@@zCc@jBA~BlAnGnEVA`GyPhGsL|BiDbCcFtFkOvF_R`EaOdAyERc@pByDjAcCVoAzA_JnBsPN}Aj@QEc@Ei@|A{QBaAHk@Ik@KkCSuHk@qCD_CPyD?oH`@}GRgFCuDPaIv@qDRmBZyM@sD_@gCcBiGU_Ce@wBoC}FsCqCkBo@uBw@q@wAsBsD[cBHwBc@mFAaCr@aHL{BMu@iCkRo@gCQeBgAsDiDqOe@gMFsCHaDQWeAsAi@i@sAcAwBqBkDwEeAaA}AcAmDuFqA}@qFm@iKeFiEyAuCuBeFeEcA}@U_@g@n@Ka@s@kB}@uBu@wCYiDJyDM_CuDaXa@_Aw@i@gB?qHhAZ[lBqJx@oDNs@Or@y@nDUlAqApGGREDeE~@aDVeB_AgBUwKUaCfBqJrDgEd@eJ{AcAe@uBuCyDsCyAm@aA_@s@@iCx@e@Ce@[wFkFaDmAoSqDaIk@mIu@gJ_B}BKwIEcAMaQ{C{Ae@}IsAcB{@aDkBiBs@iAaA_AwAcAoBqAk@aLmB?L@LnAh@TTBh@U|BT}B@UM_@uAg@IYGOy@AaBxAoDbHm@z@iCfB_SbMkEvCeBfBc@^eDj@_G\\iF\\wDhEuDbFgApFwI|a@mApIYdEMhGm@vJu@dEuAdDuBrC}A\\wCNyClB_B~A}BzBq@AmEoBeMkHqE{@iCEeDlAkJzGoB|DuClJu@vFD~Al@jDMrFY~GRpD|@hBhIrC~AlArB~B|DtDtCnCfEvBjEfAfBRlB~@tBdARZNp@GlBsB`HaAHm@AeAVkH|PuBxF_CbHi@xCmAvEw@dBuDjEwAnCyA`C_A|@u@vA}@fGG`BkArDYvDDbFQvCyAvMIvGa@bJUzDLfDjAjRf@xBPv@m@f@n@YDR\\`EvDhe@`@`AvRnOdAJx@d@t@`HRbAhCpEvBfItA|@lGbC`DZ~AxAlJpSbL`[bEtIdA~@hBl@vF~CnKzCrGbIlEtBvClCzBxAhAVpBDt@Ej@[vAcCd@E~@fArB~K`@|GTjCjIlMnApBpGnNp@|Ao@`AQNg@Ga@HiDhChDiCNIf@Fb@On@aAdJjSdF~KfAn@`If@zFNxFUvBWjc@iPd@M|ACb@MlCDxSl@zCH`CYvCkAdHqGdBeChd@o}@jBaDbAk@~FsBt@}@jIkPxJqMOfGm@pDBlEnAvB\\|@RxBRz@bB~BdBfClEfE",
+  name: "Lago di Bracciano Scenic Trot",
+  distance: 0.26,
+  start_address: "Traversa Quarto del Lago, 00062 Bracciano RM, Ital...",
+  end_address: "Traversa Quarto del Lago, 00062 Bracciano RM, Ital...",
+  done: true,
+  duration: 567
 )
 
 # comments
@@ -286,6 +328,30 @@ Comment.create!(author: u3, path: p15, body: Faker::Hacker.say_something_smart)
 Comment.create!(author: u4, path: p15, body: Faker::Friends.quote)
 Comment.create!(author: u5, path: p15, body: Faker::StarWars.wookie_sentence)
 Comment.create!(author: u6, path: p15, body: Faker::TwinPeaks.quote)
+Comment.create!(author: u1, path: p16, body: Faker::Hipster.sentence)
+Comment.create!(author: u2, path: p16, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u3, path: p16, body: Faker::Hacker.say_something_smart)
+Comment.create!(author: u4, path: p16, body: Faker::Friends.quote)
+Comment.create!(author: u5, path: p16, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u6, path: p16, body: Faker::TwinPeaks.quote)
+Comment.create!(author: u1, path: p17, body: Faker::Hipster.sentence)
+Comment.create!(author: u2, path: p17, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u3, path: p17, body: Faker::Hacker.say_something_smart)
+Comment.create!(author: u4, path: p17, body: Faker::Friends.quote)
+Comment.create!(author: u7, path: p17, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u6, path: p17, body: Faker::TwinPeaks.quote)
+Comment.create!(author: u1, path: p18, body: Faker::Hipster.sentence)
+Comment.create!(author: u2, path: p18, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u3, path: p18, body: Faker::Hacker.say_something_smart)
+Comment.create!(author: u4, path: p18, body: Faker::Friends.quote)
+Comment.create!(author: u8, path: p18, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u6, path: p18, body: Faker::TwinPeaks.quote)
+Comment.create!(author: u1, path: p19, body: Faker::Hipster.sentence)
+Comment.create!(author: u2, path: p19, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u3, path: p19, body: Faker::Hacker.say_something_smart)
+Comment.create!(author: u4, path: p19, body: Faker::Friends.quote)
+Comment.create!(author: u9, path: p19, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u6, path: p19, body: Faker::TwinPeaks.quote)
 
 # relationship
 
@@ -301,9 +367,3 @@ Relationship.create!(user_one_id: u1.id, user_two_id: u12.id, status: 0, action_
 Relationship.create!(user_one_id: u1.id, user_two_id: u11.id, status: 0, action_user_id: u11.id)
 Relationship.create!(user_one_id: u1.id, user_two_id: u10.id, status: 0, action_user_id: u10.id)
 Relationship.create!(user_one_id: u1.id, user_two_id: u9.id, status: 0, action_user_id: u9.id)
-
-
-#  user_one_id    :integer          not null
-#  user_two_id    :integer          not null
-#  status         :integer          not null
-#  action_user_id :integer          not null
