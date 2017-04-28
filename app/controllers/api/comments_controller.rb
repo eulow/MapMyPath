@@ -9,6 +9,7 @@ class Api::CommentsController < ApplicationController
   def create
     @comment = current_user.comments.new(comment_params)
     @comment.author_id = current_user.id
+    # debugger
 
     if @comment.save
       render :show

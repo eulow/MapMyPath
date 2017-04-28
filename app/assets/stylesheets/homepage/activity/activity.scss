@@ -1,0 +1,122 @@
+.activities {
+  display: flex;
+  color: #444444;
+
+  .activities-body {
+
+
+    header {
+      margin-top: 8px;
+      padding-bottom: 27px;
+      border-bottom: 1px solid #d1d0cf;
+
+      h2 {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: lighter;
+        margin-left: 5px;
+        font-weight: lighter;
+      }
+    }
+  }
+
+  li {
+    display: flex;
+    margin-top: 30px;
+
+    .avatar {
+      width: 65px;
+      height: 60px;
+      background: #fff;
+      border: 1px solid #cdcdcd;
+    }
+
+    .activity-body {
+      width: 575px;
+      margin-left: 20px;
+      border: 1px solid #cdcdcd;
+      font-weight: lighter;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+
+      span {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 18px;
+        background: #fff;
+
+        p {
+          letter-spacing: .6px;
+          font-size: 14px;
+          font-weight: lighter;
+        }
+        .fa-activity {
+          color: #e6e6e6;
+        }
+      }
+
+      a {
+        display: flex;
+        justify-content: space-between;
+        background: #f8f8f8;
+        border-top: 1px solid #cdcdcd;
+        border-bottom: 1px solid #cdcdcd;
+
+        div:first-child{
+          border-right: 1px solid #cdcdcd;
+        }
+
+        img {
+          display: block;
+        }
+
+        .activity-details {
+          width: 100%;
+          text-align: center;
+          margin: auto;
+          padding: 26px 0;
+        }
+
+        .fa-road {
+          color: #07b1c1;
+          font-size: 25px;
+        }
+
+        p {
+          text-transform: uppercase;
+          font-size: 14px;
+          margin-top: 10px;
+          color: #a7a7a7;
+        }
+
+        .distance {
+          font-size: 24px;
+          color: #666666;
+        }
+      }
+
+      .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        color: #9d9d9d;
+        font-size: 10px;
+        height: 35px;
+        background: #f8f8f8;
+
+        span {
+          margin: 0;
+          padding:10px;
+          background: #f8f8f8;
+        }
+
+        .fa-user-o {
+          padding-right: 10px;
+          border-right: 1px solid #9d9d9d;
+        }
+
+      }
+    }
+
+  }
+}

@@ -62,7 +62,7 @@ class PathUpdateForm extends React.Component {
             <label>When did you do this run?</label>
             <input
               type='date'
-              value={this.state.done_date}
+              // value={this.state.done_date}
               onChange={this.update('done_date')}/>
           </div>
           <div>

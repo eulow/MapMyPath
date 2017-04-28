@@ -22,7 +22,7 @@ class Comments extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const comment = Object.assign({}, this.state, { path_id: this.props.pathId });
+    const comment = Object.assign({}, this.state, { path_id: this.props.path.id });
     this.setState(
       { body: "" }
     );

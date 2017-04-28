@@ -1,4 +1,4 @@
-json.extract! path, :id, :name, :polyline, :distance, :start_address, :end_address, :description, :duration, :done, :done_date, :created_at
+json.extract! path, :id, :name, :polyline, :distance, :start_address, :end_address, :description, :duration, :done, :done_date, :created_at, :updated_at
 
 json.set! :user do
   json.id path.user.id

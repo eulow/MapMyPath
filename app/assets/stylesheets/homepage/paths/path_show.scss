@@ -220,6 +220,9 @@
               p {
                 font-weight: 600;
                 color: #2f98d9;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
               }
 
               .comment-right {

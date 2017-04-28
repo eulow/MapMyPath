@@ -9,10 +9,11 @@
 User.destroy_all
 Path.destroy_all
 Comment.destroy_all
+Relationship.destroy_all
 
 # Users
 
-u1 = User.create!(email: 'Guest', password: 'Password', first_name: 'Bill', last_name: 'gates')
+u1 = User.create!(email: 'Guest', password: 'Password', first_name: 'Bill', last_name: 'Gates', img_url: Faker::Avatar.image)
 u2 = User.create!(email: 'low.eugene1@gmail.com', password: 'password', first_name: 'Eugene', last_name: 'Low', img_url: Faker::Avatar.image)
 u3 = User.create!(email: 'pg@gmail.com', password: 'password', first_name: 'Paul', last_name: 'George', img_url: Faker::Avatar.image)
 u4 = User.create!(email: 'lb@gmail.com', password: 'password', first_name: 'LeBron', last_name: 'James', img_url: Faker::Avatar.image)
@@ -151,6 +152,72 @@ p9 = Path.create!(
   polyline: "kqdxF}gtvA}Dc@e@vFIn@t@|F~B|G`@bIz\\uStFeGpHqSx@{@xGkCn[yJdFk@rGOdHuCbIyDzLqDpEeBrEwEhCoBz@u@n@f@\\Z\\L|AZdCxBnCNjAr@`@h@v@Ut@u@zAk@nC_@~AkAjEbEfJbJj@f@xBnB~@}AnE_GnCqDhGmIr@w@fCe@`DyAjE}DvCPx@RfAkC~AgEl@aBjAaE|D_NVm@jDaJxOec@vKkYzOwd@gUsHaIoCGkBrBaZwEgLgBcAyCZkI~@eCo@eByBcAsDi@iCj@aMfAcEbAkF_@}Cc@mBPgDl@_BNgAHq@w@m@fA_ETgA|@}EzAmI^wClCcLp@qGv@aFFe@\\_CsAgAmCaCIEkDu@iAGr@}OZyD`BqI^}LjBwJd@mEE}Mf@mJvB}YMwBGOAOH{CWeH{BcQmGkLqFuJ?aK?qTn@oLxDgPp@yNoLz@eADL~DEJ}CrAFExCsAKeEdIg@nDY?mAG{@EIqDuFmGuJsDaEgE{BuBkAcEoFiEuDyCqDo@oAsBwAgKgCi\\_EkDYsBZwHnDgHrDgCU{\\}IgMqCuGuCgAoAi@i@iEu@sJJiIBqF}AuB_B}HPgGBqG_CqEJaN{BsSkDgBCyF|@cGjAwPhB_KTmHzBwJ[gNeCgFo@eDaAoBZq@LkEjGaBhBAnDcBlF_AfFGfBt@J~@Lp@b@hJdIf@bAr@zHs@{Hg@cAiJeIq@c@_AMu@KKzACbCGp@g@dBg@hKgDh@kAh@Od@wAkBsLx@ABA@MTcA~A{EbB_G~AcEf@wJLqBt@sGfFgFlDwFbCyK`LiErJiCtLmAfD_BdHsCl[qG|q@cA~HiEnQXlLdEhPfInM`BlLCf^kGf]mJzYuD|Ku@zDHbS|@dO?hB^HvOpAnAt@F`@xASjB\\ClEZbCr@PgAMJnHMfFu@lD@vCCrLkBtJBlBXlAbC`@d@Db@rFRbB`Aj@`CdBl@x@PlBf@pEpAvAjAdAzD|GpFjKrCbHAzCHvD|A`BpB|@x@r@EbA~@hBp@|@d@`B`BdJzBvLOlEZpB`JvL~GrFdBhDh@|CtAvBbB`C`IjEPDFDtDWhBUbDg@l@TxBrGt@xBzAPvBOjAXjAt@x@sAtAgBh@w@rAxBj@_@JO^YXKbBhAhBjDj@h@f@x@|BhEbBfA`IxEpAl@|Bc@bFWzEmBxBmEpAaA|I_@pClBxGd@zAVRjCrAvJbAjFh@fDjB~ArG`Cv@R@hBj@|D`@jC_@~A^Tf@\\bCp@~@PVa@d@wF|Db@@?FkAlA}@rAP|BYC}@DK",
 )
 
+p10 = Path.create!(
+  user_id: u2.id,
+  name: "Super fun run",
+  polyline:
+   "}mtwFnhmaMHxRVnKHxDBvBK`Cm@fH{AhQ[bDQhBYbBk@dDUtAe@lCaE|PsDxOeAtEo@~DShAdE^UpEnC[zGs@nBUvH}@~Dg@j@GJIZQ\\?V?xKh@pGZHaEAKqAGCC?s@DkBBYh@?LIPAHBTEXGL@NHHRJBH@E}@UyEDMJCTAhDf@^eGP{CTcGTqE\\yHB_B@cB?[Q??MDEDEL_Gh@aAHK@aA@Kh@@BqAtDaACOE}@A_ABaBFwCTeDh@gETaCLmCJuGP?Au@FyD\\qUDsDpDHAuDiDIgLYeFQmJSqGQDuD?}@GeBSAUeACKE?BTB\\w@NEFDp@E@YsACAI?DXcCdAwCrAk@JYBiAEA|Bv@B^Fd@`@b@h@Th@Nj@@ReCI",
+  distance: 4.84,
+  start_address: "170-2 Booth Memorial Ave, Fresh Meadows, NY 11365, USA",
+  end_address: "172-0 Booth Memorial Ave, Fresh Meadows, NY 11365, USA",
+  duration: 1463,
+  done: true,
+  done_date: '04 Apr 2017',
+  description: "Beautiful day!"
+)
+
+p11 = Path.create!(
+  name: "ay",
+  polyline:
+   "}mtwFb}laMAdA?rFJjTVnKHxDBvBK`Cm@fH{AhQ[bDQhBzCn@dAV|AZ`Ch@rANjAFjAENEp@G`AKz@MA]B}@L_CHoB^kVJgKVoQ?}DDsDNgJXqUAcBE_ACOJKDG@CBS@_@?SbAc@rEyBbGqBpB?KgCCS",
+  distance: 2.38,
+  start_address: "172-1 Booth Memorial Ave, Fresh Meadows, NY 11365, USA",
+  end_address: "178-33-178-99 67th Ave, Fresh Meadows, NY 11365, USA",
+  duration: 0,
+  done: false,
+  done_date: nil,
+  user_id: u2.id
+)
+
+p12 = Path.create!(
+  name: "adasDAS",
+  polyline:
+   "iitwFbcmaMRzCBv@G\\A^@XGfAE~E]Kg@Ay@FO@@|@@vCVnKHxDBvBCbAfHPM~J[rVGfDDRDHrANjAFjAERHf@?j@ETCbAKA^Ij@k@bCx@`@RHk@`CyDrPcBfH|G{Yj@aCSIF]LIZOIi@A]Fe@LYPUBAEi@lEi@`AE|FHrCDn@B?[J{J?a@?KX?Py@FEfBBV?bAS|DeAEi@EuBD_DNeDVeC`@cD\\uELuHP??U?mALaIZoULiJdEJ`DHfAC|IaAjPiBf@MvAg@{@iDTIBCNJJHB?n@YfAi@VS@BJFx@FX@HBBKVw@f@iAA[CY?MXaAlBbBFD\\C",
+  distance: 3.92,
+  start_address: "1702 Booth Memorial Ave, Fresh Meadows, NY 11365, USA",
+  end_address: "8000 Utopia Pkwy, Jamaica, NY 11439, USA",
+  duration: 9240,
+  done: true,
+  user_id: u3.id
+);
+
+p13 = Path.create!(
+  user_id: u3.id,
+  polyline: "y||_GuckiAe@k@?sCTO~AoFdCkHHOTFfIlFbBhAFe@\\iDv@eIRiDXuD|@eFdBuGp@sBv@aH~@n@jKlHx@@zCc@jBA~BlAnGnEVA`GyPhGsL|BiDbCcFtFkOvF_R`EaOdAyERc@pByDjAcCVoAzA_JnBsPN}Aj@QEc@Ei@|A{QBaAHk@Ik@KkCSuHk@qCD_CPyD?oH`@}GRgFCuDPaIv@qDRmBZyM@sD_@gCcBiGU_Ce@wBoC}FsCqCkBo@uBw@q@wAsBsD[cBHwBc@mFAaCr@aHL{BMu@iCkRo@gCQeBgAsDiDqOe@gMFsCHaDQWeAsAi@i@sAcAwBqBkDwEeAaA}AcAmDuFqA}@qFm@iKeFiEyAuCuBeFeEcA}@U_@g@n@Ka@s@kB}@uBu@wCYiDJyDM_CuDaXa@_Aw@i@gB?qHhAZ[lBqJx@oDNs@Or@y@nDUlAqApGGREDeE~@aDVeB_AgBUwKUaCfBqJrDgEd@eJ{AcAe@uBuCyDsCyAm@aA_@s@@iCx@e@Ce@[wFkFaDmAoSqDaIk@mIu@gJ_B}BKwIEcAMaQ{C{Ae@}IsAcB{@aDkBiBs@iAaA_AwAcAoBqAk@aLmB?L@LnAh@TTBh@U|BT}B@UM_@uAg@IYGOy@AaBxAoDbHm@z@iCfB_SbMkEvCeBfBc@^eDj@_G\\iF\\wDhEuDbFgApFwI|a@mApIYdEMhGm@vJu@dEuAdDuBrC}A\\wCNyClB_B~A}BzBq@AmEoBeMkHqE{@iCEeDlAkJzGoB|DuClJu@vFD~Al@jDMrFY~GRpD|@hBhIrC~AlArB~B|DtDtCnCfEvBjEfAfBRlB~@tBdARZNp@GlBsB`HaAHm@AeAVkH|PuBxF_CbHi@xCmAvEw@dBuDjEwAnCyA`C_A|@u@vA}@fGG`BkArDYvDDbFQvCyAvMIvGa@bJUzDLfDjAjRf@xBPv@m@f@n@YDR\\`EvDhe@`@`AvRnOdAJx@d@t@`HRbAhCpEvBfItA|@lGbC`DZ~AxAlJpSbL`[bEtIdA~@hBl@vF~CnKzCrGbIlEtBvClCzBxAhAVpBDt@Ej@[vAcCd@E~@fArB~K`@|GTjCjIlMnApBpGnNp@|Ao@`AQNg@Ga@HiDhChDiCNIf@Fb@On@aAdJjSdF~KfAn@`If@zFNxFUvBWjc@iPd@M|ACb@MlCDxSl@zCH`CYvCkAdHqGdBeChd@o}@jBaDbAk@~FsBt@}@jIkPxJqMOfGm@pDBlEnAvB\\|@RxBRz@bB~BdBfClEfE",
+  name: "Lago di Bracciano Scenic Trot",
+  distance: 0.26,
+  start_address: "Traversa Quarto del Lago, 00062 Bracciano RM, Italy",
+  end_address: "Traversa Quarto del Lago, 00062 Bracciano RM, Italy"
+)
+
+p14 = Path.create!(
+  user_id: u3.id,
+  distance: 89.04,
+  start_address: "Unnamed Road, Bass Lake, CA 93604, USA",
+  end_address: "Glass Flow Rd, June Lake, CA 93529, USA",
+  name: "Yosemite",
+  polyline: "yeycFb{sxUoUv_@er@r[cZxl@ntLkEt\\xO~ZhMuMbPkD~s@f^rcAxDbiAzr@lk@pTpeAmExw@pMbd@{z@}IkcAuJwb@oDwMlW_SrDwT_Vg]_e@{Teh@iq@po@wLv`Bgb@lgBcd@a_Aoc@u|@u`@e}@sv@gOgRcuArJil@{q@ioA{SilAoo@nMyk@_qBbIkjByZu`@on@sCkM{q@kIk~@a`Dc\\}iBmIe|@wcB_eAxbAU`i@}o@|hBe{@paA{KdF}I_@klBnI_b@cQo[{]wh@cz@eYc[wn@{fAw\\eKgJ{XqBklAin@auAkYgQgMiz@kB{d@sXaaA}~@}r@qi@eVyo@}b@m]{Mop@yKmhAmO_{@cbA{uBua@cy@nPwZ}TmXq^{t@ecBi_@in@`Fo~Am\\ksA_TeaDtN}wFeJyiAihAksAo~Cwf@uz@y@gq@eo@gWvAuIkd@jQum@mOm^i}@yb@{QnDbKcj@VseApNokBvlBk`Cwz@gxGi_@_tAdd@eh@dkAua@zpI}_AjwCs}@hjBk|@tnBouAvz@woA~o@aHjo@ch@~xAua@xJio@uMgh@~Pe[tm@k|@xVcf@flAeeAf{CazBh}Bc~@vb@v[j_AiFrjAaQ|q@a@dc@uXbJpS~m@zr@`Zva@oH|hB|^zv@zq@vc@neA~u@rhB}c@_d@fkBDlXbEn\\cMxeA|Mn~BoJ|\\dDzeAs~AtQaTtVa`@{Kug@}Z_fAsEkl@}FaaAjUax@pb@_PlEyCmCqTju@qqB`yBo]ji@qfBppCsHh`Cd@ni@aP`oCkm@bx@ac@prAahAzlAad@j}AdU`^}Nx_@mOvMlHfd@_k@aIuj@|]geAfF}o@u@ekBnq@yn@z_@kZfRxy@vj@v{@vp@qUpIaS~ZmCrKh]d}@_Blj@xQhaAhuBf{DxnBrvDbz@gB~dBuQjY`t@rKd`AwNzm@|Hh|@og@juAd[r}@fZ`c@gVhg@{`@jVtAtf@wChPvy@jl@h^b}AkNptAxRpsAzNpm@vg@zd@j\\nr@`bA`h@|gBgSpMcE~WkJrg@alAth@}r@_Gif@xZoeApg@y^r\\nKvVhx@d`@bg@tfBFz|Cd^TjfAlZ|p@bm@[fV|z@cMfeB~d@bgBhw@yUx`@pcBha@|`AcIhh@jJbf@pIxb@bp@bShp@j|Ahp@fgAnMfNbRu`A~Uky@l[ytBpZcCbBfV|a@rO|a@t|@la@i\\hsCj^w@ui@xDa|@k[geAoq@uf@XslAi_@whAoFqYhRqOnDwNs\\cQae@qT~nAodA|TsW",
+)
+
+p15 = Path.create!(
+  user_id: u1.id,
+  distance: 89.04,
+  start_address: "Unnamed Road, Bass Lake, CA 93604, USA",
+  end_address: "Glass Flow Rd, June Lake, CA 93529, USA",
+  name: "Yosemite",
+  polyline: "yeycFb{sxUoUv_@er@r[cZxl@ntLkEt\\xO~ZhMuMbPkD~s@f^rcAxDbiAzr@lk@pTpeAmExw@pMbd@{z@}IkcAuJwb@oDwMlW_SrDwT_Vg]_e@{Teh@iq@po@wLv`Bgb@lgBcd@a_Aoc@u|@u`@e}@sv@gOgRcuArJil@{q@ioA{SilAoo@nMyk@_qBbIkjByZu`@on@sCkM{q@kIk~@a`Dc\\}iBmIe|@wcB_eAxbAU`i@}o@|hBe{@paA{KdF}I_@klBnI_b@cQo[{]wh@cz@eYc[wn@{fAw\\eKgJ{XqBklAin@auAkYgQgMiz@kB{d@sXaaA}~@}r@qi@eVyo@}b@m]{Mop@yKmhAmO_{@cbA{uBua@cy@nPwZ}TmXq^{t@ecBi_@in@`Fo~Am\\ksA_TeaDtN}wFeJyiAihAksAo~Cwf@uz@y@gq@eo@gWvAuIkd@jQum@mOm^i}@yb@{QnDbKcj@VseApNokBvlBk`Cwz@gxGi_@_tAdd@eh@dkAua@zpI}_AjwCs}@hjBk|@tnBouAvz@woA~o@aHjo@ch@~xAua@xJio@uMgh@~Pe[tm@k|@xVcf@flAeeAf{CazBh}Bc~@vb@v[j_AiFrjAaQ|q@a@dc@uXbJpS~m@zr@`Zva@oH|hB|^zv@zq@vc@neA~u@rhB}c@_d@fkBDlXbEn\\cMxeA|Mn~BoJ|\\dDzeAs~AtQaTtVa`@{Kug@}Z_fAsEkl@}FaaAjUax@pb@_PlEyCmCqTju@qqB`yBo]ji@qfBppCsHh`Cd@ni@aP`oCkm@bx@ac@prAahAzlAad@j}AdU`^}Nx_@mOvMlHfd@_k@aIuj@|]geAfF}o@u@ekBnq@yn@z_@kZfRxy@vj@v{@vp@qUpIaS~ZmCrKh]d}@_Blj@xQhaAhuBf{DxnBrvDbz@gB~dBuQjY`t@rKd`AwNzm@|Hh|@og@juAd[r}@fZ`c@gVhg@{`@jVtAtf@wChPvy@jl@h^b}AkNptAxRpsAzNpm@vg@zd@j\\nr@`bA`h@|gBgSpMcE~WkJrg@alAth@}r@_Gif@xZoeApg@y^r\\nKvVhx@d`@bg@tfBFz|Cd^TjfAlZ|p@bm@[fV|z@cMfeB~d@bgBhw@yUx`@pcBha@|`AcIhh@jJbf@pIxb@bp@bShp@j|Ahp@fgAnMfNbRu`A~Uky@l[ytBpZcCbBfV|a@rO|a@t|@la@i\\hsCj^w@ui@xDa|@k[geAoq@uf@XslAi_@whAoFqYhRqOnDwNs\\cQae@qT~nAodA|TsW",
+)
+
 # comments
 
 Comment.create!(author: u1, path: p9, body: Faker::Hipster.sentence)
@@ -183,6 +250,42 @@ Comment.create!(author: u6, path: p8, body: Faker::TwinPeaks.quote)
 Comment.create!(author: u6, path: p7, body: Faker::TwinPeaks.quote)
 Comment.create!(author: u6, path: p6, body: Faker::TwinPeaks.quote)
 Comment.create!(author: u6, path: p5, body: Faker::TwinPeaks.quote)
+Comment.create!(author: u1, path: p10, body: Faker::Hipster.sentence)
+Comment.create!(author: u2, path: p10, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u3, path: p10, body: Faker::Hacker.say_something_smart)
+Comment.create!(author: u4, path: p10, body: Faker::Friends.quote)
+Comment.create!(author: u5, path: p10, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u6, path: p10, body: Faker::TwinPeaks.quote)
+Comment.create!(author: u1, path: p11, body: Faker::Hipster.sentence)
+Comment.create!(author: u2, path: p11, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u3, path: p11, body: Faker::Hacker.say_something_smart)
+Comment.create!(author: u4, path: p11, body: Faker::Friends.quote)
+Comment.create!(author: u5, path: p11, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u6, path: p11, body: Faker::TwinPeaks.quote)
+Comment.create!(author: u1, path: p12, body: Faker::Hipster.sentence)
+Comment.create!(author: u2, path: p12, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u3, path: p12, body: Faker::Hacker.say_something_smart)
+Comment.create!(author: u4, path: p12, body: Faker::Friends.quote)
+Comment.create!(author: u5, path: p12, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u6, path: p12, body: Faker::TwinPeaks.quote)
+Comment.create!(author: u1, path: p13, body: Faker::Hipster.sentence)
+Comment.create!(author: u2, path: p13, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u3, path: p13, body: Faker::Hacker.say_something_smart)
+Comment.create!(author: u4, path: p13, body: Faker::Friends.quote)
+Comment.create!(author: u5, path: p13, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u6, path: p13, body: Faker::TwinPeaks.quote)
+Comment.create!(author: u1, path: p14, body: Faker::Hipster.sentence)
+Comment.create!(author: u2, path: p14, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u3, path: p14, body: Faker::Hacker.say_something_smart)
+Comment.create!(author: u4, path: p14, body: Faker::Friends.quote)
+Comment.create!(author: u5, path: p14, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u6, path: p14, body: Faker::TwinPeaks.quote)
+Comment.create!(author: u1, path: p15, body: Faker::Hipster.sentence)
+Comment.create!(author: u2, path: p15, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u3, path: p15, body: Faker::Hacker.say_something_smart)
+Comment.create!(author: u4, path: p15, body: Faker::Friends.quote)
+Comment.create!(author: u5, path: p15, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u6, path: p15, body: Faker::TwinPeaks.quote)
 
 # relationship
 

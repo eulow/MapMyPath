@@ -20,6 +20,10 @@ import PathShowContainer from './home/paths/path_show/path_show_container';
 // dashboard
 import DashboardContainer from './home/dashboard/dashboard_container';
 
+// activities
+
+import ActivityContainer from './home/activity_feed/activity_container';
+
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
@@ -61,7 +65,7 @@ const Root = ({ store }) => {
 
             <Route
               path='activity_feed'
-              component={ Home } />
+              component={ ActivityContainer } />
 
             <Route
               path='user_dashboard'
