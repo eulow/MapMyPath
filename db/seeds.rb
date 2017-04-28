@@ -12,7 +12,7 @@ Comment.destroy_all
 
 # Users
 
-u1 = User.create!(email: 'Guest', password: 'Password', first_name: 'Best', last_name: 'Guest')
+u1 = User.create!(email: 'Guest', password: 'Password', first_name: 'Bill', last_name: 'gates')
 u2 = User.create!(email: 'low.eugene1@gmail.com', password: 'password', first_name: 'Eugene', last_name: 'Low', img_url: Faker::Avatar.image)
 u3 = User.create!(email: 'pg@gmail.com', password: 'password', first_name: 'Paul', last_name: 'George', img_url: Faker::Avatar.image)
 u4 = User.create!(email: 'lb@gmail.com', password: 'password', first_name: 'LeBron', last_name: 'James', img_url: Faker::Avatar.image)
@@ -183,3 +183,24 @@ Comment.create!(author: u6, path: p8, body: Faker::TwinPeaks.quote)
 Comment.create!(author: u6, path: p7, body: Faker::TwinPeaks.quote)
 Comment.create!(author: u6, path: p6, body: Faker::TwinPeaks.quote)
 Comment.create!(author: u6, path: p5, body: Faker::TwinPeaks.quote)
+
+# relationship
+
+Relationship.create!(user_one_id: u1.id, user_two_id: u2.id, status: 1, action_user_id: u1.id)
+Relationship.create!(user_one_id: u1.id, user_two_id: u3.id, status: 1, action_user_id: u1.id)
+Relationship.create!(user_one_id: u1.id, user_two_id: u4.id, status: 1, action_user_id: u1.id)
+Relationship.create!(user_one_id: u1.id, user_two_id: u5.id, status: 1, action_user_id: u1.id)
+Relationship.create!(user_one_id: u1.id, user_two_id: u6.id, status: 1, action_user_id: u1.id)
+Relationship.create!(user_one_id: u1.id, user_two_id: u7.id, status: 1, action_user_id: u1.id)
+Relationship.create!(user_one_id: u1.id, user_two_id: u8.id, status: 0, action_user_id: u8.id)
+Relationship.create!(user_one_id: u1.id, user_two_id: u13.id, status: 0, action_user_id: u13.id)
+Relationship.create!(user_one_id: u1.id, user_two_id: u12.id, status: 0, action_user_id: u12.id)
+Relationship.create!(user_one_id: u1.id, user_two_id: u11.id, status: 0, action_user_id: u11.id)
+Relationship.create!(user_one_id: u1.id, user_two_id: u10.id, status: 0, action_user_id: u10.id)
+Relationship.create!(user_one_id: u1.id, user_two_id: u9.id, status: 0, action_user_id: u9.id)
+
+
+#  user_one_id    :integer          not null
+#  user_two_id    :integer          not null
+#  status         :integer          not null
+#  action_user_id :integer          not null

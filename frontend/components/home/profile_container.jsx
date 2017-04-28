@@ -6,7 +6,8 @@ const Profile = ({ currentUser }) => {
     <div className='profile-box'>
       <img src={ currentUser.img_url } />
       <span>
-        <p>{currentUser.first_name + ' ' + currentUser.last_name}</p>
+        <p>Hello,</p>
+        <p className='name'>{currentUser.first_name + ' ' + currentUser.last_name}</p>
         <Link to='/friends'>Friends</Link>
       </span>
     </div>

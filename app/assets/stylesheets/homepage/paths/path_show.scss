@@ -10,11 +10,15 @@
   color: #999999;
 
   header {
-    text-transform: uppercase;
     margin-top: 8px;
     padding-bottom: 27px;
     border-bottom: 1px solid #d1d0cf;
-    letter-spacing: 1px;
+
+    h2 {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: lighter;
+    }
 
     .path-show-header {
       margin-left: 5px;
@@ -37,7 +41,7 @@
       h3 {
         text-transform: uppercase;
         font-size: 12px;
-        color: #c3c2c2;
+        color: #adabab;
         font-weight: lighter;
       }
 
@@ -51,7 +55,7 @@
       h5 {
         text-transform: lowercase;
         font-size: 12px;
-        color: #c3c2c2;
+        color: #adabab;
         font-weight: lighter;
       }
 
@@ -96,7 +100,7 @@
   .side-bar {
     margin-left: 20px;
     width: 100%;
-    min-width: 240px;
+    min-width: 250px;
 
     .errors {
       font-size: 10px;
@@ -171,7 +175,7 @@
     }
 
     .comments-box {
-      // padding: 5px 20px 20px;
+
       border: 1px solid #cdcdcd;
       background: #f8f8f8;
       border-radius: 3px;
@@ -226,13 +230,13 @@
                   margin: auto;
                   color: #0076c0;
                   cursor: pointer;
-                  padding-left: 5px;
-                  border-left: 1px solid #cdcdcd
+                  padding-right: 5px;
                 }
 
                 span {
                   margin: auto;
-                  padding-right: 5px;
+                  padding-left: 5px;
+                  border-left: 1px solid #cdcdcd
                 }
               }
             }

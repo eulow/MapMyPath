@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170427022217) do
+ActiveRecord::Schema.define(version: 20170427175516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,16 @@ ActiveRecord::Schema.define(version: 20170427022217) do
     t.datetime "updated_at",                    null: false
     t.text     "description"
     t.index ["user_id"], name: "index_paths_on_user_id", using: :btree
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "user_one_id",    null: false
+    t.integer  "user_two_id",    null: false
+    t.integer  "status",         null: false
+    t.integer  "action_user_id", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["user_one_id", "user_two_id"], name: "index_relationships_on_user_one_id_and_user_two_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

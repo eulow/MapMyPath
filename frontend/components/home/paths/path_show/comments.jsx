@@ -43,7 +43,8 @@ class Comments extends React.Component {
        createComment,
        deleteComment,
        currentUser,
-       errors
+       errors,
+       path
      } = this.props;
 
     return (
@@ -68,9 +69,11 @@ class Comments extends React.Component {
               comments.map(comment => {
                 return (
                   <CommentIndexItem
+                    currentUser={ currentUser }
                     comment={ comment }
                     deleteComment={ deleteComment }
-                    key={comment.id}/>
+                    path={ path }
+                    key={ comment.id }/>
                 );
               })
             }

@@ -192,7 +192,7 @@ class PathShow extends React.Component {
               createComment={createComment}
               deleteComment={deleteComment}
               errors={errors}
-              pathId={path.id}
+              path={path}
             />
           </section>
           <Modal

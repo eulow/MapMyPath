@@ -12,42 +12,42 @@ class Dashboard extends React.Component {
     this.totalTime = this.totalTime.bind(this);
   }
 
-  componentDidMount () {
+  componentWillMount () {
     this.props.requestAllPaths();
   }
 
   totalDistance () {
-    // debugger
     if (this.props.completePaths.length > 0) {
-      return (
-        this.props.completePaths.reduce(
-          (firstPath, path) => {
-            return firstPath.distance + path.distance;
-          }
-        )
-      );
+      let result = 0;
+      for (let i = 0; i < this.props.completePaths.length; i++) {
+        result += this.props.completePaths[i].distance;
+      }
+      return result;
     }
 
-    return <div></div>;
+    return "";
   }
 
   totalTime () {
     if (this.props.completePaths.length > 0) {
-      const timeInSeconds = this.props.completePaths
-      .reduce(
-        (firstPath, path) => {
-          return firstPath.duration + path.duration;
-        }
-      );
-      return convertSecondsToTime(timeInSeconds);
+      let result = 0;
+      for (let i = 0; i < this.props.completePaths.length; i++) {
+        result += this.props.completePaths[i].duration;
+      }
+      return convertSecondsToTime(result);
     }
-    return <div></div>;
+    return "";
   }
 
   render () {
     return (
       <div className='dashboard'>
         <div className='dashboard-body'>
+          <header>
+            <h2 className='path-show-header'>
+              life time stats
+            </h2>
+          </header>
           <div className='run-stats'>
             <span className='distance'>
               <h3>Distance</h3>
@@ -56,12 +56,12 @@ class Dashboard extends React.Component {
             </span>
             <span className='duration'>
               <h3>Time</h3>
-              { this.totalTime() }
+              <p>{ this.totalTime() }</p>
               <h5>hh : mm : ss</h5>
             </span>
             <span className='duration'>
               <h3>Runs</h3>
-              { this.props.completePaths.length }
+              <p>{ this.props.completePaths.length }</p>
               <h5>completed</h5>
             </span>
           </div>

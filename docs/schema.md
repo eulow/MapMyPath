@@ -29,16 +29,17 @@
 | created_at    | timestamp    | not null |
 | updated_at    | timestamp    | not null |
 
-## friendships
+## relationships
 
-| column name   | data type | details |
-| ------------- | ----------| ------------- |
-| id            | integer   | not null, primary key |
-| user_id       | integer   | not null, foreign key |
-| friend_id     | integer   | not null, foreign key |
-| status        | string    | not null |
-| created_at    | timestamp | not null |
-| updated_at    | timestamp | not null |
+| column name    | data type | details |
+| -------------  | ----------| ------------- |
+| id             | integer   | not null, primary key |
+| user_one_id    | integer   | not null, foreign key |
+| user_two_id    | integer   | not null, foreign key |
+| status         | integer   | not null |
+| action_user_id | integer   | not null, foreign key |
+| created_at     | timestamp | not null |
+| updated_at     | timestamp | not null |
 
 ## comments
 

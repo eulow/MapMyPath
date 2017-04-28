@@ -29,11 +29,12 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     dependent: :destroy
 
-  # has_many :friendships
-  #
-  # has_many :friends,
-  #   through: :friendships,
-  #   source: :friend
+
+  def friends
+    User
+      .joins('JOIN relationships ON relationships.user_one_id = users.id OR relationships.user_two_id = users.id')
+      .where("relationships.status = '1' AND users.id != ?", self.id).includes(:paths)
+  end
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
