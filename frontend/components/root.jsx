@@ -21,9 +21,10 @@ import PathShowContainer from './home/paths/path_show/path_show_container';
 import DashboardContainer from './home/dashboard/dashboard_container';
 
 // activities
-
 import ActivityContainer from './home/activity_feed/activity_container';
 
+// friends
+import FriendsTabs from './friends/friends_tab';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
@@ -78,6 +79,11 @@ const Root = ({ store }) => {
               <Route path=':id' component={ PathShowContainer } />
             </Route>
           </Route>
+          <Route
+            path='/friends'
+            component={ FriendsTabs }
+            onEnter={ _ensureLoggedIn }
+          />
         </Route>
       </Router>
     </Provider>

@@ -1,6 +1,11 @@
 class Api::RelationshipsController < ApplicationController
   before_action :require_logged_in!
 
+  def index
+    @pending_friends = current_user.pending_friends
+    render :index
+  end
+
   def create
     @relationship = Relationship.new
     @relationship.action_user_id = current_user.id
@@ -11,7 +16,7 @@ class Api::RelationshipsController < ApplicationController
     @relationship.user_one_id = users[1]
 
     if @relationship.save
-      render json: @relationship
+      render 'api/users/show'
     else
       render @relationship.errors.messages
     end

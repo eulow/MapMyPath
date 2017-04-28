@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     resources :paths, only: [:create, :update, :destroy, :index, :show] do
       resources :comments, only: [:index, :create, :destroy]
     end
+    resources :relationships, only: [:index, :update, :create, :destroy]
   end
 end

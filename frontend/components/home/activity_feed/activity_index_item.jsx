@@ -36,7 +36,7 @@ const ActivityIndexItem = ({ activities }) => {
           <div className='activity-body'>
             <span>
               <p>{ activity.user.name} created the { activity.name } path</p>
-              <i className="fa fa-map-marker fa-1x fa-activity" aria-hidden="true"></i>
+              <i className="fa fa-map-marker fa-2x fa-activity" aria-hidden="true"></i>
             </span>
             <Link to={ `home/paths/${activity.id}` }>
               <div className='activity-details'>
