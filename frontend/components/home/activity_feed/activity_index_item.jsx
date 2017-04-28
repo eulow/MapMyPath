@@ -25,7 +25,7 @@ const ActivityIndexItem = ({ activities }) => {
                 <p className='distance'>{ activity.distance } mi</p>
               </div>
             </Link>
-            <p className='bottom'><i className="fa fa-user-o fa-2x" aria-hidden="true"></i><FormattedRelative value={activity.updated_at} /></p>
+            <p className='bottom'><i className="fa fa-user-o fa-1x" aria-hidden="true"></i><FormattedRelative value={activity.updated_at} /></p>
           </div>
         </li>
       );
