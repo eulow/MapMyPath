@@ -1,24 +1,5 @@
-# README
+# MapMyPath
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[MapMyPath](https://map-my-path.herokuapp.com/)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+MapMyPath is full-stack web application clone of MapMyRun, created using Ruby on Rails on the backend with a PostgreSQL database and React.js with a Redux architectural framework on the frontend.

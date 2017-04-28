@@ -8,6 +8,7 @@ class FriendsTab extends React.Component {
   }
 
   selectedTab(tab) {
+    // debugger
     if (this.props.location.pathname.includes(tab)) {
       return "selected";
     }
@@ -16,10 +17,10 @@ class FriendsTab extends React.Component {
 
   render () {
     return (
-      <div className='main-content-container'>
-        <div className='header-container'>
-          <section className="profile-tabs-container">
-            <div className="profile-tabs">
+      <div className='friends-content-container'>
+        <div className='friends-header-container'>
+          <section className="friends-tabs-container">
+            <div className="friends-tabs">
               <Link
                 to={'/friends/all'}
                 className={this.selectedTab('/friends/all')} >
