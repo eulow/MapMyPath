@@ -32,13 +32,18 @@ class User < ApplicationRecord
   def friends
     User
       .joins('JOIN relationships ON relationships.user_one_id = users.id OR relationships.user_two_id = users.id')
-      .where("relationships.status = '1' AND users.id != ?", self.id).includes(:paths)
+      .where("relationships.status = '1'")
+      .where('relationships.user_one_id = ? OR relationships.user_two_id = ?', self.id, self.id)
+      .where('users.id != ?', self.id)
+      .includes(:paths)
   end
 
   def pending_friends
     User
       .joins('JOIN relationships ON relationships.user_one_id = users.id OR relationships.user_two_id = users.id')
-      .where("relationships.status = '0' AND users.id != ?", self.id)
+      .where("relationships.status = '0'")
+      .where('relationships.user_one_id = ? OR relationships.user_two_id = ?', self.id, self.id)
+      .where('users.id != ? AND relationships.action_user_id != ?', self.id, self.id)
   end
 
   def self.find_by_credentials(email, password)
@@ -69,3 +74,5 @@ class User < ApplicationRecord
   end
 
 end
+
+ # AND users.id = ?", self.id).includes(:paths)

@@ -47,7 +47,6 @@ export const requestAllRequests = () => (dispatch) => {
     FriendsAPIUtil.getPendingFriends()
     .then(
       (friends) => {
-        debugger
         dispatch(receiveAllRequests(friends));
       }
     )

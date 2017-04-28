@@ -8,7 +8,6 @@ class FriendsTab extends React.Component {
   }
 
   selectedTab(tab) {
-    // debugger
     if (this.props.location.pathname.includes(tab)) {
       return "selected";
     }

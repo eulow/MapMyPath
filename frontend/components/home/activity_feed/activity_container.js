@@ -7,7 +7,6 @@ import { requestAllPaths } from '../../../actions/path_actions';
 import { requestAllFriends } from '../../../actions/friend_actions';
 
 const mapStateToProps = ({ session, paths, friends }) => {
-  // debugger
   const activities = combinePathsAndFriendsActivities(paths, friends);
   return {
     currentUser: session.currentUser,
