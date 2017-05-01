@@ -7,7 +7,7 @@ const friendRequestReducer = (oldState = {}, action) => {
       return Object.assign({}, action.friends);
     case REMOVE_REQUEST:
       let newState = Object.assign({}, oldState);
-      delete newState[action.id];
+      delete newState[action.friend.id];
       return newState;
     default:
       return oldState;

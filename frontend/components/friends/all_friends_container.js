@@ -14,7 +14,7 @@ const mapStateToProps = ({ session, friends, friendRequests }) => {
     currentUser: session.currentUser,
     friends: Object.keys(friends).map(id => friends[id])
       .sort(function(a, b) { return b.name - a.name; }),
-    friendRequests: Object.keys(friendRequests).map(id => friends[id])
+    friendRequests: Object.keys(friendRequests).map(id => friendRequests[id])
       .sort(function(a, b) { return b.name - a.name; })
   };
 };

@@ -26,9 +26,9 @@ export const removeFriend = (id) => ({
   id
 });
 
-export const removeRequest = (id) => ({
+export const removeRequest = (friend) => ({
   type: REMOVE_REQUEST,
-  id
+  friend
 });
 
 export const requestAllFriends = () => (dispatch) => {
@@ -58,6 +58,7 @@ export const addFriend = (id) => (dispatch) => {
   .then(
     (friend) => {
       dispatch(receiveNewFriend(friend));
+      dispatch(removeRequest(friend));
     }
   );
 };

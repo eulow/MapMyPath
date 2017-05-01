@@ -18,6 +18,10 @@ class AllFriends extends React.Component {
         <FriendsIndex
           friends={this.props.friends}
           deleteFriend={this.props.deleteFriend}/>
+        <FriendRequestsIndex
+          friendRequests={this.props.friendRequests}
+          addFriend={this.props.addFriend}
+          deleteRequest={this.props.deleteRequest}/>
       </div>
     );
   }
@@ -25,7 +29,7 @@ class AllFriends extends React.Component {
 
 // <FriendRequestsIndex
 //   friends={this.props.friendRequests}
-//   addFriend={this.props.addFriend}
-//   deleteRequest={this.props.deleteRequest}
+  // addFriend={this.props.addFriend}
+  // deleteRequest={this.props.deleteRequest}
 //   />
 export default AllFriends;

@@ -12,11 +12,10 @@ export const getPendingFriends = () => {
   });
 };
 
-export const addFriend = (friend) => (
+export const addFriend = (friend_id) => (
   $.ajax({
     method: 'PATCH',
-    url: `api/relationships/${friend.id}`,
-    data: { friend }
+    url: `api/relationships/${friend_id}`,
   })
 );
 
