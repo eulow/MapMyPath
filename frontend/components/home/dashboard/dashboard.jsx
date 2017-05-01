@@ -22,7 +22,7 @@ class Dashboard extends React.Component {
       for (let i = 0; i < this.props.completePaths.length; i++) {
         result += this.props.completePaths[i].distance;
       }
-      return result;
+      return result.toFixed(2);
     }
 
     return "";
