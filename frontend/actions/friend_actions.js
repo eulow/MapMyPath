@@ -72,11 +72,11 @@ export const deleteFriend = (friendId) => (dispatch) => {
   );
 };
 
-export const deleteRequest = (id) => (dispatch) => {
-  FriendsAPIUtil.deleteRequest(id)
+export const deleteRequest = (friendId) => (dispatch) => {
+  FriendsAPIUtil.deleteRequest(friendId)
   .then(
     (deletedFriend) => {
-      dispatch(removeRequest(deletedFriend.id));
+      dispatch(removeRequest(deletedFriend));
     }
   );
 };
