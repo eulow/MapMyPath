@@ -12,8 +12,8 @@ class Api::RelationshipsController < ApplicationController
 
     users = [current_user.id, params[:friend_id].to_i].sort
     
-    @relationship.user_two_id = users[0]
-    @relationship.user_one_id = users[1]
+    @relationship.user_one_id = users[0]
+    @relationship.user_two_id = users[1]
     @relationship.status = 0
     if @relationship.save
       @user = User.find(params[:friend_id])
@@ -34,6 +34,7 @@ class Api::RelationshipsController < ApplicationController
       .where(user_one_id: relationship[0])
       .where(user_two_id: relationship[1])
       .first
+      debugger
     @relationship.action_user_id = current_user.id
     @relationship.status = 1
 
