@@ -3,18 +3,15 @@
 
 [MapMyPath](https://mapmypath.herokuapp.com/)
 
----
 
 MapMyPath is full-stack web application clone of MapMyRun, created using Ruby on Rails on the backend with a PostgreSQL database and React.js with a Redux architectural framework on the frontend. Users are able to map out the paths they have walked/run and keep tracking of the total distance and time of each route.
 
 ## Features and implementation
 
----
 ### Path creation
 
 The core feature of this application is the utilization of Google Maps API to mark and render the routes that the user will be creating.
 
----
 ![Route Creation](app/assets/images/map_creation.png)
 
 ---
