@@ -35,7 +35,6 @@ class User < ApplicationRecord
       .where("relationships.status = '1'")
       .where('relationships.user_one_id = :id OR relationships.user_two_id = :id', id: self.id)
       .where('users.id != :id', id: self.id)
-      .includes(:paths)
   end
 
   def pending_friends
