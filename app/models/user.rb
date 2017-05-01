@@ -33,8 +33,8 @@ class User < ApplicationRecord
     User
       .joins('JOIN relationships ON relationships.user_one_id = users.id OR relationships.user_two_id = users.id')
       .where("relationships.status = '1'")
-      .where('relationships.user_one_id = ? OR relationships.user_two_id = ?', self.id, self.id)
-      .where('users.id != ?', self.id)
+      .where('relationships.user_one_id = :id OR relationships.user_two_id = :id', id: self.id)
+      .where('users.id != :id', id: self.id)
       .includes(:paths)
   end
 
@@ -42,8 +42,14 @@ class User < ApplicationRecord
     User
       .joins('JOIN relationships ON relationships.user_one_id = users.id OR relationships.user_two_id = users.id')
       .where("relationships.status = '0'")
-      .where('relationships.user_one_id = ? OR relationships.user_two_id = ?', self.id, self.id)
-      .where('users.id != ? AND relationships.action_user_id != ?', self.id, self.id)
+      .where('relationships.user_one_id = :id OR relationships.user_two_id = :id', id: self.id)
+      .where('users.id != :id AND relationships.action_user_id != :id', id: self.id)
+  end
+
+  def potential_friends(search)
+    not_potential_friends = Relationship.where('user_one_id = :id or user_two_id = :id', id: self.id)
+    ids = not_potential_friends.pluck(:user_one_id).concat(not_potential_friends.pluck(:user_two_id))
+    return User.where.not(id: ids).where('first_name ILIKE :search OR last_name ILIKE :search OR email ILIKE :search', search: "%#{search}%")
   end
 
   def self.find_by_credentials(email, password)

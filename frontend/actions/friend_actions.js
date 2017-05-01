@@ -5,6 +5,8 @@ export const RECEIVE_ALL_REQUESTS = 'RECEIVE_ALL_REQUESTS';
 export const RECEIVE_NEW_FRIEND = 'RECEIVE_NEW_FRIEND';
 export const REMOVE_FRIEND = 'REMOVE_FRIEND';
 export const REMOVE_REQUEST = 'DENY_REQUEST';
+export const RECEIVE_ALL_POTENTIAL_FRIENDS = 'RECEIVE_ALL_POTENTIAL_FRIENDS';
+export const REMOVE_FROM_SEARCH = 'REMOVE_FROM_SEARCH';
 
 export const receiveAllFriends = (friends) => ({
   type: RECEIVE_ALL_FRIENDS,
@@ -30,6 +32,16 @@ export const removeRequest = (friend) => ({
   type: REMOVE_REQUEST,
   friend
 });
+
+export const receiveAllPotentialFriends = (friends) => ({
+  type: RECEIVE_ALL_POTENTIAL_FRIENDS,
+  friends
+});
+
+export const removeFromSearch = (friend) => ({
+  type: REMOVE_FROM_SEARCH,
+  friend
+})
 
 export const requestAllFriends = () => (dispatch) => {
   return (
@@ -81,11 +93,20 @@ export const deleteRequest = (friendId) => (dispatch) => {
   );
 };
 
-export const addRequest = (id) => (dispatch) => {
-  FriendsAPIUtil.addRequest(id);
-  // .then(
-  //   (addedRequest) => {
-  //     dispatch(removeRequest(deletedFriend.id));
-  //   }
-  // );
+export const addRequest = (friendId) => (dispatch) => {
+  FriendsAPIUtil.addRequest(friendId)
+  .then(
+    (friend) => {
+      dispatch(removeFromSearch(friend));
+    }
+  );
+};
+
+export const requestAllPotentialFriends = (search) => (dispatch) => {
+  FriendsAPIUtil.getPotentialFriends(search)
+  .then(
+    (potentialFriends) => {
+      dispatch(receiveAllPotentialFriends(potentialFriends));
+    }
+  );
 };

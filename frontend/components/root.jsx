@@ -26,6 +26,7 @@ import ActivityContainer from './home/activity_feed/activity_container';
 // friends
 import FriendsTabs from './friends/friends_tab';
 import AllFriendsContainer from './friends/all_friends_container';
+import FriendSearchContainer from './friends/friend_search_container';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
@@ -87,6 +88,7 @@ const Root = ({ store }) => {
             >
             <IndexRedirect to='all' />
             <Route path='all' component={ AllFriendsContainer } />
+            <Route path='search' component={ FriendSearchContainer } />
           </Route>
         </Route>
       </Router>

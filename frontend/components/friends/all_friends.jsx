@@ -1,6 +1,6 @@
 import React from 'react';
-import FriendsIndex from './friends_render';
-import FriendRequestsIndex from './friend_requests_render';
+import FriendsIndex from './friends_index';
+import FriendRequestsIndex from './friend_requests_index';
 
 class AllFriends extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class AllFriends extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className='friends-main'>
         <FriendsIndex
           friends={this.props.friends}
           deleteFriend={this.props.deleteFriend}/>
@@ -27,9 +27,4 @@ class AllFriends extends React.Component {
   }
 }
 
-// <FriendRequestsIndex
-//   friends={this.props.friendRequests}
-  // addFriend={this.props.addFriend}
-  // deleteRequest={this.props.deleteRequest}
-//   />
 export default AllFriends;

@@ -118,13 +118,10 @@
     }
 
     .complete-runs {
-      h3 {
-        border-bottom: 0;
-      }
 
       li {
         padding: 10px;
-        border-top: 1px solid #d1d0cf;
+        border-bottom: 1px solid #d1d0cf;
         display: flex;
         align-items: center;
         margin: 15px 0 10 0;

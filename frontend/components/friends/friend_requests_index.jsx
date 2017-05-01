@@ -25,8 +25,10 @@ class FriendRequestsIndex extends React.Component {
   render () {
     if (this.props.friendRequests.length > 0) {
       return (
-        <div className='friends'>
-          <h3>Friend Requests</h3>
+        <div className='friend-requests'>
+          <header>
+            <h2>Friend Requests</h2>
+          </header>
           <ul>
             {this.props.friendRequests.map(friend => this.friendListItem(friend))}
           </ul>

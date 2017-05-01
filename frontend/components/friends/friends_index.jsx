@@ -16,7 +16,9 @@ const FriendsIndex = ({ friends, deleteFriend }) => {
 
   return (
     <div className='friends'>
-      <h3>Friends</h3>
+      <header>
+        <h2>Friends</h2>
+      </header>
       <ul>
         {friends.map(friend => friendListItem(friend))}
       </ul>

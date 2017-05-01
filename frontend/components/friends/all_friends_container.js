@@ -6,7 +6,7 @@ import {
   deleteFriend,
   deleteRequest,
   addFriend,
-  requestAllRequests
+  requestAllRequests,
 } from '../../actions/friend_actions';
 
 const mapStateToProps = ({ session, friends, friendRequests }) => {

@@ -29,7 +29,8 @@ export const deleteFriend = (friend_id) => (
 export const addRequest = (friend_id) => (
   $.ajax({
     method: 'POST',
-    url: `api/relationships/${friend_id}`,
+    url: `api/relationships/`,
+    data: { friend_id }
   })
 );
 
@@ -37,5 +38,13 @@ export const deleteRequest = (friend_id) => (
   $.ajax({
     method: 'DELETE',
     url: `api/relationships/${friend_id}`
+  })
+);
+
+export const getPotentialFriends = (search) => (
+  $.ajax({
+    method: 'GET',
+    url: 'api/relationships/search',
+    data: { search }
   })
 );
