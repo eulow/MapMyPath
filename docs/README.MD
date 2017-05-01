@@ -3,7 +3,7 @@
 [Heroku Link][heroku]
 [Trello Link][trello]
 
-[heroku]: https://map-my-path.herokuapp.com/
+[heroku]: https://mapmypath.herokuapp.com/
 [trello]: https://trello.com/b/CvrGYg5n
 
 ## Minimum Viable Product
