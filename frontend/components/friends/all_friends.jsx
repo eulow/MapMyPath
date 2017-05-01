@@ -18,7 +18,6 @@ class AllFriends extends React.Component {
         <FriendsIndex
           friends={this.props.friends}
           deleteFriend={this.props.deleteFriend}/>
-
       </div>
     );
   }

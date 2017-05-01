@@ -5,7 +5,7 @@ export const completePaths = ( paths ) => {
       completedPaths.push(paths[pathId]);
     }
   }
-  return completedPaths;
+  return completedPaths.sort(function(a, b) { return  new Date(b.updated_at) - new Date(a.updated_at); });
 };
 
 export const pendingPaths = ( paths ) => {
@@ -15,7 +15,7 @@ export const pendingPaths = ( paths ) => {
       incompletedPaths.push(paths[pathId]);
     }
   }
-  return incompletedPaths;
+  return incompletedPaths.sort(function(a, b) { return  new Date(b.updated_at) - new Date(a.updated_at); });
 };
 
 export const combinePathsAndFriendsActivities = (paths, friends) => {

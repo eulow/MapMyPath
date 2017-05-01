@@ -20,10 +20,10 @@ export const addFriend = (friend) => (
   })
 );
 
-export const deleteFriend = (id) => (
+export const deleteFriend = (friend_id) => (
   $.ajax({
     method: 'DELETE',
-    url: `api/relationships/${id}`
+    url: `api/relationships/${friend_id}`
   })
 );
 

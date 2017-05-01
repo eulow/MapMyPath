@@ -40,17 +40,18 @@ class Api::RelationshipsController < ApplicationController
     end
   end
 
-  def delete
-    users = [current_user.id, relationship_params.friend_id].sort
+  def destroy
+    # debugger
+    friendship = [current_user.id, params[:id].to_i].sort
     @relationship = Relationship
-      .where(user_one_id: user[0])
-      .where(user_two_id: user[1])
+      .where(user_one_id: friendship[0])
+      .where(user_two_id: friendship[1])
       .first
-
+      # debugger
     if @relationship.destroy
-      friend_id = users.reject { |user| user == current_user.id }
+      friend_id = friendship.reject { |user| user == current_user.id }
       @user = User.find_by(id: friend_id.first)
-      render 'api/user/show'
+      render 'api/users/show'
     else
       render json: @relationship.errors.messages
     end
