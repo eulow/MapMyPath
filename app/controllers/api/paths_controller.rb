@@ -2,7 +2,11 @@ class Api::PathsController < ApplicationController
   before_action :require_logged_in!
 
   def index
-    @paths = current_user.paths
+    if params[:type] == 'index'
+      @paths = current_user.paths
+    elsif params[:type] == 'activity'
+      @paths = current_user.recent_activities
+    end
     render :index
   end
 
@@ -20,7 +24,7 @@ class Api::PathsController < ApplicationController
   end
 
   def show
-    @path = Path.find(params[:id])
+    @path = Path.includes(:comments).find(params[:id])
     render :show
   end
 

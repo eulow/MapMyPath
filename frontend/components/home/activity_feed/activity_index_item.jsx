@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import { FormattedRelative } from 'react-intl';
 
-const ActivityIndexItem = ({ activities }) => {
+const ActivityIndexItem = ({ paths }) => {
   const activityRender = (activity) => {
     const map = `https://maps.googleapis.com/maps/api/staticmap?size=278x160&path=weight:3%7Ccolor:red%7Cenc:${ activity.polyline }&key=AIzaSyAguar0XlZ_56FFg9-1IzyO2nG0Rzngsrk`;
     if (activity.done) {
@@ -57,7 +57,7 @@ const ActivityIndexItem = ({ activities }) => {
   return (
     <ul>
       {
-        activities.map(activity => {
+        paths.map(activity => {
           return (activityRender(activity));
         })
       }

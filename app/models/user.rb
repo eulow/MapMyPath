@@ -52,6 +52,12 @@ class User < ApplicationRecord
     return User.where.not(id: ids).where('first_name ILIKE :search OR last_name ILIKE :search OR email ILIKE :search', search: "%#{search}%")
   end
 
+  def recent_activities
+    ids = self.friends.ids
+    ids.push(self.id).uniq!
+    Path.where(user_id: ids).includes(:comments)
+  end
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     return nil unless user && user.valid_password?(password)

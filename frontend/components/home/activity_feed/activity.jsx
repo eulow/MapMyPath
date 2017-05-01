@@ -9,7 +9,6 @@ class Activity extends React.Component {
   }
 
   componentDidMount () {
-    this.props.requestAllFriends();
     this.props.requestAllPaths();
   }
 
@@ -23,7 +22,7 @@ class Activity extends React.Component {
             </h2>
           </header>
           <ActivityIndexItem
-            activities={this.props.activities}
+            paths={this.props.paths}
             currentUser={this.props.currentUser}
             />
         </div>

@@ -15,7 +15,7 @@ const mapStateToProps = ({ paths, session }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    requestAllPaths: () => dispatch(requestAllPaths()),
+    requestAllPaths: () => dispatch(requestAllPaths('index')),
   };
 };
 

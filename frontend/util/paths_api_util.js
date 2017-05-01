@@ -1,7 +1,8 @@
-export const getAllPaths = () => (
+export const getAllPaths = (type) => (
   $.ajax({
     method: 'GET',
-    url: 'api/paths'
+    url: 'api/paths',
+    data: { type }
   })
 );
 

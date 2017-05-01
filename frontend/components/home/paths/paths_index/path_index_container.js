@@ -12,7 +12,7 @@ const mapStateToProps = ({ paths }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    requestAllPaths: () => dispatch(requestAllPaths()),
+    requestAllPaths: () => dispatch(requestAllPaths('index')),
     deletePath: (id) => dispatch(deletePath(id))
   };
 };

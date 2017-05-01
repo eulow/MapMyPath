@@ -27,9 +27,9 @@ export const removePath = (id) => ({
   id
 });
 
-export const requestAllPaths = () => (dispatch) => {
+export const requestAllPaths = (type) => (dispatch) => {
   return (
-    PathsAPIUtil.getAllPaths()
+    PathsAPIUtil.getAllPaths(type)
     .then(
       (paths) => {
         dispatch(receiveAllPaths(paths));
