@@ -6,6 +6,16 @@ import { login } from '../../actions/session_actions';
 class Frontpage extends React.Component {
   constructor(props) {
     super(props);
+
+    this.loginGuest = this.loginGuest.bind(this);
+  }
+
+  loginGuest () {
+    const guest = {
+      email: "Guest",
+      password: "Password"
+    };
+    this.props.login(guest).then(() => this.props.router.push('/home'));
   }
 
   render () {
@@ -18,7 +28,7 @@ class Frontpage extends React.Component {
               Plan each stride and learn from every route with MapMyPath.
             </h3>
             <nav className="login-signup">
-              <button className="guest-login" onClick={this.props.loginGuest}>
+              <button className="guest-login" onClick={this.loginGuest}>
                 Log in as guest
               </button>
               <div className="or">or</div>
@@ -56,11 +66,9 @@ class Frontpage extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  const guest = {
-    email: "Guest",
-    password: "Password"
+  return {
+    login: (guest) => dispatch(login(guest))
   };
-  return { loginGuest: () => dispatch(login(guest)) };
 };
 
 export default connect(

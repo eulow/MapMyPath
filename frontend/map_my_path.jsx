@@ -5,7 +5,6 @@ import Root from './components/root';
 import Modal from 'react-modal';
 
 
-
 document.addEventListener("DOMContentLoaded", () => {
   let store;
   if (window.currentUser) {
@@ -14,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
-  window.store = store;
+
   Modal.setAppElement(document.body);
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);

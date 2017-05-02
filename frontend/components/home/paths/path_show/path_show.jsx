@@ -1,5 +1,5 @@
 import React from 'react';
-import { hashHistory } from 'react-router';
+import { withRouter } from 'react-router';
 import { convertSecondsToTime } from '../../../../util/math_calculations';
 import Comments from './comments';
 import PathUpdateForm from './path_update_form';
@@ -85,8 +85,6 @@ class PathShow extends React.Component {
 
   render () {
 
-
-
     if(this.props.path) {
       const {
         path,
@@ -103,11 +101,11 @@ class PathShow extends React.Component {
         return (
           <nav>
             <button onClick={
-                () => hashHistory.push('/home/paths')
+                () => this.props.router.push('/home/paths')
               }>all paths
             </button>
             <button onClick={
-                () => hashHistory.push('/home/paths/new')
+                () => this.props.router.push('/home/paths/new')
               }>create path
             </button>
             <button
@@ -116,7 +114,7 @@ class PathShow extends React.Component {
               }>did this path
             </button>
             <button onClick={
-                () => this.props.deletePath(path.id)
+                () => this.props.deletePath(path.id).then(() => this.props.router.push(`/home/paths/`))
               }>Delete this path
             </button>
           </nav>
@@ -125,11 +123,11 @@ class PathShow extends React.Component {
         return (
           <nav>
             <button onClick={
-                () => hashHistory.push('/home/paths')
+                () => this.props.router.push('/home/paths')
               }>all paths
             </button>
             <button onClick={
-                () => hashHistory.push('/home/paths/new')
+                () => this.props.router.push('/home/paths/new')
               }>create path
             </button>
           </nav>
@@ -239,4 +237,4 @@ class PathShow extends React.Component {
   }
 }
 
-export default PathShow;
+export default withRouter(PathShow);

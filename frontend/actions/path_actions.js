@@ -76,7 +76,6 @@ export const updatePath = (path) => (dispatch) => {
       (updatedPath) => {
         dispatch(receiveSinglePath(updatedPath));
         dispatch(clearErrors());
-        // hashHistory.push(`./home/paths/${updatedPath.id}`);
       },
       (errors) => {
         dispatch(addErrors(errors));
@@ -91,7 +90,6 @@ export const deletePath = (id) => (dispatch) => {
     .then(
       (deletedPath) => {
         dispatch(removePath(deletedPath.id));
-        hashHistory.push(`/home/paths/`);
       },
       (errors) => {
         dispatch(addErrors(errors));

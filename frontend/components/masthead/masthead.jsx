@@ -1,54 +1,66 @@
 import React from 'react';
-import { Link, hashHistory } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
+class Masthead extends React.Component {
+  constructor(props) {
+    super(props);
+    // debugger
+    this.userInfo = this.userInfo.bind(this);
+    this.signOut = this.signOut.bind(this);
+  }
 
-const sessionLinks = () => (
-  <nav className="login-signup">
-    <Link to="/login" className="login-button">Log in</Link>
-    <Link to="/signup" className="signup-button">Sign up</Link>
-  </nav>
-);
+  sessionLinks () {
+    return (
+      <nav className="login-signup">
+        <Link to="/login" className="login-button">Log in</Link>
+        <Link to="/signup" className="signup-button">Sign up</Link>
+      </nav>
+    );
+  }
 
-const userInfo = (currentUser, signOut) => {
-  function signOutMethod(e) {
+  signOut(e) {
     e.preventDefault();
-    signOut();
-    hashHistory.push('/');
+    this.props.signOut().then(
+      () => this.props.router.push('/')
+    );
   }
 
-  return (
-    <nav className="user-info">
-      <ul id="drop-down-menu">
-        <Link to="/friends" className="drop-down-button">Friends</Link>
-        <Link to="/home/paths" className="drop-down-button">Paths</Link>
-        <Link to="/home" className="drop-down-button">Home Page</Link>
-        <button className="drop-down-button" onClick={signOutMethod}>
-          Logout
-        </button>
-      </ul>
-      <img className="avatar" src={currentUser.img_url} />
-    </nav>
-  );
-};
-
-const Masthead = ({ currentUser, signOut, path }) => {
-  let render = currentUser ? userInfo(currentUser, signOut) : sessionLinks();
-  if (path === '/login' || path ==='/signup') {
-    render = <div></div>;
+  userInfo () {
+    return (
+      <nav className="user-info">
+        <ul id="drop-down-menu">
+          <Link to="/friends" className="drop-down-button">Friends</Link>
+          <Link to="/home/paths" className="drop-down-button">Paths</Link>
+          <Link to="/home" className="drop-down-button">Home Page</Link>
+          <button className="drop-down-button" onClick={this.signOut}>
+            Logout
+          </button>
+        </ul>
+        <img className="avatar" src={this.props.currentUser.img_url} />
+      </nav>
+    );
   }
 
-  return (
-    <div className='masthead-container'>
 
-      <div className="masthead">
-        <Link to='/' className="logo">
-          <h1 className="title">mapmypath</h1>
-        </Link>
+  render () {
+    let render = this.props.currentUser ? this.userInfo() : this.sessionLinks();
+    if (this.props.path === '/login' || this.props.path ==='/signup') {
+      render = <div></div>;
+    }
 
-        {render}
+    return (
+      <div className='masthead-container'>
+
+        <div className="masthead">
+          <Link to='/' className="logo">
+            <h1 className="title">mapmypath</h1>
+          </Link>
+
+          {render}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
-export default Masthead;
+export default withRouter(Masthead);

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link, hashHistory } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
-const PathIndexItem = ({ path, deletePath }) => {
+const PathIndexItem = ({ path, deletePath, router }) => {
   const map = `https://maps.googleapis.com/maps/api/staticmap?size=80x80&path=weight:3%7Ccolor:red%7Cenc:${ path.polyline }&key=AIzaSyAguar0XlZ_56FFg9-1IzyO2nG0Rzngsrk`;
 
   const complete = (path.done) ? 'Yes' : 'No';
@@ -14,11 +14,11 @@ const PathIndexItem = ({ path, deletePath }) => {
       <td className='no-wrap'>{path.start_address}</td>
       <td>{complete}</td>
       <td>
-        <button onClick={() => hashHistory.push(`home/paths/${path.id}`)}>View</button>
-        <button onClick={() => deletePath(path.id)}>Delete</button>
+        <button onClick={() => router.push(`home/paths/${path.id}`)}>View</button>
+        <button onClick={() => deletePath(path.id).then(() => router.push(`/home/paths/`))}>Delete</button>
       </td>
     </tr>
   );
 };
 
-export default PathIndexItem;
+export default withRouter(PathIndexItem);

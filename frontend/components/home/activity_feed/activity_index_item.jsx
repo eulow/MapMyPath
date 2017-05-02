@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, hashHistory } from 'react-router';
+import { Link } from 'react-router';
 import { FormattedRelative } from 'react-intl';
 
 const ActivityIndexItem = ({ paths }) => {

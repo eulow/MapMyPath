@@ -1,10 +1,7 @@
 import * as SessionAPIUtil from '../util/session_api_util';
 import { clearErrors, addErrors } from './error_actions';
-import { hashHistory } from 'react-router';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
-
-export const RECEIVE_FRIENDS = 'RECEIVE_FRIENDS'
 
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
@@ -18,7 +15,7 @@ export const login = (user) => dispatch => {
         (currentUser) => {
           dispatch(receiveCurrentUser(currentUser));
           dispatch(clearErrors());
-          hashHistory.push('/home');
+
           // dispatches receiveCurrentUser session action and clear error action
         },
         (errors) => {
@@ -34,7 +31,6 @@ export const signOut = () => dispatch => {
     SessionAPIUtil.signOut()
     .then((currentUser) => {
       dispatch(receiveCurrentUser(null));
-      hashHistory.push('/');
     })
   );
 };
@@ -46,7 +42,7 @@ export const signUp = (user) => dispatch => (
     (currentUser) => {
       dispatch(receiveCurrentUser(currentUser));
       dispatch(clearErrors());
-      hashHistory.push('/home');
+
       // dispatches receiveCurrentUser session action and clear error action
     },
     (errors) => {
