@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router';
 class Masthead extends React.Component {
   constructor(props) {
     super(props);
-    // debugger
+
     this.userInfo = this.userInfo.bind(this);
     this.signOut = this.signOut.bind(this);
   }
