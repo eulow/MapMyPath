@@ -41,7 +41,7 @@ export const receiveAllPotentialFriends = (friends) => ({
 export const removeFromSearch = (friend) => ({
   type: REMOVE_FROM_SEARCH,
   friend
-})
+});
 
 export const requestAllFriends = () => (dispatch) => {
   return (
@@ -66,47 +66,57 @@ export const requestAllRequests = () => (dispatch) => {
 };
 
 export const addFriend = (id) => (dispatch) => {
-  FriendsAPIUtil.addFriend(id)
-  .then(
-    (friend) => {
-      dispatch(receiveNewFriend(friend));
-      dispatch(removeRequest(friend));
-    }
+  return (
+    FriendsAPIUtil.addFriend(id)
+    .then(
+      (friend) => {
+        dispatch(receiveNewFriend(friend));
+        dispatch(removeRequest(friend));
+      }
+    )
   );
 };
 
 export const deleteFriend = (friendId) => (dispatch) => {
-  FriendsAPIUtil.deleteFriend(friendId)
-  .then(
-    (deletedFriend) => {
-      dispatch(removeFriend(deletedFriend.id));
-    }
+  return (
+    FriendsAPIUtil.deleteFriend(friendId)
+    .then(
+      (deletedFriend) => {
+        dispatch(removeFriend(deletedFriend.id));
+      }
+    )
   );
 };
 
 export const deleteRequest = (friendId) => (dispatch) => {
-  FriendsAPIUtil.deleteRequest(friendId)
-  .then(
-    (deletedFriend) => {
-      dispatch(removeRequest(deletedFriend));
-    }
+  return (
+    FriendsAPIUtil.deleteRequest(friendId)
+    .then(
+      (deletedFriend) => {
+        dispatch(removeRequest(deletedFriend));
+      }
+    )
   );
 };
 
 export const addRequest = (friendId) => (dispatch) => {
-  FriendsAPIUtil.addRequest(friendId)
-  .then(
-    (friend) => {
-      dispatch(removeFromSearch(friend));
-    }
+  return (
+    FriendsAPIUtil.addRequest(friendId)
+    .then(
+      (friend) => {
+        dispatch(removeFromSearch(friend));
+      }
+    )
   );
 };
 
 export const requestAllPotentialFriends = (search) => (dispatch) => {
-  FriendsAPIUtil.getPotentialFriends(search)
-  .then(
-    (potentialFriends) => {
-      dispatch(receiveAllPotentialFriends(potentialFriends));
-    }
+  return (
+    FriendsAPIUtil.getPotentialFriends(search)
+    .then(
+      (potentialFriends) => {
+        dispatch(receiveAllPotentialFriends(potentialFriends));
+      }
+    )
   );
 };

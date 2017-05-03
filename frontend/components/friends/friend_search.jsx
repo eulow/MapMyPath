@@ -3,6 +3,8 @@ import React from 'react';
 class FriendSearch extends React.Component {
   constructor(props) {
     super(props);
+    this.search = '';
+
     this.state = {
       search: ''
     };
@@ -13,6 +15,8 @@ class FriendSearch extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.search = this.state.search;
+
     this.props.requestAllPotentialFriends(this.state.search);
   }
 
@@ -39,6 +43,8 @@ class FriendSearch extends React.Component {
           }))}
         </ul>
       );
+    } else if (this.props.potentialFriends.length === 0 && this.search) {
+      return <p className='unable-to-find'>We couldn't find anything for {this.search}.</p>;
     }
   }
 

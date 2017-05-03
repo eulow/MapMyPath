@@ -43,6 +43,7 @@
         linear, left top, left bottom,
         from(#ff9628),
         to(#ff8714));
+        cursor: pointer;
         &:hover {
           background: -webkit-gradient(
           linear, left top, left bottom,
@@ -51,6 +52,10 @@
         }
       }
     }
+  }
+
+  .unable-to-find {
+    margin: 30px 0 0 10px;
   }
 
   ul {

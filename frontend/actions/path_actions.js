@@ -1,6 +1,5 @@
 import * as PathsAPIUtil from '../util/paths_api_util';
 import { clearErrors, addErrors } from './error_actions';
-import { hashHistory } from 'react-router';
 
 export const RECEIVE_ALL_PATHS = 'RECEIVE_ALL_PATHS';
 export const RECEIVE_SINGLE_PATH = 'RECEIVE_SINGLE_PATH';
@@ -60,7 +59,7 @@ export const createPath = (path) => (dispatch) => {
     .then(
       (newPath) => {
        dispatch(clearErrors());
-       hashHistory.push(`/home/paths/${newPath.id}`);
+       return newPath;
       },
       (errors) => {
         dispatch(addErrors(errors));

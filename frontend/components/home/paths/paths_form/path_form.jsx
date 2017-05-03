@@ -1,6 +1,6 @@
 import React from 'react';
 import Map from './map';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 import { convertTimeToSeconds } from '../../../../util/math_calculations';
 
 class PathForm extends React.Component {
@@ -36,9 +36,16 @@ class PathForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const duration = convertTimeToSeconds(this.hours, this.minutes, this.seconds);
+    const duration = convertTimeToSeconds(
+      this.hours,
+      this.minutes,
+      this.seconds
+    );
+
     const path = Object.assign({}, this.state, { duration });
-    this.props.createPath(path);
+    
+    this.props.createPath(path).then(
+      (newPath) => this.props.router.push(`/home/paths/${newPath.id}`));
   }
 
   setDuration(e) {
@@ -169,4 +176,4 @@ class PathForm extends React.Component {
   }
 }
 
-export default PathForm;
+export default withRouter(PathForm);
