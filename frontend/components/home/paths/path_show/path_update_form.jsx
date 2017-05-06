@@ -1,5 +1,8 @@
 import React from 'react';
-import { convertTimeToSeconds } from '../../../../util/math_calculations';
+import {
+  convertTimeToSeconds,
+  todaysDate
+} from '../../../../util/math_calculations';
 
 class PathUpdateForm extends React.Component {
   constructor(props) {
@@ -62,8 +65,8 @@ class PathUpdateForm extends React.Component {
             <label>When did you do this run?</label>
             <input
               type='date'
-              // value={this.state.done_date}
-              onChange={this.update('done_date')}/>
+              onChange={this.update('done_date')}
+              max={todaysDate()}/>
           </div>
           <div>
             <label>How did it go?</label>

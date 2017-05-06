@@ -14,3 +14,18 @@ export const convertTimeToSeconds = (hours, minutes, seconds) => {
   const minutesSeconds = minutes * 60;
   return (hoursSeconds + minutesSeconds + seconds);
 };
+
+export const todaysDate = () => {
+  const today = new Date();
+  const year = today.getFullYear();
+  let month = today.getMonth() + 1;
+  let date = today.getDate();
+  if (date < 10) {
+    date = '0' + date;
+  }
+  if(month < 10){
+     month = '0'+ month;
+  }
+
+  return (year + '-' + month + '-' + date);
+};

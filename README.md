@@ -15,7 +15,7 @@ The core feature of this application is the utilization of Google Maps API to ma
 ![Route Creation](app/assets/images/map_creation.png)
 
 ---
-The map provides real time updates on the total distance of the path along with the starting and ending locations. There were quite a bit of tweaking of the map API to make the user experience as smooth as possible. First, the cursor was changed to a target to make it more intuitive. Autozoom was also turned off to make sure the user is able to stay in focus on what they want to see. The markers are set to show the start and end points, keeping track of which marker is first to render the correct information.
+The map provides real time updates on the total distance of the path along with the starting and ending locations. There were quite a bit of tweaking of the map API to make the user experience as smooth as possible. First, I changed the cursor from a hand to a target in order to make it more intuitive. Autozoom was also turned off to make sure the user is able to stay in focus on what they want to see. The markers are set to show the start and end points, keeping track of which marker is first to render the correct information.
 
 ---
 ```javascript

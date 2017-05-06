@@ -1,7 +1,10 @@
 import React from 'react';
 import Map from './map';
 import { Link, withRouter } from 'react-router';
-import { convertTimeToSeconds } from '../../../../util/math_calculations';
+import {
+  convertTimeToSeconds,
+  todaysDate
+} from '../../../../util/math_calculations';
 
 class PathForm extends React.Component {
   constructor(props) {
@@ -43,7 +46,7 @@ class PathForm extends React.Component {
     );
 
     const path = Object.assign({}, this.state, { duration });
-    
+
     this.props.createPath(path).then(
       (newPath) => this.props.router.push(`/home/paths/${newPath.id}`));
   }
@@ -141,7 +144,8 @@ class PathForm extends React.Component {
               </div>
               <div id='date-container' className={this.state.done}>
                 <input type='date'
-                  onChange={this.update('done_date')}/>
+                  onChange={this.update('done_date')}
+                  max={todaysDate()}/>
               </div>
               <div id='duration-container' className={this.state.done}>
                 <input

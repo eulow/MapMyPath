@@ -12,6 +12,7 @@ class PathIndex extends React.Component {
   }
 
   render () {
+
     return (
       <div className='paths-index'>
         <header >

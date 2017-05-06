@@ -3,7 +3,6 @@ import { Link, withRouter } from 'react-router';
 
 const PathIndexItem = ({ path, deletePath, router }) => {
   const map = `https://maps.googleapis.com/maps/api/staticmap?size=80x80&path=weight:3%7Ccolor:red%7Cenc:${ path.polyline }&key=AIzaSyAguar0XlZ_56FFg9-1IzyO2nG0Rzngsrk`;
-
   const complete = (path.done) ? 'Yes' : 'No';
   return (
     <tr>
