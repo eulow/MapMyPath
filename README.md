@@ -73,22 +73,35 @@ Users have the abilities search and become friends with others upon acceptance. 
 ---
 ```ruby
 def friends
-  User
-    .joins('JOIN relationships ON relationships.user_one_id = users.id OR relationships.user_two_id = users.id')
-    .where("relationships.status = '1'")
-    .where('relationships.user_one_id = :id OR relationships.user_two_id = :id', id: self.id)
-    .where('users.id != :id', id: self.id)
+  relationship_where_status(1)
 end
 
 def pending_friends
+  relationship_where_status(0).where('relationships.action_user_id != :id', id: self.id)
+end
+
+private
+
+def relationship_where_status(status)
   User
     .joins('JOIN relationships ON relationships.user_one_id = users.id OR relationships.user_two_id = users.id')
-    .where("relationships.status = '0'")
+    .where("relationships.status = :status", status: status)
     .where('relationships.user_one_id = :id OR relationships.user_two_id = :id', id: self.id)
-    .where('users.id != :id AND relationships.action_user_id != :id', id: self.id)
+    .where('users.id != :id', id: self.id)
 end
 ```
 
+![Friends Search](app/assets/images/friends_search.png)
+
+To search for friends, we look for non-viable candidates, that are users that you already have a relationship with, whether pending a relationship status or already friends. We remove that group from the remaining user base.
+
+```ruby
+def potential_friends(search)
+  not_potential_friends = Relationship.where('user_one_id = :id or user_two_id = :id', id: self.id)
+  ids = not_potential_friends.pluck(:user_one_id).concat(not_potential_friends.pluck(:user_two_id)).uniq
+  return User.where.not(id: ids).where('first_name ILIKE :search OR last_name ILIKE :search OR email ILIKE :search', search: "%#{search}%")
+end
+```
 ---
 
 ### Path page
