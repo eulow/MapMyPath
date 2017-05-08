@@ -5,10 +5,15 @@ export const RECEIVE_ALL_PATHS = 'RECEIVE_ALL_PATHS';
 export const RECEIVE_SINGLE_PATH = 'RECEIVE_SINGLE_PATH';
 export const RECEIVE_NEW_PATH = 'RECEIVE_NEW_PATH';
 export const REMOVE_PATH = 'REMOVE_PATH';
+export const CLEAR_PATHS = 'CLEAR_PATHS';
 
 export const receiveAllPaths = (paths) => ({
   type: RECEIVE_ALL_PATHS,
   paths
+});
+
+export const clearPaths = () => ({
+  type: CLEAR_PATHS
 });
 
 export const receiveSinglePath = (path) => ({

@@ -12,6 +12,10 @@ class Activity extends React.Component {
     this.props.requestAllPaths();
   }
 
+  componentWillUnmount () {
+    this.props.clearPaths();
+  }
+
   render () {
     return (
       <div className='activities'>

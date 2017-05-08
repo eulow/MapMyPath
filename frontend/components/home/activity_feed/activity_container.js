@@ -3,7 +3,7 @@ import Activity from './activity';
 
 import { combinePathsAndFriendsActivities } from '../../../util/selector.js';
 
-import { requestAllPaths } from '../../../actions/path_actions';
+import { requestAllPaths, clearPaths } from '../../../actions/path_actions';
 import { requestAllFriends } from '../../../actions/friend_actions';
 
 const mapStateToProps = ({ session, paths }) => {
@@ -17,6 +17,7 @@ const mapStateToProps = ({ session, paths }) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     requestAllPaths: () => dispatch(requestAllPaths('activity')),
+    clearPaths: () => dispatch(clearPaths())
   };
 };
 

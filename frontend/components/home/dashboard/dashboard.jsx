@@ -16,6 +16,10 @@ class Dashboard extends React.Component {
     this.props.requestAllPaths();
   }
 
+  componentWillUnmount () {
+    this.props.clearPaths();
+  }
+
   totalDistance () {
     if (this.props.completePaths.length > 0) {
       let result = 0;

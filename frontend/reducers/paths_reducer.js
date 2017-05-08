@@ -2,7 +2,8 @@ import {
   RECEIVE_ALL_PATHS,
   RECEIVE_NEW_PATH,
   REMOVE_PATH,
-  RECEIVE_SINGLE_PATH
+  RECEIVE_SINGLE_PATH,
+  CLEAR_PATHS
 } from '../actions/path_actions';
 
 
@@ -23,6 +24,8 @@ const PathsReducer = (oldState = {}, action) => {
       let newState = Object.assign({}, oldState);
       delete newState[action.id];
       return newState;
+    case CLEAR_PATHS:
+      return {};
     default:
       return oldState;
   }
