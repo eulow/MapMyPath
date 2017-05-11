@@ -179,9 +179,15 @@
       border-radius: 3px;
       padding: 10px;
 
+      .avatar-container {
+        height: 45px;
+        width: 45px;
+      }
+
       .avatar {
         height: 45px;
-        width: 45px
+        width: 45px;
+        // display: block;
       }
 
       h3 {
@@ -219,6 +225,7 @@
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                width: 85px;
               }
 
               .comment-right {

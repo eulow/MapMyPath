@@ -11,7 +11,9 @@ const CommentIndexItem = ({ comment, deleteComment, path, currentUser }) => {
   };
   return (
     <li className='comment-container'>
-      <img className='avatar' src={ comment.author.img_url } />
+      <div className='avatar-container'>
+        <img className='avatar' src={ comment.author.img_url } />
+      </div>
       <div className='comment'>
         <span className='user-info'>
           <p>{ comment.author.name }</p>
