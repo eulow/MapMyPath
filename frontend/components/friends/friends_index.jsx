@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const FriendsIndex = ({ friends, deleteFriend }) => {
   const friendListItem = (friend) => {
@@ -18,6 +19,7 @@ const FriendsIndex = ({ friends, deleteFriend }) => {
     <div className='friends'>
       <header>
         <h2>Friends</h2>
+        <Link to={'/home'} className='back-button'>Back to home page</Link>
       </header>
       <ul>
         {friends.map(friend => friendListItem(friend))}

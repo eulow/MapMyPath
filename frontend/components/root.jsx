@@ -75,7 +75,7 @@ const Root = ({ store }) => {
               component={ DashboardContainer } />
 
             <Route path='paths' component={ PathsMain }>
-              <IndexRedirect to='all' />
+              <IndexRedirect to='new' />
               <Route path='all' component ={ PathIndexContainer } />
               <Route path='new' component={ PathFormContainer } />
               <Route path=':id' component={ PathShowContainer } />

@@ -32,7 +32,7 @@ class Home extends React.Component {
               </Link>
               <Link to={'/home/paths'}
                 className={this.selectedTab('/home/paths')}>
-                Paths
+                My Paths
               </Link>
               <div className="end-border"></div>
             </div>

@@ -89,7 +89,7 @@ class PathForm extends React.Component {
       <div className='create-path'>
         <header >
           <h2 className='path-form-header'>Create a Path</h2>
-          <Link to={'/home/paths/all'} className='back-button'>Back to all paths</Link>
+          <Link to={'/home/paths/all'} className='back-button'>to all paths</Link>
         </header>
         <div className='path-main'>
           <div className='path-form'>
