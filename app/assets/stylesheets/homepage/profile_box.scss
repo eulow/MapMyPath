@@ -20,6 +20,10 @@
     padding-bottom: 10px;
     border-bottom: 1px solid #cdcdcd;
     letter-spacing: .5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 120px;
   }
 
   a {
