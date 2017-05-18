@@ -29,7 +29,7 @@ class Dashboard extends React.Component {
       return result.toFixed(2);
     }
 
-    return "";
+    return 0;
   }
 
   totalTime () {
@@ -40,7 +40,7 @@ class Dashboard extends React.Component {
       }
       return convertSecondsToTime(result);
     }
-    return "";
+    return "00:00:00";
   }
 
   render () {

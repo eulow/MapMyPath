@@ -114,7 +114,7 @@ class PathShow extends React.Component {
               }>did this path
             </button>
             <button onClick={
-                () => this.props.deletePath(path.id).then(() => this.props.router.push(`/home/paths/`))
+                () => this.props.deletePath(path.id).then(() => this.props.router.push(`/home/paths/all`))
               }>Delete this path
             </button>
           </nav>

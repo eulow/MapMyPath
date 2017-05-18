@@ -212,11 +212,9 @@
             font-size: 11px;
             width: 100%;
             overflow: hidden;
-            text-overflow: ellipsis;
 
             p {
-              overflow: hidden;
-              text-overflow: ellipsis;
+              word-wrap: break-word;
             }
 
             .user-info {
@@ -228,6 +226,8 @@
                 font-weight: 600;
                 color: #2f98d9;
                 white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
                 width: 100px;
               }
 
