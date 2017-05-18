@@ -18,8 +18,8 @@ const CommentIndexItem = ({ comment, deleteComment, path, currentUser }) => {
         <span className='user-info'>
           <p>{ comment.author.name }</p>
           <div className='comment-right'>
-            {deleteButton()}
             <FormattedRelative value={comment.created_at} />
+            { deleteButton() }
           </div>
         </span>
         <span>

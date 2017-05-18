@@ -22,17 +22,17 @@ u6 = User.create!(email: 'jl@gmail.com', password: 'password', first_name: 'Jere
 u7 = User.create!(email: 'dr@gmail.com', password: 'password', first_name: 'Derrick', last_name: 'Rose', img_url: Faker::Avatar.image)
 u8 = User.create!(email: 'jh@gmail.com', password: 'password', first_name: 'Jeff', last_name: 'Hornacek',  img_url: Faker::Avatar.image)
 u9 = User.create!(email: 'sm@gmail.com', password: 'password', first_name: 'Steve', last_name: 'Mills', img_url: Faker::Avatar.image)
-u10 = User.create!(email: Faker::Internet.email, password: 'password',  first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, img_url: Faker::Avatar.image)
+u10 = User.create!(email: Faker::Internet.email, password: 'password', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, img_url: Faker::Avatar.image)
 u11 = User.create!(email: 'pe@gmail.com', password: 'password', first_name: 'Patrick',last_name: 'Ewing', img_url: Faker::Avatar.image)
 u12 = User.create!(email: 'pj@gmail.com', password: 'password', first_name: 'Phil', last_name: 'Jackson', img_url: Faker::Avatar.image)
 u13 = User.create!(email: 'bk@gmail.com', password: 'password', first_name: 'Bernard', last_name: 'King', img_url: Faker::Avatar.image)
 u14 = User.create!(email: 'tc@gmail.com', password: 'password', first_name: 'Tyson', last_name: 'Chandler', img_url: Faker::Avatar.image)
-u15 = User.create!(email: Faker::Internet.email, password: 'password',  first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, img_url: Faker::Avatar.image)
-u16 = User.create!(email: Faker::Internet.email, password: 'password',  first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, img_url: Faker::Avatar.image)
-u17 = User.create!(email: Faker::Internet.email, password: 'password',  first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, img_url: Faker::Avatar.image)
-u18 = User.create!(email: Faker::Internet.email, password: 'password',  first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, img_url: Faker::Avatar.image)
-u19 = User.create!(email: Faker::Internet.email, password: 'password',  first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, img_url: Faker::Avatar.image)
-u20 = User.create!(email: Faker::Internet.email, password: 'password',  first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, img_url: Faker::Avatar.image)
+u15 = User.create!(email: Faker::Internet.email, password: 'password', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, img_url: Faker::Avatar.image)
+u16 = User.create!(email: Faker::Internet.email, password: 'password', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, img_url: Faker::Avatar.image)
+u17 = User.create!(email: Faker::Internet.email, password: 'password', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, img_url: Faker::Avatar.image)
+u18 = User.create!(email: Faker::Internet.email, password: 'password', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, img_url: Faker::Avatar.image)
+u19 = User.create!(email: Faker::Internet.email, password: 'password', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, img_url: Faker::Avatar.image)
+u20 = User.create!(email: Faker::Internet.email, password: 'password', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, img_url: Faker::Avatar.image)
 
 
 # Paths
@@ -260,6 +260,46 @@ p19 = Path.create!(
   duration: 567
 )
 
+p20 = Path.create!(
+  user_id: u1.id,
+  name: "Walk around Koreatown!",
+  polyline:
+   "}avwF|hqbMsDfLgDnKfBfAjAv@bAt@nC~ArA|@`DvBvFtDjJcZzARpEd@jCkIxAqE}B}AuFsDwNmJaG{D}@i@|@h@mG`Si@bB",
+  distance: 1.84,
+  start_address: "44 W 36th St, New York, NY 10018, USA",
+  end_address: "52-58 W 36th St, New York, NY 10018, USA",
+  duration: 0,
+  done: false,
+  done_date: nil,
+)
+
+p21 = Path.create!(
+  user_id: u2.id,
+  name: "I love Chinese food",
+  polyline:
+   "}nxwFn`taM@iBHwD?qAC}BQmA]qBy@kGkAyHk@sDSoAd@HTBBA`A_@jM}E~BiAdBo@~B_ArCgAsCfApCtTJb@B?|@[p@lB|B`HdElLkGvAcB^WDBTZ`D[aDKwB{BsJcAwDw@iDiCfAaG~BxB`I|@hDhA~FLC",
+  distance: 2.19,
+  start_address: "130 Northern Blvd, Flushing, NY 11354, USA",
+  end_address: "37-5 College Point Blvd, Flushing, NY 11354, USA",
+  duration: 9900,
+  done: true,
+  done_date: 'Thu, 18 May 2017',
+  description: "Delicious and gained more calories than lost"
+)
+
+p22 = Path.create!(
+  user_id: u3.id,
+  name: "Jog around the park",
+  polyline:
+   "so}rGdfe}MkqA`kC|]xkC_t@vhAcf@~wFmeAjyFcvCt|ApJduK|q@ty@hKju@mOreDsdArBeFtmAbYfvAyGdyH{MbrDgs@ta@kf@fq@lsAfkEncCx}Dnw@bnDiM`cAu`Ad_@aDfbHeJf_BebAr[qaAj^om@jrB{h@`Kgo@e|AcqDru@af@zeAqFvmAar@al@mqCwnAy{@iu@ugDeaH_dO{pVuyE_~FwwEuuA}dBr`Cu{AvaEghGheKa~@jsEdd@hhDthA`aHroCtrFpzBzkD_tB~mDrX~rEc\\xrCxf@boFtwBjrH`kBl{LsUvrEnfA~mHm]fdE_gCvrAkbDlcFqqEhcCmoDm}@ifDhsAmyCbcAynBwWoyB_p@kCfq@uHbhBq~Cr{CocB`HoKqc@gD{KsVdAelDv`@o}DjgB{fD``B~UdgCelCxcBg~C|bA}XwsAcQifAoi@aaD_`@c|Ao{@sdGm~@agAksCdoA{`Bp}@yoCv}@gdAw|EaqBwBud@{|Awr@}aFhjAwtB_kAecHea@eiDnbA{wBet@ifF`dB{t@gmAerHf^}Wx{Bo`A|c@vs@{bD`MgnAn_@}y@hl@ag@czCcZueBuEic@qA_g@i[ymAqw@qhAslCg|Fy|C{zJvTgkEumAgjEgeCog@_cAv]mpAc{BqsA{uIsaDsrQw`EgdW}Ec}@eu@aaC`EetDppAwjGvjA_zFrMy`AlDskAgOiyCaZycF`iA}oGjoCk_Ied@}cElcA{t]d|AazHtdCwjTuf@ueLb~@}qAh{BqbE|sAeqEcuA}pKxdA}mH_r@sgEn|CojOjnFkjI~dIidBht@pgCqr@|`Cp`@xcFdLfeDaYlgByIj`AkLbi@zRaaAlf@olBtCwe@i[at@hJsrCa\\gmF`c@kdCtqAu~Arr@uhDfmCe|GhwFknLlwJkjJnfGigCdcEstBpjAvb@lKhl@pCrQza@jaCyAb[nJrc@fc@?r^eHr`@}b@dr@obAbs@uZneBoyAnfAlKfh@ltCleBdcEri@lfIzoFzvStzBxtEu]xcEmx@hdFii@xcD|dAvdBx_By\\x`B_SnmCslCjjD{n@zuAfsE``CndCr`CjVtkGzw@hcD{`AffD`OzgEu~ChsBijBbgDy`BhQdhAtNnqFdgAviH|~Jz|SdkDf{BdeA`rC`eBh{Kj`ApkFztBlfIriBrpFmKndFit@fnFxnAprE|bAlnHwbBnsB}z@veBgbAey@cuAsJan@dzAg~@~[zW|}AqDhrF_IrmCvlBje@vaAfk@",
+  distance: 423.68,
+  start_address: "Unnamed Road, Eagle Lake, ON K0M 1M0, Canada",
+  end_address: "Unnamed Road, Eagle Lake, ON K0M 1M0, Canada",
+  duration: 0,
+  done: false,
+  done_date: nil
+)
+
 # comments
 
 Comment.create!(author: u1, path: p9, body: Faker::Hipster.sentence)
@@ -352,6 +392,24 @@ Comment.create!(author: u3, path: p19, body: Faker::Hacker.say_something_smart)
 Comment.create!(author: u4, path: p19, body: Faker::Friends.quote)
 Comment.create!(author: u9, path: p19, body: Faker::StarWars.wookie_sentence)
 Comment.create!(author: u6, path: p19, body: Faker::TwinPeaks.quote)
+Comment.create!(author: u1, path: p20, body: Faker::Hipster.sentence)
+Comment.create!(author: u2, path: p20, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u3, path: p20, body: Faker::Hacker.say_something_smart)
+Comment.create!(author: u4, path: p20, body: Faker::Friends.quote)
+Comment.create!(author: u9, path: p20, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u6, path: p20, body: Faker::TwinPeaks.quote)
+Comment.create!(author: u1, path: p21, body: Faker::Hipster.sentence)
+Comment.create!(author: u2, path: p21, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u3, path: p21, body: Faker::Hacker.say_something_smart)
+Comment.create!(author: u4, path: p21, body: Faker::Friends.quote)
+Comment.create!(author: u9, path: p21, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u6, path: p21, body: Faker::TwinPeaks.quote)
+Comment.create!(author: u1, path: p22, body: Faker::Hipster.sentence)
+Comment.create!(author: u2, path: p22, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u3, path: p22, body: Faker::Hacker.say_something_smart)
+Comment.create!(author: u4, path: p22, body: Faker::Friends.quote)
+Comment.create!(author: u9, path: p22, body: Faker::StarWars.wookie_sentence)
+Comment.create!(author: u6, path: p22, body: Faker::TwinPeaks.quote)
 
 # relationship
 

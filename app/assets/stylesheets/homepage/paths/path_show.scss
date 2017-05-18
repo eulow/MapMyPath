@@ -32,6 +32,7 @@
     letter-spacing: .5px;
     padding-bottom: 30px;
     border-bottom: 1px solid #c3c2c2;
+    min-width: 664px;
 
     .distance-duration {
       background: #fbf9f9;
@@ -99,7 +100,7 @@
 
   .side-bar {
     margin-left: 20px;
-    width: 250px;
+    width: 255px;
 
     .errors {
       font-size: 10px;
@@ -187,7 +188,6 @@
       .avatar {
         height: 45px;
         width: 45px;
-        // display: block;
       }
 
       h3 {
@@ -209,10 +209,15 @@
 
           .comment {
             margin-left: 5px;
-            display: flex;
-            flex-direction: column;
             font-size: 11px;
             width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            p {
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
 
             .user-info {
               display: flex;
@@ -223,27 +228,24 @@
                 font-weight: 600;
                 color: #2f98d9;
                 white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                width: 85px;
+                width: 100px;
               }
 
               .comment-right {
                 font-size: 10px;
+                text-align: right;
 
                 button {
-                  font-size: 10px;
-                  margin: auto;
+                  font-size: 9.5px;
                   color: #0076c0;
                   cursor: pointer;
-                  padding-right: 5px;
-                  border-right: 1px solid #cdcdcd
+                  margin-top: 2px;
+                  margin-right: 2px;
                 }
 
                 span {
                   margin: auto;
-                  padding-left: 5px;
-
+                  display: block;
                 }
               }
             }

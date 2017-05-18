@@ -78,13 +78,13 @@ class Dashboard extends React.Component {
             <CompletePathsItem paths={this.props.completePaths} />
           </div>
         </div>
-        <div className='profile'>
-          <Profile currentUser={this.props.currentUser} />
-        </div>
+        <Profile currentUser={this.props.currentUser} />
       </div>
     );
   }
 }
 
+// <div className='profile'>
+// </div>
 
 export default Dashboard;
