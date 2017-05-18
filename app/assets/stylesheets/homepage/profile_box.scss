@@ -8,7 +8,7 @@
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   margin: 15px 0 15px 30px;
   text-transform: uppercase;
-  // height: 105px;
+  height: 100%;
 
   p:first-child {
     font-size: 12px;
@@ -30,8 +30,9 @@
     display: block;
     color:#2f98d9;
     margin-top: 10px;
-    cursor: pointer;
+    align-self: flex-end;
   }
+
   img {
     height: 100px;
     width: 100px;
