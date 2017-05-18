@@ -3,12 +3,12 @@
   border: 1px solid #cdcdcd;
   background: #f8f8f8;
   border-radius: 3px;
-  min-width: 230px;
+  width: 230px;
   padding: 8px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   margin: 15px 0 15px 30px;
   text-transform: uppercase;
-  height: 105px;
+  // height: 105px;
 
   p:first-child {
     font-size: 12px;
@@ -20,7 +20,6 @@
     padding-bottom: 10px;
     border-bottom: 1px solid #cdcdcd;
     letter-spacing: .5px;
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 120px;
@@ -30,7 +29,7 @@
     font-size: 13px;
     display: block;
     color:#2f98d9;
-    margin-top: 20px;
+    margin-top: 10px;
     cursor: pointer;
   }
   img {
