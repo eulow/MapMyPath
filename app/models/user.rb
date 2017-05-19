@@ -85,5 +85,3 @@ class User < ApplicationRecord
   end
 
 end
-
- # AND users.id = ?", self.id).includes(:paths)

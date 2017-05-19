@@ -38,7 +38,15 @@ addMarker(position) {
 }
 ```
 ---
-Each click creates a new marker on the map that is stored in the component's state. Once there are two or more markers, directions are rendered onto the map. When creating the undo button, I was unable to clear the directions off the map. Originally, I had created a new instance of the map, but there was a flash that was seemed very out of place.  The solution was instead to create a new instance of directions and remove the old directions all together.
+Each click creates a new marker on the map that is stored in the component's state. Once there are two or more markers, directions are rendered onto the map.
+
+![Undo/Clear button](app/assets/images/undoclear.png)
+
+Unfortunately, Google Maps API did not have the ability to undo and clear out the map with markers. So I made my own. When undoing a marker and having two or more, I was able to get new directions and render it on my map. However, you are only able to get directions with more than one point.
+
+My initial solution was to create a new instance of Map, but reloading a new instance caused a flashing that ruined the user experience.
+
+My final solution was to remove the directions object off my map whenever I had less than two points. This avoided the flashing of the screen while allowing the user to undo or clear out the map.
 
 ---
 ```javascript
