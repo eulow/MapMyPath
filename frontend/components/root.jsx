@@ -30,6 +30,7 @@ import FriendSearchContainer from './friends/friend_search_container';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
+    debugger
     const currentUser = store.getState().session.currentUser;
     if (!currentUser) {
       replace('/');
@@ -75,7 +76,7 @@ const Root = ({ store }) => {
               component={ DashboardContainer } />
 
             <Route path='paths' component={ PathsMain }>
-              <IndexRedirect to='new' />
+              <IndexRedirect to='new'/>
               <Route path='all' component ={ PathIndexContainer } />
               <Route path='new' component={ PathFormContainer } />
               <Route path=':id' component={ PathShowContainer } />

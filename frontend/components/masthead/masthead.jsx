@@ -21,7 +21,9 @@ class Masthead extends React.Component {
   signOut(e) {
     e.preventDefault();
     this.props.signOut().then(
-      () => this.props.router.push('/')
+      () => {
+        this.props.router.push('/');
+      }
     );
   }
 

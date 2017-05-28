@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+
 module.exports = {
   context: __dirname,
   entry: './frontend/map_my_path.jsx',
