@@ -30,7 +30,6 @@ import FriendSearchContainer from './friends/friend_search_container';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
-    debugger
     const currentUser = store.getState().session.currentUser;
     if (!currentUser) {
       replace('/');
