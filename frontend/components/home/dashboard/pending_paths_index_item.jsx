@@ -6,7 +6,7 @@ const PendingPathsItem = ({ paths }) => {
     <ul>
       {
         paths.map(path => {
-         const map = `https://maps.googleapis.com/maps/api/staticmap?size=135x125&path=weight:3%7Ccolor:red%7Cenc:${ path.polyline }&key=AIzaSyAguar0XlZ_56FFg9-1IzyO2nG0Rzngsrk`;
+         const map = `https://maps.googleapis.com/maps/api/staticmap?size=135x125&path=weight:3%7Ccolor:red%7Cenc:${ path.polyline }&key=AIzaSyBygQhRnDSS9s1hu7jxsQMu3mwIU7Hd2N4`;
          return (
            <li key={path.id}>
              <Link to={ `home/paths/${path.id}` }>

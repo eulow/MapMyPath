@@ -4,7 +4,7 @@ import { FormattedRelative } from 'react-intl';
 
 const ActivityIndexItem = ({ paths }) => {
   const activityRender = (activity) => {
-    const map = `https://maps.googleapis.com/maps/api/staticmap?size=278x160&path=weight:3%7Ccolor:red%7Cenc:${ activity.polyline }&key=AIzaSyAguar0XlZ_56FFg9-1IzyO2nG0Rzngsrk`;
+    const map = `https://maps.googleapis.com/maps/api/staticmap?size=278x160&path=weight:3%7Ccolor:red%7Cenc:${ activity.polyline }&key=AIzaSyBygQhRnDSS9s1hu7jxsQMu3mwIU7Hd2N4`;
     if (activity.done) {
       return (
         <li key={activity.id}>
