@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 
 const PathIndexItem = ({ path, deletePath, router }) => {
-  const map = `https://maps.googleapis.com/maps/api/staticmap?size=80x80&path=weight:3%7Ccolor:red%7Cenc:${ path.polyline }&key=AIzaSyBygQhRnDSS9s1hu7jxsQMu3mwIU7Hd2N4`;
+  const map = `https://maps.googleapis.com/maps/api/staticmap?size=80x80&path=weight:3%7Ccolor:red%7Cenc:${path.polyline}&key=AIzaSyBygQhRnDSS9s1hu7jxsQMu3mwIU7Hd2N4&signature=wVFDpvD2mvQnvSNsEqSAY_kW2h0=`;
   const complete = (path.done) ? 'Yes' : 'No';
   return (
     <tr>
